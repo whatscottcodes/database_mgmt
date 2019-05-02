@@ -1,0 +1,10 @@
+name: db_mgmt
+dependencies:
+- python=3
+- pip
+- pandas
+- numpy
+- jupyterlab
+- pip:
+    - titlecase
+    - geopy
