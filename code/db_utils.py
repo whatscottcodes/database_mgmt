@@ -42,7 +42,7 @@ def code_y_n(df):
             df[col] = df[col].str.title()
             df[col].replace({'Yes':1, 'No':0}, inplace=True)
 
-def build_immunization_status(df, contra):
+def build_immunization_status(df, contra, pneumo=True):
     #code administered as 1/not administered as 0
     df['immunization_status'] = np.where(df['Immunization: Dose Status'] == 'Administered',
                                          1, 0)
@@ -67,14 +67,15 @@ def build_immunization_status(df, contra):
     #check for any ppts who have had both a not administered & administered interaction
     not_admin_now_admin = not_admin_members[not_admin_members.isin(admin_members)].values
     
-    mask = ((df.member_id.isin(not_admin_now_admin)) 
-            & (df['immunization_status'] == 0))
+    if pneumo:
+        mask = ((df.member_id.isin(not_admin_now_admin)) 
+                & (df['immunization_status'] == 0))
 
-    #remove any the not administered record for any ppts who have
-    #had both records indicated
+        #remove any the not administered record for any ppts who have
+        #had both records indicated
     
-    if len(not_admin_now_admin) != 0:
-        df.drop(df[mask].index, inplace=True)
+        if len(not_admin_now_admin) != 0:
+            df.drop(df[mask].index, inplace=True)
     
     df.sort_values('date_administered', inplace=True)
     
@@ -132,14 +133,14 @@ def discharge_admit_diff(df, sql_table='', update=False, admit_diff=False, admit
 
 def get_csv_files():
     
-    files = os.listdir('..\\data')
+    files = os.listdir('.\\data')
 
     folders = [folder for folder in files if 'csv' not in folder and folder != 'archive']
     files = [file for file in files if 'csv' in file and 'statewide' not in file]
     tables = {}
 
     for file in files:
-        tables[file[:-4]] = pd.read_csv(f"..\\data\\{file}", low_memory=False)
+        tables[file[:-4]] = pd.read_csv(f".\\data\\{file}", low_memory=False)
 
     for table in tables.keys():
         date_cols = [col for col in tables[table].columns if 'date' in col.lower()]
@@ -156,9 +157,9 @@ def get_csv_files():
     folder_dicts = [incident_dict, utl_dict, vacc_dict]
 
     for folder, folder_dict in zip(folders, folder_dicts):
-        files = os.listdir(f"..\\data\\{folder}")
+        files = os.listdir(f".\\data\\{folder}")
         for file in files:
-            folder_dict[file[:-4]] = pd.read_csv(f"..\\data\\{folder}\\{file}", low_memory=False)
+            folder_dict[file[:-4]] = pd.read_csv(f".\\data\\{folder}\\{file}", low_memory=False)
 
     for folder in folder_dicts:
         for df in folder.keys():
@@ -174,21 +175,21 @@ def get_csv_files():
 def archive_files():
     pathName = os.getcwd()
 
-    shutil.make_archive(f"C:\\Users\\snelson\\repos\\db_mgmt\\data_archive\\{pd.datetime.today().date()}_update", "zip", f"..\\data")
+    shutil.make_archive(f"C:\\Users\\snelson\\repos\\db_mgmt\\data_archive\\{pd.datetime.today().date()}_update", "zip", f".\\data")
        
-    files = os.listdir('..\\data')
+    files = os.listdir('.\\data')
 
     folders = [folder for folder in files if 'csv' not in folder and folder != 'archive']
     files = [file for file in files if 'csv' in file and 'statewide' not in file]
 
     for file in files:
-        os.remove(f"..\\data\\{file}")
+        os.remove(f".\\data\\{file}")
 
 
     for folder in folders:
-        files = os.listdir(f"..\\data\\{folder}")
+        files = os.listdir(f".\\data\\{folder}")
         for file in files:
-            os.remove(f"..\\data\\{folder}\\{file}")
+            os.remove(f".\\data\\{folder}\\{file}")
 
 def clean_addresses(tables, one_file=False):
 
@@ -273,7 +274,7 @@ def clean_incidents(incident_dict, drop_cols, update=False):
         incident_dict[key].reset_index(inplace=True, drop=True)
 
         incident_dict[key] = create_id_col(incident_dict[key], ['member_id', 'date_time_occurred'], 'incident_id')
-    print(incident_dict[key]['incident_id'])
+
     return incident_dict
 
 def clean_vacc(vacc_dict, rename_dict):
@@ -282,7 +283,7 @@ def clean_vacc(vacc_dict, rename_dict):
         vacc_dict[df].rename(columns=rename_dict, inplace=True)
 
     #create immunization status cols
-    vacc_dict['influ'] = build_immunization_status(vacc_dict['influ'], vacc_dict['influ_contra'])
+    vacc_dict['influ'] = build_immunization_status(vacc_dict['influ'], vacc_dict['influ_contra'], pneumo=False)
     vacc_dict['pneumo'] = build_immunization_status(vacc_dict['pneumo'], vacc_dict['pneumo_contra'])
 
     #only keep the id and status cols
@@ -949,7 +950,7 @@ def create_or_update_table(db_name, update_table=True):
     tables['inpatient'], tables['er_only'], tables['inpatient_snf'] = clean_utlization(utl_dict, inpatient_rename_dict, inpatient_drop,
                                                                                     er_rename_dict, er_drop_cols, utl_rename_dict,
                                                                                     utl_drop_cols, tables, update=update_table, conn=sqlite3.connect(db_name))
-    print(tables['inpatient']['visit_id'])
+    
     clean_center_days(tables, center_days_rename_dict, center_days_drop)
     clean_dx(tables, dx_cols)
     clean_grievances(tables)
