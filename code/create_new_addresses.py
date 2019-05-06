@@ -1,8 +1,5 @@
-import re
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
-from datetime import date
-import numpy as np
 import pandas as pd
 import sqlite3
 from db_rename_cols import address_cols, address_drop_cols
