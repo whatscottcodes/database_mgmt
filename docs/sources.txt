@@ -1,19 +1,23 @@
 Cognify 
 burns - incident tracking survey from Quality under Reporting
 	Select Burns as type
-center_days - cneter days from Participant under Reporting
-enrollment - enrollment and disenrollment details from Intake/Enroll under Reporting
-er_adm - emergency room visits from Encounter under Reporting (select IP02 for Service Tracking)
-er_non - emergency room visits from Encounter under Reporting (select DP33 for Service Tracking)
 falls - incident tracking survey from Quality under Reporting
 	Select Falls as type
 infections - incident tracking survey from Quality under Reporting
 	Select Infection as type
-inpatient - inpatient from Encounter under Reporting
 med_errors - incident tracking survey from Quality under Reporting
 	Select Med Errors as type
 
+center_days - cneter days from Participant under Reporting
 
+enrollment - enrollment and disenrollment details from Intake/Enroll under Reporting
+
+er_adm - emergency room visits from Encounter under Reporting (select IP02 for Service Tracking)
+er_non - emergency room visits from Encounter under Reporting (select DP33 for Service Tracking)
+inpatient - inpatient from Encounter under Reporting
+
+
+save to \\tsclient\C\Users\snelson\data\ehr_for_db
 PrimeSuite
 addresses - Custom Report
 demographics - Custom Report
@@ -33,3 +37,4 @@ PACE Grids
 grievances - Grid maintained by Pauline
 ut_gird_er - Utilization grid maintained by Betsy and Yenissa - located V:\Utilization Review
 ut_grid_inp - Utilization grid maintained by Betsy and Yenissa - located V:\Utilization Review
+wounds

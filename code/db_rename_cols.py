@@ -1,8 +1,8 @@
 db_name = "V:\\Databases\\PaceDashboard.db"
 report_db = "V:\\Databases\\reporting.db"
-statewide_geocoding = "C:\\Users\\snelson\\work\\other_data_sources\\statewide.csv"
-non_geopy_addresses = "C:\\Users\\snelson\\work\\addresses_to_parse\\tough_adds.csv"
-
+statewide_geocoding = "C:\\Users\\snelson\\data\\statewide.csv"
+non_geopy_addresses = "C:\\Users\\snelson\\data\\addresses_to_parse\\tough_adds.csv"
+ehr_file_location = "C:\\Users\\snelson\\data\\ehr_for_db\\"
 
 address_rename_dict = {
     "MemberID": "member_id",

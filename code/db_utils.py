@@ -11,8 +11,27 @@ from db_rename_cols import *
 from geomap import geolocate_addresses
 import shutil
 from titlecase import titlecase
+import distutils.dir_util
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
+
+
+def create_id_col(df, pk, id_col, create_col=True):
+
+    member_ints = df[pk[0]].astype(int)
+    date_ints = df[pk[1]].dt.strftime("%Y%m%d").astype(int)
+    
+    if create_col:
+        df[id_col] = member_ints + date_ints
+       
+    if df[id_col].duplicated().sum() != 0:
+        df[id_col] += df[id_col].duplicated()
+        create_id_col(df, pk, id_col, create_col=False)
+    
+    df.drop_duplicates(subset = [col for col in df.columns if col != id_col], inplace=True)
+    
+    return df
+
 
 def code_y_n(df):
     """
@@ -77,7 +96,7 @@ def discharge_admit_diff(df, sql_table='', update=False, admit_diff=False, admit
         current_table = pd.read_sql(q, conn, parse_dates = [col for col in df.columns if 'date' in col])
 
         df = current_table.append(df, sort=False)
-        df.reset_index(inplace=True)
+        df.reset_index(inplace=True, drop=True)
         
     if admit_diff:
         diff_date = 'admission_date'
@@ -112,16 +131,15 @@ def discharge_admit_diff(df, sql_table='', update=False, admit_diff=False, admit
     return sorted_df
 
 def get_csv_files():
-    pathName = os.getcwd()
-
-    files = os.listdir(pathName+'/data')
+    
+    files = os.listdir('..\\data')
 
     folders = [folder for folder in files if 'csv' not in folder and folder != 'archive']
     files = [file for file in files if 'csv' in file and 'statewide' not in file]
     tables = {}
 
     for file in files:
-        tables[file[:-4]] = pd.read_csv(f"data/{file}", low_memory=False)
+        tables[file[:-4]] = pd.read_csv(f"..\\data\\{file}", low_memory=False)
 
     for table in tables.keys():
         date_cols = [col for col in tables[table].columns if 'date' in col.lower()]
@@ -138,9 +156,9 @@ def get_csv_files():
     folder_dicts = [incident_dict, utl_dict, vacc_dict]
 
     for folder, folder_dict in zip(folders, folder_dicts):
-        files = os.listdir(pathName+'/data'+f"/{folder}")
+        files = os.listdir(f"..\\data\\{folder}")
         for file in files:
-            folder_dict[file[:-4]] = pd.read_csv(f"data/{folder}/{file}", low_memory=False)
+            folder_dict[file[:-4]] = pd.read_csv(f"..\\data\\{folder}\\{file}", low_memory=False)
 
     for folder in folder_dicts:
         for df in folder.keys():
@@ -156,18 +174,21 @@ def get_csv_files():
 def archive_files():
     pathName = os.getcwd()
 
-    files = os.listdir(pathName+'/data')
+    shutil.make_archive(f"C:\\Users\\snelson\\repos\\db_mgmt\\data_archive\\{pd.datetime.today().date()}_update", "zip", f"..\\data")
+       
+    files = os.listdir('..\\data')
 
     folders = [folder for folder in files if 'csv' not in folder and folder != 'archive']
     files = [file for file in files if 'csv' in file and 'statewide' not in file]
 
     for file in files:
-        shutil.move(f"data/{file}", f"data/archive/{file}")
+        os.remove(f"..\\data\\{file}")
+
 
     for folder in folders:
-        files = os.listdir(pathName+'/data'+f"/{folder}")
+        files = os.listdir(f"..\\data\\{folder}")
         for file in files:
-            shutil.move(f"data/{folder}/{file}", f"data/archive/{file}")
+            os.remove(f"..\\data\\{folder}\\{file}")
 
 def clean_addresses(tables, one_file=False):
 
@@ -209,7 +230,7 @@ def clean_demos(tables):
 
     return tables['demographics']
 
-def clean_incidents(incident_dict, drop_cols):
+def clean_incidents(incident_dict, drop_cols, update=False):
 
     #loop through each dataset and
     #drop cols/replace characters
@@ -249,6 +270,10 @@ def clean_incidents(incident_dict, drop_cols):
             incident_dict[key]['location'] = incident_dict[key]['location_details'].str.split(' - ', expand=True)[0]
         except KeyError:
             pass
+        incident_dict[key].reset_index(inplace=True, drop=True)
+
+        incident_dict[key] = create_id_col(incident_dict[key], ['member_id', 'date_time_occurred'], 'incident_id')
+    print(incident_dict[key]['incident_id'])
     return incident_dict
 
 def clean_vacc(vacc_dict, rename_dict):
@@ -298,8 +323,8 @@ def clean_utlization(utl_dict, inpatient_cols, inpatient_drop, er_cols, er_drop,
                             'The Miriam Hospital' : 'Miriam Hospital',
                             'Westerly Hospital ': 'Westerly Hospital',
                             'Roger Williams Hospital': 'Roger Williams Medical Center',
-                            'Roger Williams Cancer Center': 'Roger Williams Medical Center',
-                            'St. Elizabeth Manor': 'St. Elizabeth Home'}
+                            'Roger Williams Cancer Center': 'Roger Williams Medical Center'
+                        }
     
     #replace some Cognify report facility quirks
     #can these be changed when being input?
@@ -374,8 +399,10 @@ def clean_utlization(utl_dict, inpatient_cols, inpatient_drop, er_cols, er_drop,
                                                                           'Hospital', 'merge']]
     
     if not grid_vs_cognify.empty:
-        grid_vs_cognify.to_csv('ut_grid_cognify_diffs.csv', index=False)
-        utl_dict['inpatient'][utl_dict['inpatient']['member_id'].isin(grid_vs_cognify['Member ID'])].to_csv('inp_for_diff.csv', index=False)
+        grid_vs_cognify.to_csv('..\\output\\ut_grid_cognify_diffs.csv', index=False)
+        inp_mask = (utl_dict['inpatient']['member_id'].isin(grid_vs_cognify['Member ID']) &
+                    -utl_dict['inpatient']['merge'].isin(utl_dict['ut_grid_inp']['merge']))
+        utl_dict['inpatient'][inp_mask].to_csv('..\\output\\inp_id_in_diffs.csv', index=False)
         raise AssertionError('All UR Grid Inpatient Visits are not in Cognify correctly.')
 
     #check that all UR Grid ER visits are either in the Cognify Inpatient Report
@@ -392,7 +419,10 @@ def clean_utlization(utl_dict, inpatient_cols, inpatient_drop, er_cols, er_drop,
     missing_ur_er_visits = missing_cog[-(missing_cog['merge'].isin(er_inp_check))]
     
     if not missing_ur_er_visits.empty:
-        missing_ur_er_visits.to_csv('ut_grid_cognify_diffs_er.csv', index=False)
+        missing_ur_er_visits.to_csv('..\\output\\ut_grid_cognify_diffs_er.csv', index=False)
+        er_mask = (utl_dict['er_non']['member_id'].isin(missing_ur_er_visits['Member ID']) &
+                    -utl_dict['er_non']['merge'].isin(utl_dict['ut_grid_er']['merge']))
+        utl_dict['er_non'][er_mask].to_csv('..\\output\\er_id_in_diffs.csv', index=False)
         raise AssertionError('All UR Grid ER Visits are not in Cognify correctly.')
 
     #drop cols
@@ -509,6 +539,11 @@ def clean_utlization(utl_dict, inpatient_cols, inpatient_drop, er_cols, er_drop,
         if inpatient[col].dtype == 'O':
             inpatient[col] = inpatient[col].apply(lambda x: titlecase(str(x)) if x is not None else None)
 
+    inpatient = create_id_col(inpatient,
+                            ['member_id', 'admission_date', 'facility'],
+                            'visit_id')
+
+
     #Merge Cognify ER Only and UR Grid ER reports
     er_only = utl_dict['er_non'].merge(utl_dict['ut_grid_er'], on='merge', how='left').drop_duplicates()
 
@@ -553,6 +588,10 @@ def clean_utlization(utl_dict, inpatient_cols, inpatient_drop, er_cols, er_drop,
 
 
     er_only.drop_duplicates(subset = ['member_id', 'admission_date', 'facility'], inplace=True)
+
+    er_only = create_id_col(er_only,
+                            ['member_id', 'admission_date', 'facility'],
+                            'visit_id')
 
     #start on Nursing Facility table
     inpatient_snf = utl_dict['inpatient'][utl_dict['inpatient']['admission_type'].isin(['Nursing Home',
@@ -608,6 +647,10 @@ def clean_utlization(utl_dict, inpatient_cols, inpatient_drop, er_cols, er_drop,
     for col in inpatient_snf.columns:
         if inpatient_snf[col].dtype == 'O':
             inpatient_snf[col] = inpatient_snf[col].apply(lambda x: titlecase(str(x)) if x is not None else None)
+
+    inpatient_snf = create_id_col(inpatient_snf,
+                            ['member_id', 'admission_date', 'facility'],
+                            'visit_id')
 
     return inpatient, er_only, inpatient_snf
 
@@ -762,6 +805,12 @@ def clean_grievances(tables):
     tables['grievances']['date_of_resolution'] = pd.to_datetime(tables['grievances']['date_of_resolution'])
     tables['grievances']['date_of_oral_notification'] = pd.to_datetime(tables['grievances']['date_of_oral_notification'])
     tables['grievances']['date_of_written_notification'] = pd.to_datetime(tables['grievances']['date_of_written_notification'])
+    
+    tables['grievances'].dropna(subset=['member_id', 'date_grievance_received'], inplace=True)
+
+    tables['grievances'] = create_id_col(tables['grievances'],
+                            ['member_id', 'date_grievance_received'],
+                            'griev_id')
 
     return tables['grievances']
 
@@ -789,20 +838,17 @@ def create_table(df, table_name, primary_key, conn, foreign_key=None, ref_table=
             else:
                 end = ','
             if col in primary_key:
-            # CHECK(typeof({col}) = '{sql_type}'),"
                 sql_query += f"{col} {sql_type} PRIMARY KEY{end}"
             else:
                 sql_query += f"{col} {sql_type}{end}"
-        #dtype_dict[col] = sql_type
 
     elif (foreign_key is not None) and (len(primary_key) == 1):
         for col, dtype in df.dtypes.iteritems():
             sql_type = pd2sql[str(dtype)[:3]]
             if col in primary_key:
-                sql_query += f"{col} {sql_type} PRIMARY KEY," #CHECK(typeof({col}) = '{sql_type}'),"
+                sql_query += f"{col} {sql_type} PRIMARY KEY," 
             else:
                 sql_query += f"{col} {sql_type},"
-            #dtype_dict[col] = sql_type
     
         #append foreign key creation sql if needed
         for fk, rtb, rcol in zip(foreign_key, ref_table, ref_col):
@@ -857,7 +903,6 @@ def update_sql_table(df, table_name, conn, primary_key):
     except IndexError:
         pass
 
-
     set_cols = [df_col for df_col in df.columns if df_col not in primary_key]
 
     set_sql = ', '.join([f"""{col} = (SELECT {col} FROM temp {filter_sql})""" for col in set_cols])
@@ -904,6 +949,7 @@ def create_or_update_table(db_name, update_table=True):
     tables['inpatient'], tables['er_only'], tables['inpatient_snf'] = clean_utlization(utl_dict, inpatient_rename_dict, inpatient_drop,
                                                                                     er_rename_dict, er_drop_cols, utl_rename_dict,
                                                                                     utl_drop_cols, tables, update=update_table, conn=sqlite3.connect(db_name))
+    print(tables['inpatient']['visit_id'])
     clean_center_days(tables, center_days_rename_dict, center_days_drop)
     clean_dx(tables, dx_cols)
     clean_grievances(tables)
@@ -953,19 +999,19 @@ def create_or_update_table(db_name, update_table=True):
                                   'foreign_key': ['member_id'],
                                      'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'burns': {'primary_key': ['member_id', 'date_time_occurred'],
+                    'burns': {'primary_key': ['incident_id'],
                                   'foreign_key': ['member_id'],
                                   'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'falls': {'primary_key': ['member_id', 'date_time_occurred'],
+                    'falls': {'primary_key': ['incident_id'],
                                   'foreign_key': ['member_id'],
                                   'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'infections': {'primary_key': ['member_id', 'date_time_occurred'],
+                    'infections': {'primary_key': ['incident_id'],
                                   'foreign_key': ['member_id'],
                                    'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'med_errors': {'primary_key': ['member_id', 'date_time_occurred'],
+                    'med_errors': {'primary_key': ['incident_id'],
                                   'foreign_key': ['member_id'],
                                    'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
@@ -977,23 +1023,23 @@ def create_or_update_table(db_name, update_table=True):
                                   'foreign_key': ['member_id'],
                                   'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'inpatient': {'primary_key':['member_id', 'admission_date', 'facility'],
+                    'inpatient': {'primary_key':['visit_id'],
                                   'foreign_key': ['member_id'],
                                   'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'er_only': {'primary_key':['member_id', 'admission_date', 'facility'],
+                    'er_only': {'primary_key':['visit_id'],
                                   'foreign_key': ['member_id'],
                                   'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'inpatient_snf': {'primary_key':['member_id', 'admission_date', 'facility'],
+                    'inpatient_snf': {'primary_key':['visit_id'],
                                   'foreign_key': ['member_id'],
                                       'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'grievances': {'primary_key':['grievance_num', 'date_grievance_received'],
+                    'grievances': {'primary_key':['griev_id'],
                                   'foreign_key': ['member_id'],
                                   'ref_table': ['ppts'],
                                   'ref_col': ['member_id']},
-                    'wounds': {'primary_key':['member_id', 'date_time_occurred'],
+                    'wounds': {'primary_key':['incident_id'],
                                   'foreign_key': ['member_id'],
                                   'ref_table': ['ppts'],
                                   'ref_col': ['member_id']}}

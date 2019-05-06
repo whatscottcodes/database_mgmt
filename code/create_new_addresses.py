@@ -8,7 +8,12 @@ import sqlite3
 from db_rename_cols import address_cols, address_drop_cols
 import os
 import argparse
-from db_rename_cols import statewide_geocoding, non_geopy_addresses
+from db_rename_cols import (
+    statewide_geocoding,
+    non_geopy_addresses,
+    db_name,
+    ehr_file_location,
+)
 
 try:
     current_tough_addresses = pd.read_csv(non_geopy_addresses)
@@ -18,12 +23,12 @@ except FileNotFoundError:
 
 def load_clean_addresses():
     addresses = pd.read_excel(
-        "C:\\Users\\snelson\\Downloads\\addresses.xls", "Sheet1", index_col=None
+        f"{ehr_file_location}addresses.xls", "Sheet1", index_col=None
     )
 
     addresses = addresses[addresses.member_id != 1003].copy()
 
-    addresses["address"] = addresses.addresses.str.strip(".")
+    addresses["address"] = addresses.address.str.strip(".")
 
     addresses[["address", "unit1"]] = addresses["address"].str.split(
         "Apt", expand=True
@@ -61,7 +66,7 @@ def check_for_new(addresses):
 
     addresses["pk"] = addresses["member_id"].astype(str) + addresses["address"]
 
-    conn = sqlite3.connect("C:\\Users\\snelson\\work\\db_mgmt\\PaceDashboard.db")
+    conn = sqlite3.connect(db_name)
     address_db = pd.read_sql("SELECT member_id, address from addresses", conn)
     conn.close()
 
@@ -120,7 +125,7 @@ def geocode_via_open_map(address_new, state_addresses, address_drops, address_co
         + " "
         + geocode_needed["state"]
         + " "
-        + geocode_needed["zip"]
+        + geocode_needed["zip"].astype(str)
     )
 
     return geocoded, geocode_needed
@@ -165,12 +170,11 @@ def geocode_via_geopy(geocode_needed, address_cols):
 
 def append_and_save(geocoded, geopy_geocoded):
     addresses_to_add = geocoded.append(geopy_geocoded)
+    addresses_to_add.drop_duplicates(subset=["member_id", "address"], inplace=True)
+    addresses_to_add.to_csv("..\\data\\addresses_to_add.csv", index=False)
 
-    addresses_to_add.to_csv(
-        "C:\\Users\\snelson\\work\\db_mgmt\\data\\addresses_to_add.csv", index=False
-    )
-
-    os.remove(f"C:\\Users\\snelson\\Downloads\\addresses.xls")
+    os.remove(f"{ehr_file_location}addresses.xls")
+    print("Addresses Complete!")
     return addresses_to_add
 
 
@@ -200,4 +204,4 @@ if __name__ == "__main__":
     arguments = parser.parse_args()
 
     create_addresses_to_add(**vars(arguments))
-    print("Addresses Complete!")
+
