@@ -4,7 +4,7 @@ import argparse
 
 
 def main():
-    usernames = pd.read_csv("V:\\\Dashboard\\users\\usernames.csv")
+    usernames = pd.read_csv("V:\\Dashboard\\users\\usernames.csv")
 
     conn = sqlite3.connect("V:\\Databases\\users.db")
     c = conn.cursor()

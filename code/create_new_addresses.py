@@ -8,7 +8,7 @@ import argparse
 from db_rename_cols import (
     statewide_geocoding,
     non_geopy_addresses,
-    db_name,
+    database_path,
     ehr_file_location,
 )
 
@@ -63,7 +63,7 @@ def check_for_new(addresses):
 
     addresses["pk"] = addresses["member_id"].astype(str) + addresses["address"]
 
-    conn = sqlite3.connect(db_name)
+    conn = sqlite3.connect(database_path)
     address_db = pd.read_sql("SELECT member_id, address from addresses", conn)
     conn.close()
 
@@ -168,7 +168,7 @@ def geocode_via_geopy(geocode_needed, address_cols):
 def append_and_save(geocoded, geopy_geocoded):
     addresses_to_add = geocoded.append(geopy_geocoded)
     addresses_to_add.drop_duplicates(subset=["member_id", "address"], inplace=True)
-    addresses_to_add.to_csv("..\\data\\addresses_to_add.csv", index=False)
+    addresses_to_add.to_csv("..\\data\\addresses.csv", index=False)
 
     os.remove(f"{ehr_file_location}addresses.xls")
     print("Addresses Complete!")
