@@ -21,7 +21,8 @@ def get_cognify_csvs():
     # copy and rename files then delete the file
     for file in download_csvs.keys():
         shutil.copy2(
-            f"{ehr_file_location}{file}.csv", f"..\\data\\{download_csvs[file]}.csv"
+            f"{ehr_file_location}{file}.csv",
+            f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\{download_csvs[file]}.csv",
         )
         os.remove(f"{ehr_file_location}{file}.csv")
 
@@ -33,8 +34,8 @@ def get_utlization_grid():
     utl_grid_copy = f"{ehr_file_location}2019 Utilization Grid.xlsx"
     utl_sheets = ["inpt", "ER"]
     utl_csv_name = {
-        "inpt": "..\\data\\utilization\\ut_grid_inp.csv",
-        "ER": "..\\data\\utilization\\ut_grid_er.csv",
+        "inpt": "C:\\Users\\snelson\\repos\\db_mgmt\\data\\utilization\\ut_grid_inp.csv",
+        "ER": "C:\\Users\\snelson\\repos\\db_mgmt\\data\\utilization\\ut_grid_er.csv",
     }
 
     # copy grid from V: Drive to db_mgmt folder
@@ -59,7 +60,11 @@ def get_wound_grid():
 
     # parse utlization sheets to csv files
     data_xls = pd.read_excel(wounds_grid_copy, index_col=None)
-    data_xls.to_csv("..\\data\\incidents\\wounds.csv", encoding="utf-8", index=False)
+    data_xls.to_csv(
+        "C:\\Users\\snelson\\repos\\db_mgmt\\data\\incidents\\wounds.csv",
+        encoding="utf-8",
+        index=False,
+    )
 
     # delete excel file from data folder
     os.remove(wounds_grid_copy)
@@ -74,7 +79,9 @@ def get_PS_data():
             f"{ehr_file_location}{file}.xls", "Sheet1", index_col=None
         )
         data_xls.to_csv(
-            f"..\\data\\vaccination\\{file}.csv", encoding="utf-8", index=False
+            f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\vaccination\\{file}.csv",
+            encoding="utf-8",
+            index=False,
         )
         os.remove(f"{ehr_file_location}{file}.xls")
     print("Vaccination Complete!")
@@ -82,7 +89,11 @@ def get_PS_data():
         data_xls = pd.read_excel(
             f"{ehr_file_location}{file}.xls", "Sheet1", index_col=None
         )
-        data_xls.to_csv(f"..\\data\\{file}.csv", encoding="utf-8", index=False)
+        data_xls.to_csv(
+            f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\{file}.csv",
+            encoding="utf-8",
+            index=False,
+        )
         os.remove(f"{ehr_file_location}{file}.xls")
     print("PS Complete!")
 

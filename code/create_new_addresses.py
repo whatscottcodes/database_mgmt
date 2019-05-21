@@ -168,7 +168,9 @@ def geocode_via_geopy(geocode_needed, address_cols):
 def append_and_save(geocoded, geopy_geocoded):
     addresses_to_add = geocoded.append(geopy_geocoded)
     addresses_to_add.drop_duplicates(subset=["member_id", "address"], inplace=True)
-    addresses_to_add.to_csv("..\\data\\addresses.csv", index=False)
+    addresses_to_add.to_csv(
+        "C:\\Users\\snelson\\repos\\db_mgmt\\data\\addresses.csv", index=False
+    )
 
     os.remove(f"{ehr_file_location}addresses.xls")
     print("Addresses Complete!")

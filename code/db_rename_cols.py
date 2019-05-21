@@ -26,8 +26,7 @@ address_cols = [
     "zip",
 ]
 
-address_drop_cols = ["LastName", "FirstName",
-                     "Center", "Facility", "Address2", "Phone"]
+address_drop_cols = ["LastName", "FirstName", "Center", "Facility", "Address2", "Phone"]
 
 
 # demo_cols = ['member_id', 'dob', 'ethnicity', 'race', 'language', 'gender']

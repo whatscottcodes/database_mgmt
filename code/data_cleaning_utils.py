@@ -22,8 +22,7 @@ def clean_addresses(df, one_file=False):
     # create dataframe of all Cognify addrsses
     # they come out of Cognify by center
     if one_file:
-        geocode_cols = ["coordinates", "full_address",
-                        "geocode_address", "local"]
+        geocode_cols = ["coordinates", "full_address", "geocode_address", "local"]
         df.drop(geocode_cols, axis=1, inplace=True)
         df.dropna(subset=["address"], inplace=True)
         return df
@@ -37,10 +36,9 @@ def clean_addresses(df, one_file=False):
 
 def clean_demos(df):
 
-    df.drop(demographics_drop, axis=1, inplace=True)
+    # df.drop(demographics_drop, axis=1, inplace=True)
 
-    latino_mask = (df["ethnicity"] == "Hispanic or Latino") & (
-        df["race"] == "Unknown")
+    latino_mask = (df["ethnicity"] == "Hispanic or Latino") & (df["race"] == "Unknown")
 
     df.at[latino_mask, "race"] = "Hispanic or Latino"
 
@@ -70,8 +68,7 @@ def clean_incidents(incident_dict, drop_cols):
     for key in incident_dict.keys():
         incident_dict[key].drop(drop_cols[key], axis=1, inplace=True)
 
-        repls = (" - ", "_"), ("/", "_"), ("(", ""), (")",
-                                                      ""), (" ", "_"), ("'", "")
+        repls = (" - ", "_"), ("/", "_"), ("(", ""), (")", ""), (" ", "_"), ("'", "")
 
         incident_dict[key].columns = [
             reduce(lambda a, kv: a.replace(*kv), repls, col.lower())
@@ -121,7 +118,8 @@ def clean_incidents(incident_dict, drop_cols):
             pass
         incident_dict[key].reset_index(inplace=True, drop=True)
         incident_dict[key] = create_id_col(
-            incident_dict[key], ['member_id', 'date_time_occurred'], 'incident_id')
+            incident_dict[key], ["member_id", "date_time_occurred"], "incident_id"
+        )
 
     return incident_dict
 
@@ -167,8 +165,7 @@ def clean_enrollment(df, rename_dict, drop_cols):
     # disenroll_reasons begins with the type (volunatry/non)
     # Split that info out in to a new column
     df["disenroll_type"] = (
-        df["disenroll_reason"].str.split(" ", expand=True)[
-            0].replace("", np.nan)
+        df["disenroll_reason"].str.split(" ", expand=True)[0].replace("", np.nan)
     )
 
     df["disenroll_reason"] = df["disenroll_reason"].apply(
@@ -230,8 +227,7 @@ def clean_grievances(df):
     provider_start = df.columns.tolist().index("Provider")
     provider_end_type_start = df.columns.tolist().index("TYPE")
     # type_end = df.columns.tolist().index("EOT")
-    type_end = df.iloc[0].values.tolist().index(
-        "full resolution for internal tracking")
+    type_end = df.iloc[0].values.tolist().index("full resolution for internal tracking")
     # actual col names are in the second row
     df.columns = df.iloc[1].values.tolist()
 
@@ -254,8 +250,7 @@ def clean_grievances(df):
         str(col).lower().replace(" ", "_").replace("\n", "").replace("\r", "")
         for col in df.columns
     ]
-    df.columns = [col.replace("/", "_").replace("-", "_")
-                  for col in df.columns]
+    df.columns = [col.replace("/", "_").replace("-", "_") for col in df.columns]
     df.rename(columns={"participant_id": "member_id"}, inplace=True)
     # get cols that indicate if a grievances is attributed to
     # a specific provider
@@ -270,8 +265,7 @@ def clean_grievances(df):
 
     for provider in providers:
         df[provider] = df[provider].replace("0.5", "1")
-        df["providers"] = np.where(
-            df[provider] == "1", provider, df["providers"])
+        df["providers"] = np.where(df[provider] == "1", provider, df["providers"])
 
     # create column that indicates the has the type of each grievance
     df["types"] = np.nan
@@ -283,11 +277,9 @@ def clean_grievances(df):
     # below we clean up some common data entry issuses we saw
     df["providers"] = df["providers"].str.replace("(", "")
     df["providers"] = df["providers"].str.replace(")", "")
-    df["providers"] = df["providers"].str.replace(
-        "transportation", "transport")
+    df["providers"] = df["providers"].str.replace("transportation", "transport")
 
-    df["providers"] = df["providers"].str.replace(
-        "snfs_hospitals_alfs", "facilities")
+    df["providers"] = df["providers"].str.replace("snfs_hospitals_alfs", "facilities")
     df["providers"] = df["providers"].str.replace(".", "_")
 
     df["types"] = df["types"].str.replace("(products)", "")
@@ -329,19 +321,16 @@ def clean_grievances(df):
     df["quality_analysis"].replace(["Y", "N"], [1, 0], inplace=True)
 
     # create datetime cols
-    df["date_grievance_received"] = pd.to_datetime(
-        df["date_grievance_received"])
+    df["date_grievance_received"] = pd.to_datetime(df["date_grievance_received"])
     df["date_of_resolution"] = pd.to_datetime(df["date_of_resolution"])
-    df["date_of_oral_notification"] = pd.to_datetime(
-        df["date_of_oral_notification"])
+    df["date_of_oral_notification"] = pd.to_datetime(df["date_of_oral_notification"])
     df["date_of_written_notification"] = pd.to_datetime(
         df["date_of_written_notification"]
     )
 
     df.dropna(subset=["member_id", "date_grievance_received"], inplace=True)
 
-    df = create_id_col(
-        df, ['member_id', 'date_grievance_received'], 'griev_id')
+    df = create_id_col(df, ["member_id", "date_grievance_received"], "griev_id")
 
     return df
 
@@ -365,10 +354,8 @@ def clean_utilization(
     utl_dict["ut_grid_inp"] = utl_dict["ut_grid_inp_2018"].append(
         utl_dict["ut_grid_inp"]
     )
-    utl_dict["ut_grid_er"] = utl_dict["ut_grid_er_2018"].append(
-        utl_dict["ut_grid_er"])
-    utl_dict["inpatient"] = utl_dict["pco_inpatient"].append(
-        utl_dict["inpatient"])
+    utl_dict["ut_grid_er"] = utl_dict["ut_grid_er_2018"].append(utl_dict["ut_grid_er"])
+    utl_dict["inpatient"] = utl_dict["pco_inpatient"].append(utl_dict["inpatient"])
     utl_dict["er_non"] = utl_dict["pco_er"].append(utl_dict["er_non"])
 
     utl_dict["inpatient"], utl_dict["ut_grid_inp"] = clean_add_merge_col(

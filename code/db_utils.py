@@ -151,7 +151,6 @@ def create_or_update_table(db_name, update_table=True):
     # load and clean any csv files
 
     tables, incident_dict, utl_dict, vacc_dict = get_csv_files()
-
     try:
         tables["addresses"] = clean_addresses(tables["addresses"])
     except KeyError:
@@ -166,6 +165,7 @@ def create_or_update_table(db_name, update_table=True):
 
     try:
         tables["demographics"] = clean_demos(tables["demographics"])
+        print(tables["demographics"].columns)
     except KeyError:
         pass
 

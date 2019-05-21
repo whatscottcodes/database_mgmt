@@ -16,7 +16,6 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 
 
 def create_id_col(df, pk, id_col, create_col=True):
-
     member_ints = df[pk[0]].astype(int)
     date_ints = df[pk[1]].dt.strftime("%Y%m%d").astype(int)
 
