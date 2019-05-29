@@ -165,7 +165,6 @@ def create_or_update_table(db_name, update_table=True):
 
     try:
         tables["demographics"] = clean_demos(tables["demographics"])
-        print(tables["demographics"].columns)
     except KeyError:
         pass
 
@@ -182,7 +181,9 @@ def create_or_update_table(db_name, update_table=True):
         pass
 
     try:
-        tables["grievances"] = clean_grievances(tables["grievances"])
+        tables["grievances"] = clean_grievances(
+            tables["grievances"], tables["grievances_2018"]
+        )
     except KeyError:
         pass
 
@@ -215,6 +216,8 @@ def create_or_update_table(db_name, update_table=True):
         tables["enrollment"].drop(["last", "first"], axis=1, inplace=True)
     except KeyError:
         pass
+    if update_table:
+        del tables["grievances_2018"]
 
     for table_name in tables.keys():
         df = tables[table_name].copy()
@@ -363,6 +366,7 @@ def create_or_update_table(db_name, update_table=True):
                     table_keys["ref_col"],
                 )
             else:
+                print(table_name)
                 table_keys = sql_table_info[table_name]
                 update_sql_table(
                     tables[table_name], table_name, conn, table_keys["primary_key"]

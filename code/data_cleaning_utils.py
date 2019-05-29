@@ -36,7 +36,7 @@ def clean_addresses(df, one_file=False):
 
 def clean_demos(df):
 
-    # df.drop(demographics_drop, axis=1, inplace=True)
+    df.drop(demographics_drop, axis=1, inplace=True)
 
     latino_mask = (df["ethnicity"] == "Hispanic or Latino") & (df["race"] == "Unknown")
 
@@ -219,7 +219,7 @@ def clean_dx(df, dx_cols):
     return df
 
 
-def clean_grievances(df):
+def clean_grievances(df, prev_griev):
 
     # works with Pauline's grid
     # looks for where she indicates the providers/types start
@@ -331,6 +331,7 @@ def clean_grievances(df):
     df.dropna(subset=["member_id", "date_grievance_received"], inplace=True)
 
     df = create_id_col(df, ["member_id", "date_grievance_received"], "griev_id")
+    #df = prev_griev.append(df, sort=True)
 
     return df
 

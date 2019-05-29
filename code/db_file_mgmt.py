@@ -28,8 +28,7 @@ def get_csv_files():
         tables[file[:-4]] = pd.read_csv(f".\\data\\{file}", low_memory=False)
 
     for table in tables.keys():
-        date_cols = [
-            col for col in tables[table].columns if "date" in col.lower()]
+        date_cols = [col for col in tables[table].columns if "date" in col.lower()]
         for col in date_cols:
             try:
                 tables[table][col] = pd.to_datetime(tables[table][col])
@@ -51,8 +50,7 @@ def get_csv_files():
 
     for folder in folder_dicts:
         for df in folder.keys():
-            date_cols = [
-                col for col in folder[df].columns if "date" in col.lower()]
+            date_cols = [col for col in folder[df].columns if "date" in col.lower()]
             for col in date_cols:
                 try:
                     folder[df][col] = pd.to_datetime(folder[df][col])
@@ -77,7 +75,11 @@ def archive_files():
         folder for folder in files if "csv" not in folder and folder != "archive"
     ]
 
-    for file in [filename for filename in files if "csv" in filename]:
+    for file in [
+        filename
+        for filename in files
+        if "csv" in filename and filename not in ["grievances_2018.csv"]
+    ]:
         os.remove(f".\\data\\{file}")
 
     for folder in folders:
