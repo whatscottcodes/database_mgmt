@@ -145,6 +145,13 @@ def update_sql_table(df, table_name, conn, primary_key):
     )
     conn.commit()
 
+    if table_name == 'addresses':
+        c.execute(
+        """
+        UPDATE addresses
+        SET active = 0
+        WHERE addresses.member_id IN (SELECT member_id FROM temp);        
+        """)
 
 # start main
 def create_or_update_table(db_name, update_table=True):
