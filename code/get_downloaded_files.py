@@ -20,11 +20,15 @@ def get_cognify_csvs():
     }
     # copy and rename files then delete the file
     for file in download_csvs.keys():
-        shutil.copy2(
-            f"{ehr_file_location}{file}.csv",
-            f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\{download_csvs[file]}.csv",
-        )
-        os.remove(f"{ehr_file_location}{file}.csv")
+        try:
+            shutil.copy2(
+                f"{ehr_file_location}{file}.csv",
+                f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\{download_csvs[file]}.csv",
+            )
+            os.remove(f"{ehr_file_location}{file}.csv")
+        except FileNotFoundError:
+            print(f"Missing {file}")
+            pass
 
     print("Cognify Complete")
 
@@ -75,26 +79,34 @@ def get_PS_data():
     download_excel_vacc = ["pneumo_contra", "influ", "influ_contra", "pneumo"]
     download_excel_other = ["demographics", "dx"]
     for file in download_excel_vacc:
-        data_xls = pd.read_excel(
-            f"{ehr_file_location}{file}.xls", "Sheet1", index_col=None
-        )
-        data_xls.to_csv(
-            f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\vaccination\\{file}.csv",
-            encoding="utf-8",
-            index=False,
-        )
-        os.remove(f"{ehr_file_location}{file}.xls")
+        try:
+            data_xls = pd.read_excel(
+                f"{ehr_file_location}{file}.xls", "Sheet1", index_col=None
+            )
+            data_xls.to_csv(
+                f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\vaccination\\{file}.csv",
+                encoding="utf-8",
+                index=False,
+            )
+            os.remove(f"{ehr_file_location}{file}.xls")
+        except FileNotFoundError:
+            print(f"Missing {file}")
+
     print("Vaccination Complete!")
     for file in download_excel_other:
-        data_xls = pd.read_excel(
-            f"{ehr_file_location}{file}.xls", "Sheet1", index_col=None
-        )
-        data_xls.to_csv(
-            f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\{file}.csv",
-            encoding="utf-8",
-            index=False,
-        )
-        os.remove(f"{ehr_file_location}{file}.xls")
+        try:
+            data_xls = pd.read_excel(
+                f"{ehr_file_location}{file}.xls", "Sheet1", index_col=None
+            )
+            data_xls.to_csv(
+                f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\{file}.csv",
+                encoding="utf-8",
+                index=False,
+            )
+            os.remove(f"{ehr_file_location}{file}.xls")
+        except FileNotFoundError:
+            print(f"Missing {file}")
+            pass
     print("PS Complete!")
 
 

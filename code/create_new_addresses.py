@@ -178,7 +178,11 @@ def append_and_save(geocoded, geopy_geocoded):
 
 
 def create_addresses_to_add(update=True):
-    address_new = load_clean_addresses()
+    try:
+        address_new = load_clean_addresses()
+    except FileNotFoundError:
+        print("Missing addressess")
+        return None
     state_addresses = load_open_map_dataset()
     if update:
         address_new = check_for_new(address_new)
