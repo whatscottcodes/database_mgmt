@@ -1,0 +1,437 @@
+,member_id,address,address_2,city,state,zip,unit
+0,1003,181 Davis Drive,,Pascoag,RI,2859,
+1,100113,10 Rhodes Avenue,,North Smithfield,RI,2896,
+2,100116,568 Child Street,,Warren,RI,02885-1734,Box 308
+3,100121,593 Eddy St,,Providence,RI,2903,
+4,100126,20 Laurel Lane,,Warren,RI,2885,
+5,100128,30 Hagan St,,Providence,RI,02904-1200,Apt 305
+6,100131,25 Tobey St,,Providence,RI,02909-1836,Apt 1201
+7,100141,100 Atwells Ave,,Providence,RI,02903-1639,Apt 405
+8,100144,15 Vineyard Street,Apt. 108,Providence,RI,2907,Apt 108
+9,100165,25 Tobey St,Apt 201,Providence,RI,2909,Apt 201
+10,100183,100 Borden St,,Providence,RI,29034803,
+11,100195,700 Westminster St,,Providence,RI,02903-4066,Apt 215
+12,100201,20 Grand St,,Providence,RI,02907-3070,Apt 407
+13,100202,1 Flat St,,Cumberland,RI,02864-2350,Apt 101
+14,100205,568 Child Street,,Warren,RI,02885-1734,Box 308
+15,100227,76 Stadden Street,,Providence,RI,2907,
+16,100229,109 West Shore Road,,Warwick,RI,02889-1198,
+17,100232,825 Chalkstone Avenue,,Providence,RI,2908,
+18,100233,675 Elmwood Avenue,Apt. 118,Providence,RI,2907,Apt 118
+19,100238,982 Branch Ave,,Providence,RI,02904-1065,Apt 405
+20,100244,109 West Shore Road,,Warwick,RI,02889-1198,
+21,100247,825 Main St,,Hope Valley,RI,02832-1945,Apt S107
+22,100250,11 Togansett Rd,,Providence,RI,02910-1039,
+23,100252,421 Public St,,Providence,RI,02907-1222,Fl 1
+24,100261,66 Benefit Street,,Providence,RI,2904,
+25,100262,33 Hawthorne Street,Apt. 2,Providence,RI,2907,Apt 2
+26,100263,359 Carpenter St,,Providence,RI,02909-1439,Apt 217
+27,100270,10 Franklin St,,Lincoln,RI,02865-2049,Apt V364
+28,100271,100 Borden St,,Providence,RI,29034803,
+29,100278,327 Admiral St,,Providence,RI,02908-2571,
+30,100285,13 Puritan St,,Providence,RI,02907-3028,
+31,100286,13 Puritan St,,Providence,RI,02907-3028,
+32,100290,109 Bridgham St,,Providence,RI,02907-2362,Apt B14
+33,100291,1 Shawmut Avenue,,Central Falls,RI,2863,
+34,100294,300 Lambert Lind Hwy,,Warwick,RI,02886-1178,Apt 334 Bldg B
+35,100295,190 Saint Paul St,,North Smithfield,RI,02896-6847,Apt 18A
+36,100300,301 Cranston St,,Providence,RI,02907-2455,Apt 113
+37,100303,30 Washington St,,Central Falls,RI,02863-2853,Apt 514
+38,100307,45 Manton Street,Flr. 2,Pawtucket,RI,2861,Flr 2
+39,100308,400 Mendon Road,Apt. 215,North Smithfield,RI,2896,Apt 215
+40,100325,128 Oak St,,Providence,RI,02909-2035,Apt B20 Bldg B
+41,100331,100 Atwells Ave,,Providence,RI,02903-1640,Apt 508
+42,100336,141 Oak Street,Apt. A19,Providence,RI,2909,Apt A19
+43,100348,455 Douglas Ave,,Providence,RI,2908,
+44,100350,100 Borden St,,Providence,RI,29034803,
+45,100353,125 Scituate Avenue,,Cranston,RI,2921,
+46,100355,164 Summit Ave,,Providence,RI,2906,
+47,100359,568 Child Street,,Warren,RI,02885-1734,Box 308
+48,100360,300 6Th Ave,,East Greenwich,RI,02818-3144,Apt 103
+49,100364,29 9Th St,,Providence,RI,2906,
+50,100367,300 Lambert Lind Hwy,,Warwick,RI,02886-1189,Apt 309A
+51,100374,75 East Ave,,Pawtucket,RI,02860-4022,Apt 1203
+52,100377,14 Molter St,,Cranston,RI,02910-1053,
+53,100395,945 Douglas Pike,,Smithfield,RI,02917-1878,
+54,100397,225 Elmwood Avenue,,Providence,RI,02907-1461,
+55,100400,48 Everglade Ave,,Warwick,RI,02886-3451,
+56,100401,740 Oak Hill Road,,North Kingstown,RI,2852,
+57,100403,One Saint Elizabeth Way,,East Greenwich,RI,2818,
+58,100404,72 Kelly St,,Lincoln,RI,02865-2114,
+59,100405,115 Goldsmith Ave,,East Providence,RI,02914-2224,Apt 208
+60,100406,30 Alexander Avenue,,East Providence,RI,2904,
+61,100408,101 Highland Avenue,,Providence,RI,2906,
+62,100412,593 Eddy St,,Providence,RI,2903,
+63,100418,155 Cranston St,,Providence,RI,02907-2369,Apt F5
+64,100420,90 East St,,Woonsocket,RI,02895-4260,Apt 2
+65,100422,75 East Ave,,Pawtucket,RI,02860-4021,Apt 806
+66,100424,546 Main Street,,Coventry,RI,2816,
+67,100427,6 John Ave,,North Smithfield,RI,2896,
+68,100433,30 Alexander Avenue,,East Providence,RI,2904,
+69,100434,250 Rand St,,Central Falls,RI,02863-2573,Apt 426
+70,100447,100 Borden St,,Providence,RI,29034803,
+71,100454,109 Melrose Street,,Providence,RI,2907,
+72,100456,455 Douglas Ave,,Providence,RI,2908,
+73,100460,237 Flint Avenue,,Cranston,RI,2910,
+74,100462,100 Borden St,,Providence,RI,29034803,
+75,100463,957 Post Road,Apt. B202,Warwick,RI,2888,Apt B202
+76,100466,77 Lebrun Avenue,,Woonsocket,RI,2895,
+77,100469,10 Franklin St,,Lincoln,RI,02865-2049,Apt D54
+78,100474,327 Kenyon Ave,,Wakefield,RI,02879-4254,Apt 8E
+79,100477,1 Mendon Rd,,Cumberland,RI,02864-5359,Apt 512
+80,100481,100 Borden St,,Providence,RI,29034803,
+81,100482,21 Spicer St,,Providence,RI,02905-1416,
+82,100483,100 Borden St,,Providence,RI,29034803,
+83,100484,50 Randall St,,Providence,RI,02904-2733,Apt 7L
+84,100488,1 Mendon Rd,,Cumberland,RI,02864-5347,Apt 303
+85,100489,10 Rhodes Avenue,,North Smithfield,RI,2896,
+86,100490,568 Child Street,,Warren,RI,02885-1734,Box 308
+87,100492,20 Kelley St,,Providence,RI,02909-2954,Apt 1001
+88,100496,30 Alexander Avenue,,East Providence,RI,2904,
+89,100503,20 Oregon Avenue,,Pawtucket,RI,2861,
+90,100504,30 Parker St,,Central Falls,RI,02863-2510,
+91,100505,30 Parker St,,Central Falls,RI,02863-2510,
+92,100507,359 Greenwich Ave,,Warwick,RI,02886-1628,Apt 137
+93,100512,100 Borden St,,Providence,RI,29034803,
+94,100513,22 Ashwood Circle,,Warwick,RI,2886,
+95,100516,883 River Avenue,Flr. 1,Providence,RI,2908,Flr 1
+96,100525,181 Davis Drive,,Pascoag,RI,2859,
+97,100527,271 New York Avenue,Apt. 1A,Providence,RI,2905,Apt 1A
+98,100528,178 Laurel Hill Ave,,Providence,RI,02909-4515,Fl 1
+99,100531,225 Elmwood Avenue,,Providence,RI,02907-1461,
+100,100532,455 Douglas Ave,,Providence,RI,2908,
+101,100534,10 Rhodes Avenue,,North Smithfield,RI,2896,
+102,100537,18 Berlin Street,,Providence,RI,02908-4613,
+103,100540,455 Tollgate Road,,Warwick,RI,2886,
+104,100541,1181 Broad Street,,Cranston,RI,2905,
+105,100542,38 South Street,Flr. 2,Woonsocket,RI,2895,Flr 2
+106,100546,675 Elmwood Ave,,Providence,RI,02907-3339,Apt 218
+107,100552,150 Warwick Neck Ave,,Warwick,RI,02889-5334,Apt 216
+108,100562,200 Gordon Ave,,Providence,RI,02905-1834,Apt 213
+109,100564,315 Park Ave,,Cranston,RI,02905-1232,Apt 120
+110,100567,40 Leander Street,Apt. 316,Providence,RI,2909,Apt 316
+111,100568,150 Dartmouth Street,Apt. B117,Pawtucket,RI,2860,Apt B117
+112,100569,675 Elmwood Ave,,Providence,RI,02907-3338,Apt 122
+113,100574,20 Phenix Ave,,West Warwick,RI,02893-4314,
+114,100578,670 N Main St,,Providence,RI,02904-5733,Apt 2E
+115,100579,87 Byfield Avenue,,Providence,RI,2905,
+116,100585,331 Centerville Rd,,Warwick,RI,02886-4331,Apt 218
+117,100586,568 Child Street,,Warren,RI,02885-1734,Box 308
+118,100587,109 West Shore Road,,Warwick,RI,02889-1198,
+119,100588,29 Crawford St,,Cranston,RI,02910-2409,
+120,100589,12 Sackett St,,Providence,RI,02907-2021,Fl 1
+121,100595,109 West Shore Road,,Warwick,RI,02889-1198,
+122,100597,1 Mendon Road,,Cumberland,RI,2864,
+123,100598,1 Main St,,Woonsocket,RI,02895-4345,Apt 316
+124,100599,104 Indiana Avenue,Flr. 1,Providence,RI,2905,Flr 1
+125,100601,109 Melrose Street,,Providence,RI,2907,
+126,100602,1085 N Main Street,,Providence,RI,2904,
+127,100605,1181 Broad Street,,Cranston,RI,2905,
+128,100607,557 Veazie St,,Providence,RI,02904-1058,Apt 105
+129,100608,455 Lonsdale Ave,,Pawtucket,RI,02860-1860,Apt 403
+130,100611,175 Broad St,,Pawtucket,RI,02860-2056,Apt C15
+131,100613,100 Atwells Ave,,Providence,RI,02903-1680,Apt 1606
+132,100614,77 Fairmount Ave,,Providence,RI,02919-3824,Apt 3
+133,100615,37 Grover St,,North Providence,RI,02911-1614,Apt 1
+134,100620,688 Weeden Street,Flr. 1,Pawtucket,RI,2862,Flr 1
+135,100623,455 Douglas Ave,,Providence,RI,2908,
+136,100624,61 Salmon St,,Providence,RI,02909-4134,Apt 102
+137,100625,250 Rand St,,Central Falls,RI,02863-2573,Apt 424
+138,100626,568 Child Street,,Warren,RI,02885-1734,Box 308
+139,100627,124 Hanover Street,Apt. 2,Providence,RI,2907,Apt 2
+140,100629,68 Gray St,,Providence,RI,02909-4036,Apt 1
+141,100630,156 Bear Hill Road,Apt. 339,Cumberland,RI,2864,Apt 339
+142,100631,30 Alexander Avenue,,East Providence,RI,2904,
+143,100632,825 Chalkstone Avenue,,Providence,RI,2908,
+144,100633,568 Child Street,,Warren,RI,02885-1734,Box 308
+145,100635,30 Alexander Avenue,,East Providence,RI,2904,
+146,100636,9 Parkis Ave,,Providence,RI,02907-1472,Apt 3K
+147,100641,369 Montgomery Ave,,Providence,RI,02905-1306,
+148,100649,700 Westminster St,,Providence,RI,02903-4066,Apt 1105
+149,100650,175 King Philip Road,,East Providence,RI,2916,
+150,100651,109 Melrose Street,,Providence,RI,2907,
+151,100656,1085 N Main Street,,Providence,RI,2904,
+152,100659,153 Dean St,,Providence,RI,2903,
+153,100661,100 Glasgow St,,Providence,RI,02908-1648,Apt 103
+154,100662,31 Elmdale Ave,,Providence,RI,02919-1611,Fl 1
+155,100665,1 Valley St,Apt 306,Providence,RI,2905,Apt 306
+156,100668,3 Olmsted Way,,Providence,RI,02904-1737,Apt 306
+157,100669,25 Harwol Ct,,Providence,RI,02904-2137,Apt 105
+158,100670,455 Douglas Ave,,Providence,RI,2908,
+159,100671,52 Health Ave,,Providence,RI,02908-4521,
+160,100673,349 Academy Ave,,Providence,RI,02908-4119,Apt 1
+161,100674,220 Highland Corporate Dr,,Cumberland,RI,2864,
+162,100678,85 Corinth St,,Providence,RI,02907-2005,
+163,100681,50 Prairie Ave,,Providence,RI,02905-2435,Apt 219
+164,100683,164 Summit Ave,,Providence,RI,2906,
+165,100684,100 Borden St,,Providence,RI,02903-4803,
+166,100685,100 Borden St,,Providence,RI,29034803,
+167,100689,1 Valley St,,Providence,RI,02909-2451,Apt 602
+168,100690,125 Scituate Avenue,,Cranston,RI,2921,
+169,100692,547 Clinton St,,Woonsocket,RI,02895-3227,Apt 301
+170,100694,455 Douglas Ave,,Providence,RI,2908,
+171,100696,153 Dean St,,Providence,RI,2903,
+172,100700,1010 Cranston St,,Cranston,RI,02920-7534,Apt 1
+173,100701,45 Pleasant St,,Providence,RI,02906-1717,Fl 1
+174,100702,100 Borden St,,Providence,RI,29034803,
+175,100704,700 Westminster St,,Providence,RI,02903-4066,Apt 705
+176,100705,30 Alexander Avenue,,East Providence,RI,2904,
+177,100707,243 Smith St,,Providence,RI,02908-4946,Apt 806
+178,100709,164 Carousel Dr E,,Riverside,RI,02915-3655,Apt 211C Bldg C
+179,100710,31 Rankin Avenue,,Providence,RI,2908,
+180,100711,365 Admiral St,,Providence,RI,02908-2536,
+181,100713,546 Main Street,,Coventry,RI,2816,
+182,100715,63 Scenery Ln,,Johnston,RI,02919-7505,
+183,100717,1000 Willett Ave,,Riverside,RI,02915-2039,Apt 2
+184,100721,70 Lincoln Ave,,Cranston,RI,02920-7755,Unit 111
+185,100723,568 Child Street,,Warren,RI,02885-1734,Box 308
+186,100724,101 Highland Avenue,,Providence,RI,2906,
+187,100727,5107 Mulhearn Dr,,Coventry,RI,02816-4494,
+188,100728,164 Summit Ave,,Providence,RI,2906,
+189,100731,1000 Willett Ave,,Riverside,RI,02915-2039,Apt 2
+190,100734,266 Providence Ave,,Riverside,RI,02915-3679,Apt 266C
+191,100735,66 Benefit Street,,Providence,RI,2904,
+192,100738,67 Wendell St,,Providence,RI,02909-1727,Fl 2
+193,100739,1081R Mineral Spring Ave,,North Providence,RI,02904-4101,
+194,100740,52 Jackson St,,Pawtucket,RI,02860-2087,Apt 4
+195,100742,2074 Smith Street,Apt. 403,North Providence,RI,2911,Apt 403
+196,100743,455 Douglas Ave,,Providence,RI,2908,
+197,100745,4 Cathedral Sq,,Providence,RI,02903-3608,Apt 107
+198,100746,50 Ninigret St,,Warwick,RI,02889-1522,
+199,100747,825 Chalkstone Avenue,,Providence,RI,2908,
+200,100749,349 Blackstone St,,Providence,RI,02907-1201,
+201,100750,33 Cedar Swamp Road,,Smithfield,RI,02917-2431,
+202,100751,104 Steve Lopes Way,,Woonsocket,RI,2895,
+203,100753,100 Borden St,,Providence,RI,29034803,
+204,100754,122 Cross St,,Westerly,RI,02891-2478,Apt D303
+205,100755,25 Burrows St,,Providence,RI,02907-3633,Fl 1
+206,100756,100 Borden St,,Providence,RI,29034803,
+207,100757,100 Atwells Ave,,Providence,RI,02903-1642,Apt 1503
+208,100758,30 Washington St,,Central Falls,RI,02863-2853,Apt 415
+209,100759,16 Greene St,,Woonsocket,RI,02895-4545,Apt 505A
+210,100760,10 Bodell Ave,,Providence,RI,02909-4315,Apt 2
+211,100761,374 Douglas Ave,,Providence,RI,02908-2518,Apt 1
+212,100764,20 Grand St,,Providence,RI,02907-3070,Apt 401
+213,100766,568 Child Street,,Warren,RI,02885-1734,Box 308
+214,100767,335 Hartford Avenue,Apt. 506,Providence,RI,2909,Apt 506
+215,100768,59 Pleasant St,,West Warwick,RI,2893,
+216,100769,1015 Pembroke Woods Dr,,Pembroke,MA,02359-4967,
+217,100771,250 Rand St,,Central Falls,RI,02863-2570,Apt 204
+218,100774,100 Borden St,,Providence,RI,29034803,
+219,100775,100 Arthur St,,Cranston,RI,02910-3648,Apt 317
+220,100776,1221 Saugatucket Rd,,Wakefield,RI,02879-2122,Apt 205W
+221,100777,455 Douglas Ave,,Providence,RI,2908,
+222,100779,774 Park Ave,,Cranston,RI,02910-2146,Fl 1
+223,100780,200 High Service Avenue,,North Providence,RI,2904,
+224,100781,716 Union Ave,,Providence,RI,02909-5446,
+225,100783,15 Jencks Rd,,Foster,RI,02825-1613,
+226,100785,825 Chalkstone Avenue,,Providence,RI,2908,
+227,100787,1485 High St,,Central Falls,RI,02863-1141,Apt S405
+228,100788,301 Cranston St,,Providence,RI,02907-2455,Apt 102
+229,100789,1243 Eddy St,,Providence,RI,02905-4524,Fl 1
+230,100791,225 Elmwood Avenue,,Providence,RI,02907-1461,
+231,100792,1 Cadillac Dr,,Providence,RI,02907-2149,Apt 317
+232,100793,10 Price St,,Providence,RI,02907-2018,
+233,100795,29 Woodbine St,,Pawtucket,RI,02860-1363,Apt 6
+234,100796,147 Palm St,,North Providence,RI,02904-4634,
+235,100798,66 Benefit Street,,Providence,RI,2904,
+236,100799,3579 Diamond Hill Rd,,Cumberland,RI,02864-1614,
+237,100800,100 Atwells Ave,,Providence,RI,02903-1640,Apt 607
+238,100801,100 Borden St,,Providence,RI,29034803,
+239,100804,1485 High St,,Central Falls,RI,02863-1137,Apt S204
+240,100806,568 Child St,,Warren,RI,02885-1734,
+241,100807,546 Main Street,,Coventry,RI,2816,
+242,100808,125 Wesleyan Ave,,Providence,RI,02907-1423,
+243,100810,2072 Smith St,,North Providence,RI,02911-1747,Apt 209
+244,100811,109 West Shore Road,,Warwick,RI,02889-1198,
+245,100812,455 Tollgate Road,,Warwick,RI,2886,
+246,100813,125 Wesleyan Ave,,Providence,RI,02907-1423,
+247,100814,153 Dean St,,Providence,RI,2903,
+248,100815,58 Tiogue Ave,,West Warwick,RI,02893-6060,Apt 103
+249,100817,209 Dexter St,,Providence,RI,02907-2434,Apt 2
+250,100818,3070 W Shore Rd,,Warwick,RI,02886-7528,Apt G1
+251,100819,30 Alexander Avenue,,East Providence,RI,2904,
+252,100822,30 Alexander Avenue,,East Providence,RI,2904,
+253,100823,593 Eddy St,,Providence,RI,2903,
+254,100826,100 Borden St,,Providence,RI,29034803,
+255,100827,455 Douglas Ave,,Providence,RI,2908,
+256,100828,23 Curson St,,West Warwick,RI,02893-4904,Apt 1R
+257,100829,455 Douglas Ave,,Providence,RI,2908,
+258,100830,101 Highland Ave,,Providence,RI,2906,
+259,100831,170 Benedict St,,Providence,RI,02909-2337,Apt 208
+260,100833,109 Melrose Street,,Providence,RI,2907,
+261,100834,475 High St,,Cumberland,RI,02864-7622,Apt 2
+262,100835,38 Bridgham St,,Providence,RI,02907-2327,Apt 1
+263,100836,1 Mendon Rd,,Cumberland,RI,02864-5364,Apt 810
+264,100837,70 Lincoln Ave,,Cranston,RI,02920-7756,Unit 104
+265,100838,99 Goldsmith Ave,,East Providence,RI,02914-2221,Apt 501
+266,100839,568 Child Street,,Warren,RI,02885-1734,Box 308
+267,100840,170 Benedict St,,Providence,RI,02909-2353,Apt 320
+268,100841,11 Woodridge Dr,,Mapleville,RI,02839-1177,
+269,100843,100 Borden St,,Providence,RI,29034803,
+270,100844,100 Atwells Ave,,Providence,RI,02903-1642,Apt 1407
+271,100845,546 Main Street,,Coventry,RI,2816,
+272,100846,25 Mcguire Rd,,North Providence,RI,02904-3762,Bldg E Apt 204
+273,100847,670 N Main St,,Providence,RI,02904-5758,Apt 12F
+274,100848,28 Andrews Ave,,West Warwick,RI,02893-5914,
+275,100849,14 Case Ln,,Providence,RI,02909-5563,
+276,100850,16 Spruce Ave,,Cranston,RI,02910-3716,
+277,100851,24 Magdalene St,,Providence,RI,02909-4706,Fl 1
+278,100853,1081 Mineral Spring Avenue,,North Providence,RI,2904,
+279,100854,455 Douglas Ave,,Providence,RI,2908,
+280,100855,181 Davis Drive,,Pascoag,RI,2859,
+281,100856,59 Pleasent St,,West Warwick,RI,2893,
+282,100857,429 E School St,,Woonsocket,RI,02895-1368,Apt 814
+283,100858,460 Charles St,,Providence,RI,02904-2250,Apt 102
+284,100950,182 Cumberland St,,Woonsocket,RI,02895-4722,Apt 77
+285,100951,182 Cumberland Street,Apt. 77,Woonsocket,RI,02895-4722,Apt 77
+286,100953,10 Rhodes Avenue,,North Smithfield,RI,2896,
+287,100954,225 Elmwood Avenue,,Providence,RI,02907-1461,
+288,100955,593 Eddy St,,Providence,RI,2903,
+289,100956,727 Front St,,Woonsocket,RI,02895-5281,Unit 203
+290,100957,1085 N Main Street,,Providence,RI,2904,
+291,100958,455 Douglas Ave,,Providence,RI,2908,
+292,100959,455 Lonsdale Ave,,Pawtucket,RI,02860-1861,Apt 407
+293,100960,66 America St,,Cranston,RI,02920-5002,
+294,100961,455 Douglas Ave,,Providence,RI,2908,
+295,1000816,593 Eddy St,,Providence,RI,2903,
+296,1000821,8 George St,,Pawtucket,RI,02860-4051,Apt 713
+297,1000822,311 Hardig Rd,,Warwick,RI,02886-6607,Apt B107
+298,1000823,3 Olmsted Way,,Providence,RI,02904-1741,Apt 203
+299,1000824,34 Dyerville Ave,,Johnston,RI,02919-4411,
+300,1000825,319 Providence St,,West Warwick,RI,02893-2035,Apt 119
+301,1000826,728 High St,,Central Falls,RI,02863-2335,
+302,1000827,825 Chalkstone Avenue,,Providence,RI,2908,
+303,1000831,12 Patterson Ave,,Pawtucket,RI,02860-4825,Apt 2
+304,1000832,109 West Shore Road,,Warwick,RI,02889-1198,
+305,1000833,52 Ford St,,Providence,RI,02907-2734,Apt 1
+306,1000835,2 Village Way,,North Smithfield,RI,02896-7248,Apt 243
+307,1000836,301 Cranston St,,Providence,RI,02907-2455,Apt 122
+308,1000837,460 Charles St,,Providence,RI,02904-7802,Apt 520
+309,1000838,675 Elmwood Ave,,Providence,RI,02907-3339,Apt 304
+310,1000839,21 Marvin St,,Providence,RI,02909-2040,Apt C9
+311,1000841,170 Benedict St,,Providence,RI,02909-2352,Apt 211
+312,1000850,568 Child Street,,Warren,RI,02885-1734,Box 308
+313,1000851,327 Kenyon Ave,,Wakefield,RI,02879-4254,# 8F
+314,2000853,99 Emmett St,,Central Falls,RI,02863-1609,# 2R
+315,2000854,99 Emmett St,,Central Falls,RI,02863-1609,# 2R
+316,2000855,50 Birch St,,Cranston,RI,02920-7519,Apt 407
+317,2000856,8 George St,,Pawtucket,RI,02860-4045,Apt 58
+318,2000857,153 Dean St,,Providence,RI,2903,
+319,2000858,,,,,,
+320,2000868,29 Homer St,,Providence,RI,02905-1320,Fl 2
+321,2000869,62 Roberts St,,West Warwick,RI,02893-5032,Apt 208
+322,2000870,83 Doyle Ave,,Providence,RI,02906-1744,Apt 204
+323,2000871,170 Benedict St,,Providence,RI,02909-2340,Apt 503
+324,2000873,301 Main St,,Pawtucket,RI,02860-2969,Apt 610
+325,2000874,100 Borden St,,Providence,RI,29034803,
+326,2000875,66 Benefit Street,,Providence,RI,2904,
+327,2000876,50 Murray St,,Coventry,RI,02816-8124,Apt 52
+328,2000877,1085 N Main Street,,Providence,RI,2904,
+329,2000879,125 Governor St,,Providence,RI,02906-3079,Apt 9
+330,2000881,62 Roberts St,,West Warwick,RI,02893-5034,Apt 619
+331,2000882,101 Highland Avenue,,Providence,RI,2906,
+332,2000891,153 Dean St,,Providence,RI,2903,
+333,2000892,101 Highland Avenue,,Providence,RI,2906,
+334,2000893,10 Goff Ave,,Pawtucket,RI,02860-2971,Apt 2I
+335,2000894,280 Washington St,,Providence,RI,02903-3606,Apt 611
+336,2000895,67 Benjamin St,,Pawtucket,RI,02861-2919,
+337,2000896,101 Highland Avenue,,Providence,RI,2906,
+338,2000897,192 Mineral Spring Ave,,Pawtucket,RI,02860-2811,Fl 1
+339,2000902,525 2Nd Ave,,Woonsocket,RI,02895-8909,Apt L03
+340,2000903,115 Cass Ave,,Woonsocket,RI,2895,
+341,2000904,14 Sebille Rd,,Smithfield,RI,02917-2529,Bldg 9 Apt 111
+342,2000905,10 Goff Ave,,Pawtucket,RI,02860-2975,Apt 4J
+343,2000906,150 Dartmouth St,,Pawtucket,RI,02860-5992,Apt B216
+344,2000912,435 Oaklawn Ave,,Cranston,RI,02920-3885,Apt 116
+345,2000917,88 1/2 Church St,,West Warwick,RI,02893-3155,Apt 17
+346,2000918,104 Rockland Rd,,N Scituate,RI,02857-1938,Apt 107
+347,2000919,2065 Mendon Rd,,Cumberland,RI,02864-4307,
+348,2000920,87 Stedman Ave,,Pawtucket,RI,02860-2429,
+349,2000936,164 Carousel Dr,,Riverside,RI,02915-3657,Apt 214 Bldg C
+350,2000937,215 Hunt St,,Central Falls,RI,02863-1028,Fl 1
+351,2000939,1 Mendon Rd,,Cumberland,RI,02864-5346,Apt E304
+352,2000942,75 East Ave,,Pawtucket,RI,02860-4023,Apt 1510
+353,2000943,1905 Mineral Spring Ave,,North Providence,RI,02904-3780,Apt 307
+354,2000945,106 Providence St,,West Warwick,RI,02893-2506,
+355,2000946,101 Highland Avenue,,Providence,RI,2906,
+356,2000947,101 Highland Avenue,,Providence,RI,2906,
+357,2000949,104 Bishop Hill Rd,,Johnston,RI,02919-2820,
+358,2000950,455 Tollgate Road,,Warwick,RI,2886,
+359,2000952,95 Scott Rd,,Cumberland,RI,02864-2808,
+360,2000953,2368 E Main Rd,,Portsmouth,RI,02871-4035,Apt D2
+361,2000954,66 Benefit Street,,Providence,RI,2904,
+362,2000958,250 Rand St,,Central Falls,RI,02863-2570,Apt 104
+363,2000959,250 Rand St,,Central Falls,RI,2863,Apt 104
+364,2000960,121 Wood St,,Bristol,RI,02809-3145,Apt 2
+365,2000963,320 Prairie Ave,,Providence,RI,02905-2347,Apt 4
+366,2000964,1081 Mineral Spring Avenue,,North Providence,RI,2904,
+367,2000965,497 Hartford Ave,,Providence,RI,02909-5132,
+368,2000972,429 East School Street,,Woonsocket,RI,02895-1368,
+369,2000973,59 Pleasant St,,West Warwick,RI,2893,
+370,2000974,700 Westminster St,,Providence,RI,02903-4066,# 706
+371,2000975,97 Franklin Rd,,Foster,RI,02825-1169,
+372,2000982,5 Chestnut St,,Westerly,RI,02891-2279,Apt C203
+373,2000983,109 West Shore Road,,Warwick,RI,02889-1198,
+374,2000985,250 Rand St,,Central Falls,RI,02863-2571,Apt 208
+375,2000992,259 6Th Ave,,Woonsocket,RI,02895-4136,
+376,2000993,49 Linwood Ave,,Providence,RI,02909-2310,
+377,2000996,218 Pond St,,Woonsocket,RI,02895-2004,Apt 306
+378,2000997,229 Woodland Rd,,Woonsocket,RI,02895-1935,
+379,2000998,353 Simmonsville Ave,,Johnston,RI,02919-6062,Apt 216
+380,2001000,825 Wakefield St,,West Warwick,RI,02893-1434,Apt 708
+381,2001001,46 Whitehall St,,Providence,RI,02909-3522,
+382,2001002,288 Providence St,,West Warwick,RI,02893-2043,Apt B
+383,2001003,10 Rhodes Avenue,,North Smithfield,RI,2896,
+384,2001005,300 Lambert Lind Hwy,,Warwick,RI,02886-1197,Apt 102A
+385,2001006,28 Harris Ave,,Cranston,RI,02920-5421,Apt 1
+386,2001007,319 Providence St,,West Warwick,RI,02893-2038,Apt 601
+387,2001008,164 Summit Ave,,Providence,RI,2906,
+388,2001009,11 Wilkens St,,Providence,RI,02906-1863,
+389,2001010,30 Alexander Avenue,,East Providence,RI,2904,
+390,2001012,1 Main St,,Woonsocket,RI,02895-4343,
+391,2001013,16A Walker Rd,,Foster,RI,02825-1265,
+392,2001014,150 Dartmouth St,,Pawtucket,RI,02860-6910,Apt A307
+393,2001015,100 Arthur Street,Budlong Manor #316,Cranston,RI,2910,Budlong Manor #316
+394,2001016,455 Douglas Ave,,Providence,RI,2908,
+395,2001017,1211 Plainfield St,,Johnston,RI,02919-6902,
+396,2001018,89 Cider Mill Rd,,North Smithfield,RI,02896-7643,
+397,2001019,520 2Nd Ave,,Woonsocket,RI,02895-4182,Apt 310
+398,2001020,214 Roosevelt Ave,,Pawtucket,RI,02860-2149,Apt 1505
+399,2001025,153 Dean St,,Providence,RI,2903,
+400,2001026,13 Whitney St,,Providence,RI,02907-3665,
+401,2001027,58 Sherman St,,Pawtucket,RI,02860-5018,
+402,2001028,250 Rand St,,Central Falls,RI,02863-2571,Apt 332
+403,2001029,10 Goff Ave,,Pawtucket,RI,02860-2978,Apt 5I Apt 509
+404,2001030,62 Roberts St,,West Warwick,RI,02893-5085,Apt 714
+405,2001036,3 Olmsted Way,,Providence,RI,02904-1742,Apt 106
+406,2001041,101 Highland Avenue,,Providence,RI,2906,
+407,2001044,547 Clinton St,,Woonsocket,RI,02895-3234,Apt 813
+408,2001045,140 Rutland St,,Cranston,RI,02920-4826,
+409,2001046,30 Pomham St,,Cranston,RI,02910-1433,
+410,2001052,319 Providence St,,West Warwick,RI,02893-2036,Apt 220
+411,2001053,271 Coe St,,Woonsocket,RI,02895-6202,# 1R
+412,2001054,27 Barnes St,Lock Box 1960,Greenville,RI,02828-2114,Lock Box 1960
+413,2001055,810 Front St,,Woonsocket,RI,02895-5244,
+414,2001056,180 Main St,,Westerly,RI,02891-7119,Apt A
+415,2001057,455 Douglas Ave,,Providence,RI,2908,
+416,2001058,455 Douglas Ave,,Providence,RI,2908,
+417,2001059,Blackstone Falls,1485 High Street  apt E319,Central Falls,RI,2863,1485 High Street  apt E319
+418,2001060,675 Elmwood Ave,,Providence,RI,02907-3339,Apt 212
+419,2001061,156 Bear Hill Rd,,Cumberland,RI,02864-6021,Apt 116
+420,2001062,372 Child St,,Warren,RI,02885-1837,
+421,2001063,25 Harwol Ct,,Providence,RI,02904-2135,Apt 110
+422,2001065,1485 High St,,Central Falls,RI,02863-1135,Apt S308
+423,2001077,35 Beech Ave,,Cranston,RI,02910-5504,
+424,2001082,1 Mendon Rd,,Cumberland,RI,02864-5347,Apt 214
+425,2001085,201 California Ave,,Providence,RI,02905-4300,
+426,2001086,1221 Saugatucket Rd,,Wakefield,RI,02879-2125,Apt 227E
+427,2001087,53 Joffre Ave,,Woonsocket,RI,02895-5505,
+428,2001089,74 Edmund St,,Woonsocket,RI,02895-1008,
+429,2001090,23 Clinton St,,Woonsocket,RI,02895-3242,Apt 304
+430,2001093,1255 Eddy St,,Providence,RI,02905-4524,Apt 2
+431,2001098,311 Hardig Rd,sparrows point 1,Warwick,RI,2886,Apt B302
+432,2001101,7 Custer Ave,,Johnston,RI,02919-6903,
+433,2001102,300 Lambert Lind Hwy,,Warwick,RI,02886-5612,Apt 536B
+434,2001103,525 2Nd Ave,,Woonsocket,RI,02895-4186,Apt 130
+435,2001104,240 Rock Ridge Dr,,Woonsocket,RI,02895-2511,Apt A

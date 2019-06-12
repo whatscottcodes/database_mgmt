@@ -1,6 +1,7 @@
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import pandas as pd
+import numpy as np
 import sqlite3
 from db_rename_cols import address_cols, address_drop_cols
 import os
@@ -24,30 +25,18 @@ def load_clean_addresses():
     )
 
     addresses = addresses[addresses.member_id != 1003].copy()
+    addresses["address"] = addresses["address"].str.title()
+    addresses[["address", "unit"]] = addresses["address"].str.split(
+        "(?=Apt |Flr |Fl |Box |Bldg |Unit |#)(.*$)", expand=True
+    )[[0, 1]]
+    addresses["unit"] = np.where(
+        addresses["unit"].isnull(), addresses["address_2"], addresses["unit"]
+    )
+    addresses["address"] = addresses.address.str.replace(".", "")
+    addresses["address"] = addresses.address.str.strip()
 
-    addresses["address"] = addresses.address.str.strip(".")
-
-    addresses[["address", "unit1"]] = addresses["address"].str.split(
-        "Apt", expand=True
-    )[[0, 1]]
-    addresses[["address", "unit2"]] = addresses["address"].str.split("Fl", expand=True)[
-        [0, 1]
-    ]
-    addresses[["address", "unit3"]] = addresses["address"].str.split("#", expand=True)[
-        [0, 1]
-    ]
-    addresses[["address", "unit4"]] = addresses["address"].str.split(
-        "Unit", expand=True
-    )[[0, 1]]
-    addresses[["address", "unit5"]] = addresses["address"].str.split(
-        "Box", expand=True
-    )[[0, 1]]
-    addresses[["address", "unit6"]] = addresses["address"].str.split(
-        "Bldg", expand=True
-    )[[0, 1]]
-    addresses[["address", "unit6"]] = addresses["address"].str.split(
-        "apt", expand=True
-    )[[0, 1]]
+    addresses["unit"] = addresses.unit.str.replace(".", "")
+    addresses["unit"] = addresses.unit.str.strip()
 
     addresses["full_address"] = (
         addresses["address"].str.title().str.rstrip()
@@ -56,6 +45,7 @@ def load_clean_addresses():
         + " "
         + addresses["state"]
     )
+    addresses.to_csv("updated_addresses.csv")
     return addresses
 
 
@@ -169,7 +159,7 @@ def append_and_save(geocoded, geopy_geocoded):
     addresses_to_add = geocoded.append(geopy_geocoded)
     addresses_to_add.drop_duplicates(subset=["member_id", "address"], inplace=True)
     addresses_to_add.to_csv(
-        "C:\\Users\\snelson\\repos\\db_mgmt\\data\\addresses.csv", index=False
+        "C:\\Users\\snelson\\repos\\db_mgmt\\data_raw\\addresses.csv", index=False
     )
 
     os.remove(f"{ehr_file_location}addresses.xls")

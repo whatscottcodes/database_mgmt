@@ -16,7 +16,7 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 
 def get_csv_files():
 
-    files = os.listdir(".\\data")
+    files = os.listdir(".\\data_raw")
 
     folders = [
         folder for folder in files if "csv" not in folder and folder != "archive"
@@ -25,7 +25,7 @@ def get_csv_files():
     tables = {}
 
     for file in files:
-        tables[file[:-4]] = pd.read_csv(f".\\data\\{file}", low_memory=False)
+        tables[file[:-4]] = pd.read_csv(f".\\data_raw\\{file}", low_memory=False)
 
     for table in tables.keys():
         date_cols = [col for col in tables[table].columns if "date" in col.lower()]
@@ -42,10 +42,10 @@ def get_csv_files():
     folder_dicts = [incident_dict, utl_dict, vacc_dict]
 
     for folder, folder_dict in zip(folders, folder_dicts):
-        files = os.listdir(f".\\data\\{folder}")
+        files = os.listdir(f".\\data_raw\\{folder}")
         for file in files:
             folder_dict[file[:-4]] = pd.read_csv(
-                f".\\data\\{folder}\\{file}", low_memory=False
+                f".\\data_raw\\{folder}\\{file}", low_memory=False
             )
 
     for folder in folder_dicts:
@@ -66,10 +66,10 @@ def archive_files():
     shutil.make_archive(
         f"C:\\Users\\snelson\\repos\\db_mgmt\\data_archive\\{pd.datetime.today().date()}_update",
         "zip",
-        f".\\data",
+        f".\\data_raw",
     )
 
-    files = os.listdir(".\\data")
+    files = os.listdir(".\\data_raw")
 
     folders = [
         folder for folder in files if "csv" not in folder and folder != "archive"
@@ -80,10 +80,10 @@ def archive_files():
         for filename in files
         if "csv" in filename and filename not in ["grievances_2018.csv"]
     ]:
-        os.remove(f".\\data\\{file}")
+        os.remove(f".\\data_raw\\{file}")
 
     for folder in folders:
-        files = os.listdir(f".\\data\\{folder}")
+        files = os.listdir(f".\\data_raw\\{folder}")
 
         files = [
             file
@@ -98,4 +98,4 @@ def archive_files():
             ]
         ]
         for file in files:
-            os.remove(f".\\data\\{folder}\\{file}")
+            os.remove(f".\\data_raw\\{folder}\\{file}")

@@ -38,8 +38,8 @@ def get_utlization_grid():
     utl_grid_copy = f"{ehr_file_location}2019 Utilization Grid.xlsx"
     utl_sheets = ["inpt", "ER"]
     utl_csv_name = {
-        "inpt": "C:\\Users\\snelson\\repos\\db_mgmt\\data\\utilization\\ut_grid_inp.csv",
-        "ER": "C:\\Users\\snelson\\repos\\db_mgmt\\data\\utilization\\ut_grid_er.csv",
+        "inpt": "C:\\Users\\snelson\\repos\\db_mgmt\\data_raw\\utilization\\ut_grid_inp.csv",
+        "ER": "C:\\Users\\snelson\\repos\\db_mgmt\\data_raw\\utilization\\ut_grid_er.csv",
     }
 
     # copy grid from V: Drive to db_mgmt folder
@@ -65,7 +65,7 @@ def get_wound_grid():
     # parse utlization sheets to csv files
     data_xls = pd.read_excel(wounds_grid_copy, index_col=None)
     data_xls.to_csv(
-        "C:\\Users\\snelson\\repos\\db_mgmt\\data\\incidents\\wounds.csv",
+        "C:\\Users\\snelson\\repos\\db_mgmt\\data_raw\\incidents\\wounds.csv",
         encoding="utf-8",
         index=False,
     )
@@ -84,7 +84,7 @@ def get_PS_data():
                 f"{ehr_file_location}{file}.xls", "Sheet1", index_col=None
             )
             data_xls.to_csv(
-                f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\vaccination\\{file}.csv",
+                f"C:\\Users\\snelson\\repos\\db_mgmt\\data_raw\\vaccination\\{file}.csv",
                 encoding="utf-8",
                 index=False,
             )
@@ -99,7 +99,7 @@ def get_PS_data():
                 f"{ehr_file_location}{file}.xls", "Sheet1", index_col=None
             )
             data_xls.to_csv(
-                f"C:\\Users\\snelson\\repos\\db_mgmt\\data\\{file}.csv",
+                f"C:\\Users\\snelson\\repos\\db_mgmt\\data_raw\\{file}.csv",
                 encoding="utf-8",
                 index=False,
             )

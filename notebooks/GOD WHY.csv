@@ -1,0 +1,326 @@
+,textBox5,textBox2,Center,MemberID,ParticipantName,PCP,AdmissionDate,Facility,Diagnosis,merge
+0,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100331,"Brown, Honorata ",,2017-07-08,Rhode Island Hospital,"Z79.899,N95.0",1003312017-07-08Rhode Island Hospital
+1,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100463,"Soto, Ada ",,2017-07-08,Kent County Memorial Hospital,,1004632017-07-08Kent County Memorial Hospital
+2,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100611,"Morales, Lydia ",,2017-07-11,Roger Williams Medical Center,"R31.9,F03.90,E78.00,I10,D72.829,Z85.3,R19.7,R11.2,K43.9",1006112017-07-11Roger Williams Medical Center
+3,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100781,"Gonzalez, Carlos J",,2017-07-15,Rhode Island Hospital,"Z79.4,Z79.01,Z86.73,N18.6,E11.22,I12.0,I48.91,E78.5",1007812017-07-15Rhode Island Hospital
+4,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100587,"Luescher, Helena L",,2017-07-16,Roger Williams Medical Center,S00.93XA,1005872017-07-16Roger Williams Medical Center
+5,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100799,"Rattigan, Barbara L",,2017-07-16,Our Lady of Fatima Hospital,R10.9,1007992017-07-16Our Lady of Fatima Hospital
+6,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100840,"Harney, Jose G",,2017-07-20,Rhode Island Hospital,,1008402017-07-20Rhode Island Hospital
+7,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100799,"Rattigan, Barbara L",,2017-07-24,Our Lady of Fatima Hospital,R10.9,1007992017-07-24Our Lady of Fatima Hospital
+8,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100678,"Britto, Mary S",,2017-07-27,Rhode Island Hospital,"Z91.81,F02.80,G30.9,S80.12XA,S00.83XA,S06.5X0A",1006782017-07-27Rhode Island Hospital
+9,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100263,"Robles, Miriam ",,2017-07-27,Rhode Island Hospital,"Z87.891,E11.9,G89.29,M25.562,M54.5",1002632017-07-27Rhode Island Hospital
+10,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100799,"Rattigan, Barbara L",,2017-07-31,Our Lady Of Fatima Hospital,"Z79.899,I10,E78.00,R82.99,Z76.5,E87.6,R03.0,G89.29,F41.9,F32.89",1007992017-07-31Our Lady Of Fatima Hospital
+11,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100710,"Wagnac, Isabelle ",,2017-08-04,Rhode Island Hospital,"F03.90,J44.9,I10,J96.90,I21.3",1007102017-08-04Rhode Island Hospital
+12,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100611,"Morales, Lydia ",,2017-08-06,Memorial Hospital of Rhode Island,"R11.0,K63.9,K57.90,K43.9",1006112017-08-06Memorial Hospital of Rhode Island
+13,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100631,"Gomes, Gabriela R",,2017-08-06,Rhode Island Hospital,"E03.9,I10,F02.80,G30.9,R62.7",1006312017-08-06Rhode Island Hospital
+14,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100764,"Colon, Esteban ",,2017-08-07,Roger Williams Medical Center,"N40.0,I10,E78.00,N47.2,R50.9,F03.90,N44.8",1007642017-08-07Roger Williams Medical Center
+15,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100769,"Beausoleil, Linda A",,2017-08-11,Landmark Medical Center,"Z88.6,F17.200,Z86.73,I10,E78.00,E11.9,I25.10,G89.29,J44.9,S93.401A,S80.11XA",1007692017-08-11Landmark Medical Center
+17,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100244,"Prak, Yee ",,2017-08-13,Roger Williams Medical Center,"E78.00,J45.909,E11.9,I10,E87.6,G89.29,R07.9",1002442017-08-13Roger Williams Medical Center
+18,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100843,"Castillo, Noris M",,2017-08-13,Kent County Memorial Hospital,"R20.2,H40.9,G20,I10,S52.602A,S52.532A",1008432017-08-13Kent County Memorial Hospital
+19,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100801,"Perreira, Maria J",,2017-08-14,The Miriam Hospital,"Z79.82,Z79.891,Z79.899,I10,E78.00,S32.501D,R11.0",1008012017-08-14The Miriam Hospital
+20,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100774,"Rivera, Edna E",,2017-08-16,The Miriam Hospital,"I50.9,I48.91,I25.10,I11.0,F41.9,F03.90,E78.5,E11.9,E07.9,S05.31XA",1007742017-08-16The Miriam Hospital
+21,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100229,"Puth, Than O",,2017-08-19,Kent County Memorial Hospital,"M19.90,R13.10,E83.52,E78.5,J44.9,D64.9,G40.909,K58.9,I48.91,I25.10,E11.319,I50.9,N18.9,E11.22,I13.0,R29.6,E11.51,R50.9",1002292017-08-19Kent County Memorial Hospital
+22,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100751,"Urreta, Deborah ",,2017-08-27,Landmark Medical Center,"I10,K21.9,I73.9,F32.9,E55.9,F03.90,E11.9,E78.00,E03.9,R41.82,I69.320,N39.0",1007512017-08-27Landmark Medical Center
+23,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100857,"Gregory, Lynn A",,2017-08-27,Landmark Medical Center,"Z91.09,Z91.040,Z88.0,Z86.73,F32.9,F41.9,K58.9",1008572017-08-27Landmark Medical Center
+24,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100850,"Garcia De Mella, Juana B",,2017-08-28,Rhode Island Hospital,"F02.80,G30.9,R06.2",1008502017-08-28Rhode Island Hospital
+25,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100636,"Miller, David ",,2017-09-01,Rhode Island Hospital,"Z79.899,Z79.82,Z79.51,Z93.6,F17.210,G91.9,Q05.9,Q05.4,N31.9,I10,I25.2,K21.9,I25.10,J44.9,R53.81,R68.83,R51",1006362017-09-01Rhode Island Hospital
+26,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2017-09-08,Kent County Memorial Hospital,"Z79.899,Z87.440,Z95.0,I10,I25.10,K21.9,I48.2,N34.3,R33.9",1007132017-09-08Kent County Memorial Hospital
+27,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2017-09-10,Kent County Memorial Hospital,"R60.1,N49.3,R65.21,I95.9,I48.91,Z79.01,Z96.0,R41.82,N50.89,R50.9,R31.9,R00.0,R61,N50.82,D72.829",1007132017-09-10Kent County Memorial Hospital
+28,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100813,"Nzeyimana, Renovata ",,2017-09-12,Rhode Island Hospital,"Z79.899,G40.909",1008132017-09-12Rhode Island Hospital
+29,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100427,"Furtado, Alda ",,2017-09-18,Landmark Medical Center,,1004272017-09-18Landmark Medical Center
+30,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100597,"Louis, Alfred ",,2017-09-18,Landmark Medical Center,,1005972017-09-18Landmark Medical Center
+31,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100587,"Luescher, Helena L",,2017-09-22,Kent County Memorial Hospital,"R27.9,Z88.8,Z88.5,I25.2,M19.90,Z79.899,K21.9,I10,F03.90,S00.83XA",1005872017-09-22Kent County Memorial Hospital
+32,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100747,"Martinez, William E",,2017-09-25,Rhode Island Hospital,"Z95.0,Z79.01,Z86.79,I10,I50.9,E78.5,E66.01,I25.89,I25.10,M79.604,M79.89",1007472017-09-25Rhode Island Hospital
+33,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100743,"Facha, Robert A",,2017-09-26,The Miriam Hospital,"Z95.0,Z87.891,Z79.899,Z99.81,I25.2,E78.5,I25.10,I50.9,J44.9,I10,I48.91,R07.9",1007432017-09-26The Miriam Hospital
+34,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100955,"Correa Bonilla, Ramon ",,2017-09-30,Landmark Medical Center,"Z91.041,E78.00,E11.9,I10,I48.91,S99.922A",1009552017-09-30Landmark Medical Center
+35,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100811,"Farland, Frederick J ""Fred""",,2017-10-02,Rhode Island Hospital,,1008112017-10-02Rhode Island Hospital
+36,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000824,"Barclay, Elizabeth M",,2017-10-04,Our Lady of Fatima Hospital,,10008242017-10-04Our Lady of Fatima Hospital
+37,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100244,"Prak, Yee ",,2017-10-05,Rhode Island Hospital,,1002442017-10-05Rhode Island Hospital
+38,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100532,"Villafane, Aurelio ",,2017-10-05,Landmark Medical Center,,1005322017-10-05Landmark Medical Center
+39,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000857,"Charette, Carol J",,2017-10-06,Rhode Island Hospital,,20008572017-10-06Rhode Island Hospital
+40,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100760,"Parker, Helen M",,2017-10-16,Roger Williams Medical Center,,1007602017-10-16Roger Williams Medical Center
+41,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100364,"Dorego, Ann Marie ",,2017-10-18,Roger Williams Medical Center,,1003642017-10-18Roger Williams Medical Center
+42,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100605,"Johansson, Shirley A",,2017-10-19,Kent County Memorial Hospital,,1006052017-10-19Kent County Memorial Hospital
+43,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100578,"Perry, Deborah M",,2017-10-22,Roger Williams Medical Center,,1005782017-10-22Roger Williams Medical Center
+44,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100331,"Brown, Honorata ",,2017-10-23,Roger Williams Medical Center,,1003312017-10-23Roger Williams Medical Center
+45,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100829,"Rivera, Victoria ",,2017-10-24,Roger Williams Medical Center,,1008292017-10-24Roger Williams Medical Center
+46,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100607,"Kollie, Juana M",,2017-10-27,The Miriam Hospital,,1006072017-10-27The Miriam Hospital
+47,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100747,"Martinez, William E",,2017-10-29,Roger Williams Medical Center,,1007472017-10-29Roger Williams Medical Center
+48,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100540,"Marcucci, Santos L",,2017-10-30,Rhode Island Hospital,,1005402017-10-30Rhode Island Hospital
+49,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100403,"Slack, Laurence ",,2017-10-30,Rhode Island Hospital,,1004032017-10-30Rhode Island Hospital
+50,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100605,"Johansson, Shirley A",,2017-11-01,Roger Williams Medical Center,,1006052017-11-01Roger Williams Medical Center
+51,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100454,"Barnes, Gayle ",,2017-11-01,Rhode Island Hospital,,1004542017-11-01Rhode Island Hospital
+52,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100649,"Kumar, Kesho ",,2017-11-02,Rhode Island Hospital,,1006492017-11-02Rhode Island Hospital
+53,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100374,"Morrison, Steven E",,2017-11-06,Roger Williams Medical Center,,1003742017-11-06Roger Williams Medical Center
+54,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100244,"Prak, Yee ",,2017-11-07,Kent County Memorial Hospital,,1002442017-11-07Kent County Memorial Hospital
+55,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100760,"Parker, Helen M",,2017-11-08,Roger Williams Medical Center,,1007602017-11-08Roger Williams Medical Center
+56,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2017-11-09,The Miriam Hospital,"Z93.59,T83.010A",1007132017-11-09The Miriam Hospital
+57,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100792,"Linarez, Maria ",,2017-11-10,Rhode Island Hospital,,1007922017-11-10Rhode Island Hospital
+58,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2017-11-11,Rhode Island Hospital,,1007132017-11-11Rhode Island Hospital
+59,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100854,"Oliver, Roland L",,2017-11-12,Kent County Memorial Hospital,,1008542017-11-12Kent County Memorial Hospital
+60,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100552,"Williams, Margaret ",,2017-11-12,Kent County Memorial Hospital,,1005522017-11-12Kent County Memorial Hospital
+61,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100760,"Parker, Helen M",,2017-11-14,Rhode Island Hospital,,1007602017-11-14Rhode Island Hospital
+62,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100749,"Baez, Luis A",,2017-11-14,Rhode Island Hospital,,1007492017-11-14Rhode Island Hospital
+63,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100843,"Castillo, Noris M",,2017-11-14,Roger Williams Medical Center,,1008432017-11-14Roger Williams Medical Center
+64,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100607,"Kollie, Juana M",,2017-11-16,The Miriam Hospital,,1006072017-11-16The Miriam Hospital
+65,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100408,"Allen, Mary Ann ",,2017-11-17,Roger Williams Medical Center,,1004082017-11-17Roger Williams Medical Center
+66,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100856,"Keo, Kim H",,2017-11-18,Roger Williams Medical Center,,1008562017-11-18Roger Williams Medical Center
+67,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100684,"Araujo, Jose ",,2017-11-18,Rhode Island Hospital,,1006842017-11-18Rhode Island Hospital
+68,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100692,"Aponte Vargas, Hector ",,2017-11-20,Landmark Medical Center,,1006922017-11-20Landmark Medical Center
+69,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100814,"Pasela, John J",,2017-11-25,Roger Williams Medical Center,,1008142017-11-25Roger Williams Medical Center
+70,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100766,"Celender, Joanne ",,2017-11-27,Roger Williams Medical Center,,1007662017-11-27Roger Williams Medical Center
+71,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100954,"Robles, Maria C",,2017-11-30,Our Lady Of Fatima Hospital,,1009542017-11-30Our Lady Of Fatima Hospital
+72,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100806,"Rivera, Luis G",,2017-12-01,Rhode Island Hospital,,1008062017-12-01Rhode Island Hospital
+73,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100427,"Furtado, Alda ",,2017-12-02,Landmark Medical Center,,1004272017-12-02Landmark Medical Center
+74,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100766,"Celender, Joanne ",,2017-12-04,Roger Williams Medical Center,,1007662017-12-04Roger Williams Medical Center
+75,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100745,"Ruiz-Jimenez, Maria A",,2017-12-04,Rhode Island Hospital,,1007452017-12-04Rhode Island Hospital
+76,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100587,"Luescher, Helena L",,2017-12-06,Kent County Memorial Hospital,,1005872017-12-06Kent County Memorial Hospital
+77,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100701,"Gonsalez, Efrain F",,2017-12-08,Roger Williams Medical Center,,1007012017-12-08Roger Williams Medical Center
+78,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100447,"White, Florence ",,2017-12-11,Roger Williams Medical Center,,1004472017-12-11Roger Williams Medical Center
+79,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100843,"Castillo, Noris M",,2017-12-12,Roger Williams Medical Center,,1008432017-12-12Roger Williams Medical Center
+80,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100360,"Begin, Theresa ",,2017-12-13,Roger Williams Medical Center,,1003602017-12-13Roger Williams Medical Center
+81,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100403,"Slack, Laurence ",,2017-12-13,Kent County Memorial Hospital,,1004032017-12-13Kent County Memorial Hospital
+82,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100649,"Kumar, Kesho ",,2017-12-16,Rhode Island Hospital,,1006492017-12-16Rhode Island Hospital
+83,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100546,"Prak, Saray ",,2017-12-16,The Miriam Hospital,,1005462017-12-16The Miriam Hospital
+84,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100813,"Nzeyimana, Renovata ",,2017-12-19,Rhode Island Hospital,,1008132017-12-19Rhode Island Hospital
+85,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100813,"Nzeyimana, Renovata ",,2017-12-21,Rhode Island Hospital,,1008132017-12-21Rhode Island Hospital
+86,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100532,"Villafane, Aurelio ",,2017-12-30,Roger Williams Medical Center,,1005322017-12-30Roger Williams Medical Center
+87,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100747,"Martinez, William E",,2017-12-31,Rhode Island Hospital,,1007472017-12-31Rhode Island Hospital
+88,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100367,"Therrien, George ",,2018-01-01,The Miriam Hospital,,1003672018-01-01The Miriam Hospital
+89,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100661,"Cuai, Hlei ",,2018-01-02,Rhode Island Hospital,,1006612018-01-02Rhode Island Hospital
+90,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000821,"Albino, Louis ",,2018-01-03,Our Lady of Fatima Hospital,,10008212018-01-03Our Lady of Fatima Hospital
+91,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100348,"Pantojas, Roberto ",,2018-01-05,Rhode Island Hospital,,1003482018-01-05Rhode Island Hospital
+92,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100525,"Rivera, Gladys E",,2018-01-08,Our Lady Of Fatima Hospital,,1005252018-01-08Our Lady Of Fatima Hospital
+93,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100496,"Baez, Maria ",,2018-01-09,The Miriam Hospital,,1004962018-01-09The Miriam Hospital
+94,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100827,"Grandy, Ronald L",,2018-01-12,The Miriam Hospital,,1008272018-01-12The Miriam Hospital
+95,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100683,"Terry, Carolyn J",,2018-01-14,The Miriam Hospital,,1006832018-01-14The Miriam Hospital
+96,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000832,"Nicoletti, Rose M",,2018-01-15,Roger Williams Medical Center,,10008322018-01-15Roger Williams Medical Center
+97,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100613,"Andino, Pura ",,2018-01-17,Rhode Island Hospital,,1006132018-01-17Rhode Island Hospital
+98,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100325,"Castillo, Rosa ",,2018-01-21,Roger Williams Medical Center,,1003252018-01-21Roger Williams Medical Center
+99,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100540,"Marcucci, Santos L",,2018-01-22,Rhode Island Hospital,,1005402018-01-22Rhode Island Hospital
+100,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100804,"Houle, Normand A",,2018-01-30,Roger Williams Medical Center,,1008042018-01-30Roger Williams Medical Center
+101,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100854,"Oliver, Roland L",,2018-02-05,Rhode Island Hospital,,1008542018-02-05Rhode Island Hospital
+102,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100286,"Chhoum, Huon ",,2018-02-10,Roger Williams Medical Center,,1002862018-02-10Roger Williams Medical Center
+103,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100827,"Grandy, Ronald L",,2018-02-10,The Miriam Hospital,,1008272018-02-10The Miriam Hospital
+104,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100492,"Morales, Elba ",,2018-02-19,Roger Williams Medical Center,,1004922018-02-19Roger Williams Medical Center
+105,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100683,"Terry, Carolyn J",,2018-02-22,The Miriam Hospital,,1006832018-02-22The Miriam Hospital
+106,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100728,"Morales, Mary A",,2018-02-26,The Miriam Hospital,,1007282018-02-26The Miriam Hospital
+107,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000839,"Cotto, Bernarda ",,2018-02-26,Rhode Island Hospital,,10008392018-02-26Rhode Island Hospital
+108,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100813,"Nzeyimana, Renovata ",,2018-02-27,The Miriam Hospital,,1008132018-02-27The Miriam Hospital
+109,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100814,"Pasela, John J",,2018-02-27,Roger Williams Medical Center,,1008142018-02-27Roger Williams Medical Center
+110,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100956,"Leblond, Charles L ""Chuck""",,2018-02-28,Landmark Medical Center,,1009562018-02-28Landmark Medical Center
+111,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100814,"Pasela, John J",,2018-02-28,Roger Williams Medical Center,,1008142018-02-28Roger Williams Medical Center
+112,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100585,"Lewandoski, John K",,2018-03-06,Roger Williams Medical Center,,1005852018-03-06Roger Williams Medical Center
+113,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100780,"Alzate, Carlos E",,2018-03-09,Kent County Memorial Hospital,,1007802018-03-09Kent County Memorial Hospital
+114,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100364,"Dorego, Ann Marie ",,2018-03-10,The Miriam Hospital,,1003642018-03-10The Miriam Hospital
+115,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100285,"Bou, Keo ",,2018-03-10,Roger Williams Medical Center,"Z79.899,E03.9,I48.91,E78.00,I50.9,R19.7,R53.1",1002852018-03-10Roger Williams Medical Center
+116,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100823,"Robinson, Rosa ",,2018-03-10,Rhode Island Hospital,,1008232018-03-10Rhode Island Hospital
+117,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2018-03-11,Kent County Memorial Hospital,,1007132018-03-11Kent County Memorial Hospital
+118,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100849,"Rivera, Agustin ",,2018-03-12,Roger Williams Medical Center,,1008492018-03-12Roger Williams Medical Center
+119,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100482,"Lawson, Elizabeth D",,2018-03-12,Rhode Island Hospital,,1004822018-03-12Rhode Island Hospital
+120,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100834,"Vargas, Pedro ",,2018-03-20,Landmark Medical Center,,1008342018-03-20Landmark Medical Center
+121,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100623,"Morel, Aurelia ",,2018-03-23,Rhode Island Hospital,,1006232018-03-23Rhode Island Hospital
+122,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100651,"Robidou, Charles  ""Charlie""",,2018-03-23,Rhode Island Hospital,,1006512018-03-23Rhode Island Hospital
+123,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100769,"Beausoleil, Linda A",,2018-03-23,Roger Williams Medical Center,,1007692018-03-23Roger Williams Medical Center
+124,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100685,"Rivera, Juan ",,2018-03-24,Roger Williams Medical Center,,1006852018-03-24Roger Williams Medical Center
+125,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000827,"Perez, Cesar V",,2018-03-24,Roger Williams Medical Center,,10008272018-03-24Roger Williams Medical Center
+126,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,1000835,"Morisseau, Roger F",,2018-03-28,Roger Williams Medical Center,,10008352018-03-28Roger Williams Medical Center
+127,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100569,"Perez, Evelyn ",,2018-03-29,Rhode Island Hospital,,1005692018-03-29Rhode Island Hospital
+128,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100291,"Rodriguez, Jim ",,2018-04-03,Landmark Medical Center,,1002912018-04-03Landmark Medical Center
+129,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100785,"Ariosto, Nicholas A ""Nick""",,2018-04-06,Rhode Island Hospital,,1007852018-04-06Rhode Island Hospital
+130,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100454,"Barnes, Gayle ",,2018-04-07,Roger Williams Medical Center,,1004542018-04-07Roger Williams Medical Center
+131,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100745,"Ruiz-Jimenez, Maria A",,2018-04-10,Rhode Island Hospital,,1007452018-04-10Rhode Island Hospital
+132,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2018-04-10,Rhode Island Hospital,,1007132018-04-10Rhode Island Hospital
+133,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100954,"Robles, Maria C",,2018-04-14,Roger Williams Medical Center,,1009542018-04-14Roger Williams Medical Center
+134,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000882,"Gutterman, Janet ",,2018-04-17,The Miriam Hospital,,20008822018-04-17The Miriam Hospital
+135,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100513,"Leach, Walton A ""Chick""",,2018-04-20,Rhode Island Hospital,,1005132018-04-20Rhode Island Hospital
+136,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100512,"Kennedy, Joan P",,2018-04-23,Roger Williams Medical Center,,1005122018-04-23Roger Williams Medical Center
+137,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100546,"Prak, Saray ",,2018-04-27,The Miriam Hospital,,1005462018-04-27The Miriam Hospital
+138,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100788,"Sherman, Helen L",,2018-05-01,Rhode Island Hospital,,1007882018-05-01Rhode Island Hospital
+139,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100303,"Simmonds, Alejandro ",,2018-05-08,The Miriam Hospital,,1003032018-05-08The Miriam Hospital
+140,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,1000826,"Quiroz, Emperatriz C",,2018-05-09,The Miriam Hospital,,10008262018-05-09The Miriam Hospital
+141,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100780,"Alzate, Carlos E",,2018-05-11,Roger Williams Medical Center,,1007802018-05-11Roger Williams Medical Center
+142,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100777,"Merrill, Helene E ""Helen""",,2018-05-14,Roger Williams Medical Center,,1007772018-05-14Roger Williams Medical Center
+143,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100625,"Mendoza, Oscar M",,2018-05-18,Rhode Island Hospital,,1006252018-05-18Rhode Island Hospital
+144,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000896,"Fricot, Constance L",,2018-05-20,East Side Urgent Care,,20008962018-05-20East Side Urgent Care
+145,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100395,"Meijer, Anna ",,2018-05-22,Landmark Medical Center,,1003952018-05-22Landmark Medical Center
+146,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100537,"Chatelain, Brune ",,2018-05-27,Roger Williams Medical Center,,1005372018-05-27Roger Williams Medical Center
+147,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000882,"Gutterman, Janet ",,2018-05-27,East Side Urgent Care,,20008822018-05-27East Side Urgent Care
+148,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100956,"Leblond, Charles L ""Chuck""",,2018-05-29,Landmark Medical Center,,1009562018-05-29Landmark Medical Center
+149,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000896,"Fricot, Constance L",,2018-06-01,The Miriam Hospital,,20008962018-06-01The Miriam Hospital
+150,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000832,"Nicoletti, Rose M",,2018-06-01,Roger Williams Medical Center,,10008322018-06-01Roger Williams Medical Center
+151,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100635,"Readett, Jacklyn A",,2018-06-04,Rhode Island Hospital,,1006352018-06-04Rhode Island Hospital
+152,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100814,"Pasela, John J",,2018-06-05,Rhode Island Hospital,,1008142018-06-05Rhode Island Hospital
+153,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100701,"Gonsalez, Efrain F",,2018-06-06,Roger Williams Medical Center,,1007012018-06-06Roger Williams Medical Center
+154,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100613,"Andino, Pura ",,2018-06-07,Rhode Island Hospital,,1006132018-06-07Rhode Island Hospital
+155,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2018-06-08,Kent County Memorial Hospital,,1007132018-06-08Kent County Memorial Hospital
+156,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Westerly,100776,"Blankenship, Lois E ""MeMe""",,2018-06-09,South County Hospital,,1007762018-06-09South County Hospital
+157,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100492,"Morales, Elba ",,2018-06-15,Roger Williams Medical Center,,1004922018-06-15Roger Williams Medical Center
+158,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000937,"Rosario, Luz Cuba",,2018-06-18,The Miriam Hospital,,20009372018-06-18The Miriam Hospital
+159,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100800,"De Leon, Santa L",,2018-06-21,Rhode Island Hospital,,1008002018-06-21Rhode Island Hospital
+160,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100701,"Gonsalez, Efrain F",,2018-06-21,Roger Williams Medical Center,,1007012018-06-21Roger Williams Medical Center
+161,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100689,"Perez Batista, Rosa ",,2018-06-22,Roger Williams Medical Center,,1006892018-06-22Roger Williams Medical Center
+162,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100831,"Tierney, Aileen P",,2018-06-26,Rhode Island Hospital,,1008312018-06-26Rhode Island Hospital
+163,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000892,"Charpentier, Virginia L ""Ginger""",,2018-06-29,Newberry County Memorial Hospital,,20008922018-06-29Newberry County Memorial Hospital
+164,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000943,"Coppola, Mary S",,2018-07-04,Rhode Island Hospital,,20009432018-07-04Rhode Island Hospital
+165,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100541,"Santana, Grecia G",,2018-07-09,Roger Williams Medical Center,,1005412018-07-09Roger Williams Medical Center
+166,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100764,"Colon, Esteban ",,2018-07-11,Rhode Island Hospital,,1007642018-07-11Rhode Island Hospital
+167,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100611,"Morales, Lydia ",,2018-07-11,The Miriam Hospital,,1006112018-07-11The Miriam Hospital
+168,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100681,"Threats, Ruth A",,2018-07-11,Rhode Island Hospital,,1006812018-07-11Rhode Island Hospital
+169,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100689,"Perez Batista, Rosa ",,2018-07-18,Roger Williams Medical Center,,1006892018-07-18Roger Williams Medical Center
+170,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100364,"Dorego, Ann Marie ",,2018-07-18,The Miriam Hospital,,1003642018-07-18The Miriam Hospital
+171,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000853,"Lugo, Andres ",,2018-07-21,Roger Williams Medical Center,,20008532018-07-21Roger Williams Medical Center
+172,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100611,"Morales, Lydia ",,2018-07-22,The Miriam Hospital,,1006112018-07-22The Miriam Hospital
+173,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100843,"Castillo, Noris M",,2018-07-24,Kent County Memorial Hospital,,1008432018-07-24Kent County Memorial Hospital
+174,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100360,"Begin, Theresa ",,2018-07-28,Kent County Memorial Hospital,,1003602018-07-28Kent County Memorial Hospital
+175,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100650,"Rodrigues, Maria J",,2018-07-31,Roger Williams Medical Center,,1006502018-07-31Roger Williams Medical Center
+176,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100503,"Almeida, Antonio ",,2018-08-02,Rhode Island Hospital,,1005032018-08-02Rhode Island Hospital
+177,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100804,"Houle, Normand A",,2018-08-05,Roger Williams Medical Center,,1008042018-08-05Roger Williams Medical Center
+178,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000837,"Jefferies, Abraham  ""Abe""",,2018-08-06,The Miriam Hospital,,10008372018-08-06The Miriam Hospital
+179,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100828,"Stamp, Dale ",,2018-08-09,Roger Williams Medical Center,,1008282018-08-09Roger Williams Medical Center
+180,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100851,"Lee, Janet ",,2018-08-11,Roger Williams Medical Center,,1008512018-08-11Roger Williams Medical Center
+181,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100671,"Laurore, Polene ",,2018-08-11,Roger Williams Medical Center,,1006712018-08-11Roger Williams Medical Center
+182,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100635,"Readett, Jacklyn A",,2018-08-13,The Miriam Hospital,,1006352018-08-13The Miriam Hospital
+183,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,1000826,"Quiroz, Emperatriz C",,2018-08-14,The Miriam Hospital,,10008262018-08-14The Miriam Hospital
+184,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100659,"Miranda, Oliver ",,2018-08-14,Roger Williams Medical Center,,1006592018-08-14Roger Williams Medical Center
+185,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100623,"Morel, Aurelia ",,2018-08-15,Roger Williams Medical Center,,1006232018-08-15Roger Williams Medical Center
+186,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100598,"Brunelle, James A",,2018-08-15,Roger Williams Medical Center,,1005982018-08-15Roger Williams Medical Center
+187,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2018-08-18,Kent County Memorial Hospital,,1007132018-08-18Kent County Memorial Hospital
+188,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000947,"Mirsky, Gregory I",,2018-08-19,The Miriam Hospital,,20009472018-08-19The Miriam Hospital
+189,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100751,"Urreta, Deborah ",,2018-08-19,Landmark Medical Center,,1007512018-08-19Landmark Medical Center
+190,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000939,"Smith, Vincent C",,2018-08-20,Roger Williams Medical Center,,20009392018-08-20Roger Williams Medical Center
+191,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100611,"Morales, Lydia ",,2018-08-20,Rhode Island Hospital,,1006112018-08-20Rhode Island Hospital
+192,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100758,"Landry, Maurice  ""Moe""",,2018-08-25,The Miriam Hospital,,1007582018-08-25The Miriam Hospital
+193,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100758,"Landry, Maurice  ""Moe""",,2018-08-27,The Miriam Hospital,,1007582018-08-27The Miriam Hospital
+194,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100546,"Prak, Saray ",,2018-09-02,Rhode Island Hospital,,1005462018-09-02Rhode Island Hospital
+195,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100627,"Rivera, Cruz ",,2018-09-05,Rhode Island Hospital,,1006272018-09-05Rhode Island Hospital
+196,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100623,"Morel, Aurelia ",,2018-09-08,Roger Williams Medical Center,,1006232018-09-08Roger Williams Medical Center
+197,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100492,"Morales, Elba ",,2018-09-09,Roger Williams Medical Center,,1004922018-09-09Roger Williams Medical Center
+198,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100826,"Latimore, Janie M",,2018-09-15,The Miriam Hospital,,1008262018-09-15The Miriam Hospital
+199,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,1000835,"Morisseau, Roger F",,2018-09-20,Roger Williams Medical Center,,10008352018-09-20Roger Williams Medical Center
+200,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000965,"Holland, Arline F",,2018-09-20,Rhode Island Hospital,,20009652018-09-20Rhode Island Hospital
+201,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100814,"Pasela, John J",,2018-09-23,Roger Williams Medical Center,,1008142018-09-23Roger Williams Medical Center
+202,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Westerly,100474,"Cruz, Pedro J",,2018-09-26,South County Hospital,,1004742018-09-26South County Hospital
+203,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000965,"Holland, Arline F",,2018-09-26,Our Lady Of Fatima Hospital,,20009652018-09-26Our Lady Of Fatima Hospital
+204,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100853,"Lanzo, Migna Y",,2018-09-27,Roger Williams Medical Center,,1008532018-09-27Roger Williams Medical Center
+205,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100589,"Suarez, Enemencia M",,2018-09-30,Rhode Island Hospital,,1005892018-09-30Rhode Island Hospital
+206,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100843,"Castillo, Noris M",,2018-10-01,Roger Williams Medical Center,,1008432018-10-01Roger Williams Medical Center
+207,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100681,"Threats, Ruth A",,2018-10-02,Rhode Island Hospital,,1006812018-10-02Rhode Island Hospital
+208,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100578,"Perry, Deborah M",,2018-10-02,The Miriam Hospital,,1005782018-10-02The Miriam Hospital
+209,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2018-10-04,Kent County Memorial Hospital,,1007132018-10-04Kent County Memorial Hospital
+211,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100542,"Portes-Garcia, Marcos ",,2018-10-06,Landmark Medical Center,,1005422018-10-06Landmark Medical Center
+212,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,1000826,"Quiroz, Emperatriz C",,2018-10-07,The Miriam Hospital,,10008262018-10-07The Miriam Hospital
+214,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100395,"Meijer, Anna ",,2018-10-09,Landmark Medical Center,,1003952018-10-09Landmark Medical Center
+215,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100804,"Houle, Normand A",,2018-10-12,Roger Williams Medical Center,,1008042018-10-12Roger Williams Medical Center
+216,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100749,"Baez, Luis A",,2018-10-13,Roger Williams Medical Center,,1007492018-10-13Roger Williams Medical Center
+217,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100569,"Perez, Evelyn ",,2018-10-13,Roger Williams Medical Center,,1005692018-10-13Roger Williams Medical Center
+218,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100611,"Morales, Lydia ",,2018-10-14,The Miriam Hospital,,1006112018-10-14The Miriam Hospital
+219,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100585,"Lewandoski, John K",,2018-10-17,Roger Williams Medical Center,,1005852018-10-17Roger Williams Medical Center
+220,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100849,"Rivera, Agustin ",,2018-10-22,The Miriam Hospital,,1008492018-10-22The Miriam Hospital
+221,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100713,"Giramma, Antonio J",,2018-10-23,Kent County Memorial Hospital,,1007132018-10-23Kent County Memorial Hospital
+222,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100613,"Andino, Pura ",,2018-10-23,Roger Williams Medical Center,,1006132018-10-23Roger Williams Medical Center
+223,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100201,"Bueno, Jose ",,2018-10-25,Landmark Medical Center,,1002012018-10-25Landmark Medical Center
+224,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Westerly,2000876,"Irving, Judy M",,2018-10-26,Kent County Memorial Hospital,,20008762018-10-26Kent County Memorial Hospital
+225,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100484,"Ruiz, Dominga ",,2018-10-26,Carolinas Hosptial System,,1004842018-10-26Carolinas Hosptial System
+226,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000869,"Maine, Christine J",,2018-10-27,Roger Williams Medical Center,,20008692018-10-27Roger Williams Medical Center
+227,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100540,"Marcucci, Santos L",,2018-10-30,Rhode Island Hospital,,1005402018-10-30Rhode Island Hospital
+228,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100705,"Thimas, Elsie ",,2018-10-31,Rhode Island Hospital,,1007052018-10-31Rhode Island Hospital
+229,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000869,"Maine, Christine J",,2018-10-31,Roger Williams Medical Center,,20008692018-10-31Roger Williams Medical Center
+230,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000873,"Gonzalez, Jacinto ",,2018-11-07,The Miriam Hospital,,20008732018-11-07The Miriam Hospital
+231,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100767,"Douse, Millie ",,2018-11-13,Rhode Island Hospital,,1007672018-11-13Rhode Island Hospital
+232,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000952,"Curley, Cynthia G",,2018-11-14,Landmark Medical Center,,20009522018-11-14Landmark Medical Center
+233,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100623,"Morel, Aurelia ",,2018-11-16,Roger Williams Medical Center,,1006232018-11-16Roger Williams Medical Center
+234,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100777,"Merrill, Helene E ""Helen""",,2018-11-16,Roger Williams Medical Center,,1007772018-11-16Roger Williams Medical Center
+235,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000939,"Smith, Vincent C",,2018-11-19,The Miriam Hospital,,20009392018-11-19The Miriam Hospital
+236,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000952,"Curley, Cynthia G",,2018-11-21,Landmark Medical Center,,20009522018-11-21Landmark Medical Center
+237,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100541,"Santana, Grecia G",,2018-11-22,Rhode Island Hospital,,1005412018-11-22Rhode Island Hospital
+238,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000992,"Moyen, Chrissie E",,2018-11-24,Landmark Medical Center,,20009922018-11-24Landmark Medical Center
+239,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100623,"Morel, Aurelia ",,2018-11-25,Roger Williams Medical Center,,1006232018-11-25Roger Williams Medical Center
+240,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000875,"Bonin, Irene ",,2018-11-26,Rhode Island Hospital,,20008752018-11-26Rhode Island Hospital
+241,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Westerly,1000851,"McGowan, Charles M ""Charlie""",,2018-11-27,Rhode Island Hospital,,10008512018-11-27Rhode Island Hospital
+242,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100635,"Readett, Jacklyn A",,2018-11-28,The Miriam Hospital,,1006352018-11-28The Miriam Hospital
+243,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,1000826,"Quiroz, Emperatriz C",,2018-12-08,The Miriam Hospital,,10008262018-12-08The Miriam Hospital
+244,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100761,"Buzizi, John ",,2018-12-08,Kent County Memorial Hospital,,1007612018-12-08Kent County Memorial Hospital
+245,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000992,"Moyen, Chrissie E",,2018-12-10,Landmark Medical Center,,20009922018-12-10Landmark Medical Center
+246,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100541,"Santana, Grecia G",,2018-12-10,Rhode Island Hospital,,1005412018-12-10Rhode Island Hospital
+247,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000964,"Montoya, Juan E",,2018-12-13,Roger Williams Medical Center,,20009642018-12-13Roger Williams Medical Center
+248,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Westerly,100776,"Blankenship, Lois E ""MeMe""",,2018-12-17,South County Hospital,,1007762018-12-17South County Hospital
+249,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100303,"Simmonds, Alejandro ",,2018-12-19,The Miriam Hospital,,1003032018-12-19The Miriam Hospital
+250,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000892,"Charpentier, Virginia L ""Ginger""",,2018-12-20,The Miriam Hospital,,20008922018-12-20The Miriam Hospital
+251,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100613,"Andino, Pura ",,2018-12-21,Rhode Island Hospital,,1006132018-12-21Rhode Island Hospital
+252,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000825,"Ionata, Dario S",,2018-12-22,Kent County Memorial Hospital,,10008252018-12-22Kent County Memorial Hospital
+253,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000896,"Fricot, Constance L",,2018-12-23,The Miriam Hospital,,20008962018-12-23The Miriam Hospital
+254,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000892,"Charpentier, Virginia L ""Ginger""",,2018-12-24,Newberry County Memorial Hospital,,20008922018-12-24Newberry County Memorial Hospital
+255,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000882,"Gutterman, Janet ",,2018-12-25,The Miriam Hospital,,20008822018-12-25The Miriam Hospital
+256,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100483,"Alvarez, Maria L",,2018-12-25,Rhode Island Hospital,,1004832018-12-25Rhode Island Hospital
+257,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000906,"Montuori, Robert A",,2018-12-26,Roger Williams Medical Center,,20009062018-12-26Roger Williams Medical Center
+258,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000964,"Montoya, Juan E",,2018-12-26,Roger Williams Medical Center,,20009642018-12-26Roger Williams Medical Center
+259,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,100804,"Houle, Normand A",,2018-12-26,Landmark Medical Center,,1008042018-12-26Landmark Medical Center
+260,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000892,"Charpentier, Virginia L ""Ginger""",,2018-12-28,The Miriam Hospital,,20008922018-12-28The Miriam Hospital
+261,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100367,"Therrien, George ",,2018-12-28,Rhode Island Hospital,,1003672018-12-28Rhode Island Hospital
+262,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000946,"Mirsky, Zina ",,2018-12-28,The Miriam Hospital,,20009462018-12-28The Miriam Hospital
+263,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100541,"Santana, Grecia G",,2018-12-29,Rhode Island Hospital,,1005412018-12-29Rhode Island Hospital
+264,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000992,"Moyen, Chrissie E",,2018-12-31,Landmark Medical Center,,20009922018-12-31Landmark Medical Center
+265,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100958,"Perkins, Lee A",,2019-01-01,Rhode Island Hospital,,1009582019-01-01Rhode Island Hospital
+266,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2001018,"Moisan, Rose M",,2019-01-03,Women & Infants Hospital,,20010182019-01-03Women & Infants Hospital
+267,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000869,"Maine, Christine J",,2019-01-05,Roger Williams Medical Center,,20008692019-01-05Roger Williams Medical Center
+268,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000906,"Montuori, Robert A",,2019-01-17,Roger Williams Medical Center,,20009062019-01-17Roger Williams Medical Center
+269,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100261,"Hernandez, Ismael ",,2019-01-19,Roger Williams Medical Center,,1002612019-01-19Roger Williams Medical Center
+270,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2001012,"Alvarez, Raquel ",,2019-01-19,Landmark Medical Center,,20010122019-01-19Landmark Medical Center
+271,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2001020,"Horton, Walter H",,2019-01-21,The Miriam Hospital,,20010202019-01-21The Miriam Hospital
+272,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100701,"Gonsalez, Efrain F",,2019-01-26,Roger Williams Medical Center,,1007012019-01-26Roger Williams Medical Center
+273,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100701,"Gonsalez, Efrain F",,2019-01-30,Roger Williams Medical Center,,1007012019-01-30Roger Williams Medical Center
+274,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100263,"Robles, Miriam ",,2019-02-03,Roger Williams Medical Center,,1002632019-02-03Roger Williams Medical Center
+275,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Westerly,1000851,"McGowan, Charles M ""Charlie""",,2019-02-04,South County Hospital,,10008512019-02-04South County Hospital
+276,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100614,"Bonilla, Osiris N",,2019-02-06,Roger Williams Medical Center,,1006142019-02-06Roger Williams Medical Center
+277,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100814,"Pasela, John J",,2019-02-18,Roger Williams Medical Center,,1008142019-02-18Roger Williams Medical Center
+278,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000824,"Barclay, Elizabeth M",,2019-02-18,Our Lady Of Fatima Hospital,,10008242019-02-18Our Lady Of Fatima Hospital
+279,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100814,"Pasela, John J",,2019-02-19,Rhode Island Hospital,,1008142019-02-19Rhode Island Hospital
+280,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2001025,"Poole, Chester A",,2019-02-20,Roger Williams Medical Center,,20010252019-02-20Roger Williams Medical Center
+281,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100605,"Johansson, Shirley A",,2019-02-20,Rhode Island Hospital,,1006052019-02-20Rhode Island Hospital
+282,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100454,"Barnes, Gayle ",,2019-02-21,Rhode Island Hospital,,1004542019-02-21Rhode Island Hospital
+283,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100364,"Dorego, Ann Marie ",,2019-02-21,The Miriam Hospital,,1003642019-02-21The Miriam Hospital
+284,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100829,"Rivera, Victoria ",,2019-02-25,Roger Williams Medical Center,,1008292019-02-25Roger Williams Medical Center
+285,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Westerly,1000851,"McGowan, Charles M ""Charlie""",,2019-02-27,South County Hospital,,10008512019-02-27South County Hospital
+286,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100422,"Quintero, Ines O",,2019-03-01,Roger Williams Medical Center,,1004222019-03-01Roger Williams Medical Center
+287,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100838,"Murray, Robert J ""Bob""",,2019-03-04,Rhode Island Hospital,,1008382019-03-04Rhode Island Hospital
+288,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,1000826,"Quiroz, Emperatriz C",,2019-03-06,The Miriam Hospital,,10008262019-03-06The Miriam Hospital
+289,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000972,"Flores, Marie A",,2019-03-07,Landmark Medical Center,,20009722019-03-07Landmark Medical Center
+290,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100492,"Morales, Elba ",,2019-03-09,Rhode Island Hospital,,1004922019-03-09Rhode Island Hospital
+291,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2001045,"Vargas, Marcelino ",,2019-03-11,Roger Williams Medical Center,,20010452019-03-11Roger Williams Medical Center
+292,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2001012,"Alvarez, Raquel ",,2019-03-13,Roger Williams Medical Center,,20010122019-03-13Roger Williams Medical Center
+293,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100814,"Pasela, John J",,2019-03-21,Rhode Island Hospital,,1008142019-03-21Rhode Island Hospital
+294,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2001012,"Alvarez, Raquel ",,2019-03-23,Landmark Medical Center,,20010122019-03-23Landmark Medical Center
+295,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100541,"Santana, Grecia G",,2019-03-24,Rhode Island Hospital,,1005412019-03-24Rhode Island Hospital
+296,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2001025,"Poole, Chester A",,2019-03-30,Rhode Island Hospital,,20010252019-03-30Rhode Island Hospital
+297,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2000950,"Sicke, Rosemarie ",,2019-04-02,Kent County Memorial Hospital,,20009502019-04-02Kent County Memorial Hospital
+298,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2001012,"Alvarez, Raquel ",,2019-04-05,Landmark Medical Center,,20010122019-04-05Landmark Medical Center
+299,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100303,"Simmonds, Alejandro ",,2019-04-08,The Miriam Hospital,,1003032019-04-08The Miriam Hospital
+300,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100608,"Ward, Marie M",,2019-04-08,The Miriam Hospital,,1006082019-04-08The Miriam Hospital
+301,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100651,"Robidou, Charles  ""Charlie""",,2019-04-09,Kent County Memorial Hospital,,1006512019-04-09Kent County Memorial Hospital
+302,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100528,"Inirio, Ernestina ",,2019-04-12,Our Lady of Fatima Hospital,,1005282019-04-12Our Lady of Fatima Hospital
+303,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100828,"Stamp, Dale ",,2019-04-14,Roger Williams Medical Center,,1008282019-04-14Roger Williams Medical Center
+304,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000939,"Smith, Vincent C",,2019-04-17,The Miriam Hospital,,20009392019-04-17The Miriam Hospital
+305,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100528,"Inirio, Ernestina ",,2019-04-18,Roger Williams Medical Center,,1005282019-04-18Roger Williams Medical Center
+306,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100195,"Figueroa, Natividad ",,2019-04-19,Rhode Island Hospital,,1001952019-04-19Rhode Island Hospital
+307,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000939,"Smith, Vincent C",,2019-04-24,The Miriam Hospital,,20009392019-04-24The Miriam Hospital
+308,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100578,"Perry, Deborah M",,2019-05-01,The Miriam Hospital,,1005782019-05-01The Miriam Hospital
+309,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2001008,"Dade, Sania G",,2019-05-04,Rhode Island Hospital,,20010082019-05-04Rhode Island Hospital
+310,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100843,"Castillo, Noris M",,2019-05-05,Rhode Island Hospital,,1008432019-05-05Rhode Island Hospital
+311,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2001059,"Fonseca, Pedro M",,2019-05-07,The Miriam Hospital,,20010592019-05-07The Miriam Hospital
+312,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100635,"Readett, Jacklyn A",,2019-05-07,Roger Williams Medical Center,,1006352019-05-07Roger Williams Medical Center
+313,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100843,"Castillo, Noris M",,2019-05-10,Rhode Island Hospital,,1008432019-05-10Rhode Island Hospital
+314,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100856,"Keo, Kim H",,2019-05-14,Kent County Memorial Hospital,,1008562019-05-14Kent County Memorial Hospital
+315,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100620,"Burke, Madelyn ",,2019-05-15,The Miriam Hospital,,1006202019-05-15The Miriam Hospital
+316,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2001019,"Hogan, Greta ",,2019-05-15,Landmark Medical Center,,20010192019-05-15Landmark Medical Center
+317,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2001041,"Corkery, Anne K",,2019-05-18,The Miriam Hospital,,20010412019-05-18The Miriam Hospital
+318,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000832,"Nicoletti, Rose M",,2019-05-20,Rhode Island Hospital,,10008322019-05-20Rhode Island Hospital
+319,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2001036,"Rogers, Martha E",,2019-05-22,The Miriam Hospital,,20010362019-05-22The Miriam Hospital
+320,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100701,"Gonsalez, Efrain F",,2019-05-22,The Miriam Hospital,,1007012019-05-22The Miriam Hospital
+321,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,2001036,"Rogers, Martha E",,2019-05-26,Roger Williams Medical Center,,20010362019-05-26Roger Williams Medical Center
+322,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100745,"Ruiz-Jimenez, Maria A",,2019-05-27,Rhode Island Hospital,,1007452019-05-27Rhode Island Hospital
+323,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,1000839,"Cotto, Bernarda ",,2019-05-31,Rhode Island Hospital,,10008392019-05-31Rhode Island Hospital
+324,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,2000992,"Moyen, Chrissie E",,2019-06-01,Landmark Medical Center,,20009922019-06-01Landmark Medical Center
+325,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Woonsocket,1000826,"Quiroz, Emperatriz C",,2019-06-06,The Miriam Hospital,,10008262019-06-06The Miriam Hospital
+326,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Westerly,2001056,"Chattaway, Pamela M",,2019-06-07,Westerly Hospital ,,20010562019-06-07Westerly Hospital 
+327,1/1/2001 through 6/12/2019 (6737 days),DP33 - Emergency Room Episodes,Providence,100689,"Perez Batista, Rosa ",,2019-06-09,Rhode Island Hospital,,1006892019-06-09Rhode Island Hospital
