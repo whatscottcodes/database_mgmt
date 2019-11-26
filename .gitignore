@@ -1,8 +1,9 @@
-#folders
-data_raw/
-data_processed/
-output/
+﻿#folders
 data_archive/
+data_processed/
+data_raw/
+output/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
