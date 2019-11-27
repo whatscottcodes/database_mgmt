@@ -35,7 +35,9 @@ def process_alfs():
 
     alfs["member_id"] = alfs["participant_name"].apply(get_id)
 
-    if alfs.shape[0] != 0:
+    if (alfs.shape[0] != 0) & (
+        alfs["discharge_type"].isnull().sum() != alfs["discharge_type"].shape[0]
+    ):
         try:
             alfs[
                 ["discharge_type", "discharge_facility", "discharge_facility2"]

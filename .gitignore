@@ -4,6 +4,9 @@ data_processed/
 data_raw/
 output/
 
+#ignore log files
+**logs/**.txt
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -76,12 +76,14 @@ def create_table(
         "cat": "TEXT",
         "obj": "TEXT",
     }
+    df[ref_col] = df[ref_col].astype(int)
 
-    if (ref_table == "ppts") & (not agg_table):
+    if (ref_table[0] == "ppts") & (not agg_table):
         helper = Helpers(database_path)
         current_mem_ids = [
             tup[0] for tup in helper.fetchall_query("SELECT member_id FROM ppts", [])
         ]
+
         df = df[df.member_id.isin(current_mem_ids)].copy()
 
     conn.execute("PRAGMA foreign_keys = 1")
