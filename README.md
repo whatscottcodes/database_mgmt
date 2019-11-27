@@ -14,3 +14,6 @@ Requires that the paceutils package to be installed. Can be found at http://gith
 
 Read the Database Guide file in the docs folder. Update file_path.py, run create_database.py with files in proper places.
 
+## Future Consideration
+
+As the amount of data captured continues to grow, this database will need to be moved out of SQLite. Change should not be too difficult to make, thinking about MariaDB or MySQL.
