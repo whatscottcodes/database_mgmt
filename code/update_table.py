@@ -234,11 +234,12 @@ def update_table(table_name):
     Args:
         table_name(str): table to be updated
     """
-
     for filename in table_name_to_funcs[table_name]["filename"]:
         choose_file_to_get(table_name_to_funcs[table_name]["file_type"], filename)
+
     for process_func in table_name_to_funcs[table_name]["process"]:
         process_func()
+
     table_name_to_funcs[table_name]["to_sql"](update=True)
 
 
