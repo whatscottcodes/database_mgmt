@@ -40,7 +40,7 @@ def monthly_census_to_sql(update=True):
 
         if month_exists is None:
 
-            enrollment = pd.read_csv(f"{processed_data}\\enrollment.csv")
+            enrollment = pd.read_csv(f"{processed_data}\\enrollment_for_census.csv")
             enrollment = create_sql_dates(enrollment)
 
             most_recent_month = pd.read_sql(

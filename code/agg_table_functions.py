@@ -569,7 +569,7 @@ def create_team_utl_agg_table(
 
     utl_team = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
 
-    utl_team.drop(["none", "central", "east", "north", "south"], axis=1, inplace=True)
+    utl_team.drop(["none", "central", "east", "north", "south", "west"], axis=1, inplace=True)
 
     for col_title, func in utilization.items():
         dff = t.loop_plot_team_df(func, params, freq=freq, col_suffix=f"_{col_title}")
@@ -655,7 +655,7 @@ def create_team_info_agg_table(
     team_info_df = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
 
     team_info_df.drop(
-        ["none", "central", "east", "north", "south"], axis=1, inplace=True
+        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
     )
 
     for col_title, func in team_info.items():
@@ -732,7 +732,7 @@ def create_team_incidents_agg_table(
     incidents_team = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
 
     incidents_team.drop(
-        ["none", "central", "east", "north", "south"], axis=1, inplace=True
+        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
     )
 
     for col_title, func in incidents.items():
