@@ -569,8 +569,6 @@ def create_team_utl_agg_table(
 
     utl_team = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
 
-    utl_team.drop(["none", "central", "east", "north", "south", "west"], axis=1, inplace=True)
-
     for col_title, func in utilization.items():
         dff = t.loop_plot_team_df(func, params, freq=freq, col_suffix=f"_{col_title}")
         utl_team = utl_team.merge(dff, on="month", how="left")
@@ -585,6 +583,8 @@ def create_team_utl_agg_table(
                 col_suffix=f"_{utilization}{col_title}",
             )
             utl_team = utl_team.merge(dff, on="month", how="left")
+
+    utl_team.drop(["none", "central", "east", "north", "south", "west"], axis=1, inplace=True)
 
     utl_team.to_csv(f"{processed_data}\\utl_team.csv", index=False)
 
@@ -654,13 +654,13 @@ def create_team_info_agg_table(
     }
     team_info_df = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
 
-    team_info_df.drop(
-        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
-    )
-
     for col_title, func in team_info.items():
         dff = t.loop_plot_team_df(func, params, freq=freq, col_suffix=f"_{col_title}")
         team_info_df = team_info_df.merge(dff, on="month", how="left")
+
+    team_info_df.drop(
+        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
+    )
 
     team_info_df.to_csv(f"{processed_data}\\team_info_df.csv", index=False)
 
@@ -746,6 +746,10 @@ def create_team_incidents_agg_table(
             )
             incidents_team = incidents_team.merge(dff, on="month", how="left")
 
+    incidents_team.drop(
+        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
+    )
+    
     incidents_team.to_csv(f"{processed_data}\\incidents_team.csv", index=False)
 
     if freq == "QS":
