@@ -1,17 +1,29 @@
 import argparse
-from paceutils import (Enrollment, Demographics, Incidents, Utilization, Team, Helpers, CenterEnrollment, Quality)
+from paceutils import (
+    Enrollment,
+    Demographics,
+    Incidents,
+    Utilization,
+    Team,
+    Helpers,
+    CenterEnrollment,
+    Quality,
+)
 import pandas as pd
 import sqlite3
 from data_to_sql import sql_table_utils as stu
-from file_paths import processed_data, agg_db_path, daily_census_data, update_logs_folder
+from file_paths import (
+    processed_data,
+    agg_db_path,
+    daily_census_data,
+    update_logs_folder,
+)
 
-end_date = pd.to_datetime("today").strftime('%Y-%m-%d')
+end_date = pd.to_datetime("today").strftime("%Y-%m-%d")
+
 
 def create_enrollment_agg_table(
-    params=("2005-12-01", end_date),
-    db_path=agg_db_path,
-    freq="MS",
-    update=True,
+    params=("2005-12-01", end_date), db_path=agg_db_path, freq="MS", update=True
 ):
     """
     Create an aggregate table of enrollment values
@@ -35,13 +47,13 @@ def create_enrollment_agg_table(
             can be told the process is complete.
     """
     e = Enrollment()
-    
+
     if str(update).lower() == "true":
         params = (e.last_month()[0], e.month_to_date()[1])
         update = True
     else:
         update = False
-    
+
     enrollment_funcs = {
         "disenrolled": e.disenrolled,
         "voluntary_disenrolled": e.voluntary_disenrolled_percent,
@@ -51,7 +63,7 @@ def create_enrollment_agg_table(
         "avg_years_enrolled": e.avg_years_enrolled,
         "inquiries": e.inquiries,
         "avg_days_to_enrollment": e.avg_days_to_enrollment,
-        "conversion_rate_180_days": e.conversion_rate_180_days
+        "conversion_rate_180_days": e.conversion_rate_180_days,
     }
 
     enrollment_agg = e.loop_plot_df(e.census_on_end_date, params, freq=freq).rename(
@@ -87,7 +99,7 @@ def create_enrollment_agg_table(
     conn = sqlite3.connect(db_path)
 
     if update:
-        
+
         stu.update_sql_table(
             enrollment_agg, table_name, conn, ["month"], agg_table=True
         )
@@ -99,17 +111,15 @@ def create_enrollment_agg_table(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\enrollment_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\enrollment_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return enrollment_agg
 
 
 def create_demographic_agg_table(
-    params=("2005-12-01", end_date),
-    db_path=agg_db_path,
-    freq="MS",
-    update=True,
+    params=("2005-12-01", end_date), db_path=agg_db_path, freq="MS", update=True
 ):
     """
     Create an aggregate table of demographic values
@@ -133,7 +143,7 @@ def create_demographic_agg_table(
             can be told the process is complete.
     """
     d = Demographics()
-    
+
     if str(update).lower() == "true":
         params = (d.last_month()[0], d.month_to_date()[1])
         update = True
@@ -157,7 +167,7 @@ def create_demographic_agg_table(
         "percent_female": d.percent_female,
         "bh_dx_percent": d.behavorial_dx_percent,
         "six_chronic_conditions": d.over_six_chronic_conditions_percent,
-        "percent_attending_dc": d.percent_attending_dc
+        "percent_attending_dc": d.percent_attending_dc,
     }
 
     demo_agg = d.loop_plot_df(d.avg_age, params, freq=freq).rename(
@@ -189,7 +199,8 @@ def create_demographic_agg_table(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\demographic_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\demographic_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return demo_agg
@@ -312,17 +323,15 @@ def create_incidents_agg_tables(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\{incident_table}_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\{incident_table}_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return df
 
 
 def create_utilization_table(
-    params=("2017-07-01", end_date),
-    db_path=agg_db_path,
-    freq="MS",
-    update=True,
+    params=("2017-07-01", end_date), db_path=agg_db_path, freq="MS", update=True
 ):
     """
     Create an aggregate table of utilization values
@@ -371,15 +380,16 @@ def create_utilization_table(
     er_visit_func = {
         "er_visits_per_100MM": u.admissions_per_100MM,
         "er_visits": u.admissions_count,
-        }
-
-    nf_only_funcs = {"_per_100MM":u.ppts_in_utl_per_100MM,
-    "_percent" :u.ppts_in_utl_percent
     }
 
-    utl_agg = u.loop_plot_df(
-            u.er_to_inp_rate, params, freq=freq
-        ).rename(columns={"Month": "month", "Value": "er_to_inp_rate"})
+    nf_only_funcs = {
+        "_per_100MM": u.ppts_in_utl_per_100MM,
+        "_percent": u.ppts_in_utl_percent,
+    }
+
+    utl_agg = u.loop_plot_df(u.er_to_inp_rate, params, freq=freq).rename(
+        columns={"Month": "month", "Value": "er_to_inp_rate"}
+    )
 
     for col_title, func in utilization_func.items():
         for utilization in utilization_types:
@@ -391,7 +401,9 @@ def create_utilization_table(
     for utilization in ["acute", "psych", "er_only"]:
         dff = u.loop_plot_df(
             u.readmits_30day_rate, params, freq=freq, additional_func_args=[utilization]
-        ).rename(columns={"Month": "month", "Value": utilization + "_30_day_readmit_rate"})
+        ).rename(
+            columns={"Month": "month", "Value": utilization + "_30_day_readmit_rate"}
+        )
         utl_agg = utl_agg.merge(dff, on="month", how="left")
 
     for col_title, func in er_visit_func.items():
@@ -408,8 +420,8 @@ def create_utilization_table(
             utl_agg = utl_agg.merge(dff, on="month", how="left")
 
     dff = u.loop_plot_df(
-                u.percent_nf_discharged_to_higher_loc, params, freq=freq
-            ).rename(columns={"Month": "month", "Value": "nf_higher_loc_discharge_percent"})
+        u.percent_nf_discharged_to_higher_loc, params, freq=freq
+    ).rename(columns={"Month": "month", "Value": "nf_higher_loc_discharge_percent"})
     utl_agg = utl_agg.merge(dff, on="month", how="left")
 
     utl_agg.to_csv(f"{processed_data}\\utilization_agg.csv", index=False)
@@ -429,16 +441,15 @@ def create_utilization_table(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\utilization_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\utilization_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return utl_agg
 
+
 def create_quality_agg_table(
-    params=("2005-12-01", end_date),
-    db_path=agg_db_path,
-    freq="MS",
-    update=True,
+    params=("2005-12-01", end_date), db_path=agg_db_path, freq="MS", update=True
 ):
     """
     Create an aggregate table of quality values
@@ -476,8 +487,7 @@ def create_quality_agg_table(
         "no_hosp_admission_last_year": q.no_hosp_admission_last_year,
         "pneumo_rate": q.pneumo_rate,
         "influ_rate": q.influ_rate,
-        "avg_days_until_nf_admission": q.avg_days_until_nf_admission
-
+        "avg_days_until_nf_admission": q.avg_days_until_nf_admission,
     }
 
     quality_agg = q.loop_plot_df(q.mortality_rate, params, freq=freq).rename(
@@ -509,16 +519,15 @@ def create_quality_agg_table(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\quality_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\quality_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return quality_agg
 
+
 def create_team_utl_agg_table(
-    params=("2017-07-01", end_date),
-    db_path=agg_db_path,
-    freq="MS",
-    update=True,
+    params=("2017-07-01", end_date), db_path=agg_db_path, freq="MS", update=True
 ):
     """
     Create an aggregate table of team utilization values
@@ -564,7 +573,7 @@ def create_team_utl_agg_table(
         "percent_of_discharges_with_mortality_in_30": t.percent_of_discharges_with_mortality_in_30_by_team,
         "mortality_within_30_days_of_discharge": t.mortality_within_30days_of_discharge_rate_by_team,
         "no_hosp_admission_since_enrollment": t.no_hosp_admission_since_enrollment_by_team,
-        "er_only_visits": t.er_only_visits_by_team
+        "er_only_visits": t.er_only_visits_by_team,
     }
 
     utl_team = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
@@ -584,7 +593,9 @@ def create_team_utl_agg_table(
             )
             utl_team = utl_team.merge(dff, on="month", how="left")
 
-    utl_team.drop(["none", "central", "east", "north", "south", "west"], axis=1, inplace=True)
+    utl_team.drop(
+        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
+    )
 
     utl_team.to_csv(f"{processed_data}\\utl_team.csv", index=False)
 
@@ -604,17 +615,15 @@ def create_team_utl_agg_table(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\team_utilization_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\team_utilization_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return utl_team
 
 
 def create_team_info_agg_table(
-    params=("2017-07-01", end_date),
-    db_path=agg_db_path,
-    freq="MS",
-    update=True,
+    params=("2017-07-01", end_date), db_path=agg_db_path, freq="MS", update=True
 ):
     """
     Create an aggregate table of team information related values
@@ -680,17 +689,15 @@ def create_team_info_agg_table(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\team_info_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\team_info_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return team_info_df
 
 
 def create_team_incidents_agg_table(
-    params=("2017-07-01", end_date),
-    db_path=agg_db_path,
-    freq="MS",
-    update=True,
+    params=("2017-07-01", end_date), db_path=agg_db_path, freq="MS", update=True
 ):
     """
     Create an aggregate table of team incidents values
@@ -749,7 +756,7 @@ def create_team_incidents_agg_table(
     incidents_team.drop(
         ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
     )
-    
+
     incidents_team.to_csv(f"{processed_data}\\incidents_team.csv", index=False)
 
     if freq == "QS":
@@ -769,10 +776,12 @@ def create_team_incidents_agg_table(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\team_incidents_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\team_incidents_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return incidents_team
+
 
 def create_dc_attnd_table(params, freq):
     """
@@ -787,55 +796,78 @@ def create_dc_attnd_table(params, freq):
         DataFrame: dataframe with average or summed data columns for each center
 
     """
-    pvd_dc_attnd = pd.read_excel(daily_census_data, sheet_name="pvd", parse_dates=["date"])
-    woon_dc_attnd = pd.read_excel(daily_census_data, sheet_name="woon", parse_dates=["date"])
-    wes_dc_attnd = pd.read_excel(daily_census_data, sheet_name="wes", parse_dates=["date"])
+    pvd_dc_attnd = pd.read_excel(
+        daily_census_data, sheet_name="pvd", parse_dates=["date"]
+    )
+    woon_dc_attnd = pd.read_excel(
+        daily_census_data, sheet_name="woon", parse_dates=["date"]
+    )
+    wes_dc_attnd = pd.read_excel(
+        daily_census_data, sheet_name="wes", parse_dates=["date"]
+    )
 
-    pvd_dc_attnd = pvd_dc_attnd[(pvd_dc_attnd["date"] >= params[0]) &
-    (pvd_dc_attnd["date"] <= params[1])].copy()
-    woon_dc_attnd = woon_dc_attnd[(woon_dc_attnd["date"] >= params[0]) &
-    (woon_dc_attnd["date"] <= params[1])].copy()
-    wes_dc_attnd = wes_dc_attnd[(wes_dc_attnd["date"] >= params[0]) &
-    (wes_dc_attnd["date"] <= params[1])].copy()
+    pvd_dc_attnd = pvd_dc_attnd[
+        (pvd_dc_attnd["date"] >= params[0]) & (pvd_dc_attnd["date"] <= params[1])
+    ].copy()
+    woon_dc_attnd = woon_dc_attnd[
+        (woon_dc_attnd["date"] >= params[0]) & (woon_dc_attnd["date"] <= params[1])
+    ].copy()
+    wes_dc_attnd = wes_dc_attnd[
+        (wes_dc_attnd["date"] >= params[0]) & (wes_dc_attnd["date"] <= params[1])
+    ].copy()
 
     if freq == "QS":
         month_move = 3
     else:
         month_move = 1
 
-    pvd_dc_attnd["month"] = (pvd_dc_attnd["date"] - 
-    pd.offsets.MonthBegin(month_move)).dt.strftime("%Y-%m-%d")
-    woon_dc_attnd["month"] = (woon_dc_attnd["date"] - 
-    pd.offsets.MonthBegin(month_move)).dt.strftime("%Y-%m-%d")
-    wes_dc_attnd["month"] = (wes_dc_attnd["date"] - 
-    pd.offsets.MonthBegin(month_move)).dt.strftime("%Y-%m-%d")
+    pvd_dc_attnd["month"] = (
+        pvd_dc_attnd["date"] - pd.offsets.MonthBegin(month_move)
+    ).dt.strftime("%Y-%m-%d")
+    woon_dc_attnd["month"] = (
+        woon_dc_attnd["date"] - pd.offsets.MonthBegin(month_move)
+    ).dt.strftime("%Y-%m-%d")
+    wes_dc_attnd["month"] = (
+        wes_dc_attnd["date"] - pd.offsets.MonthBegin(month_move)
+    ).dt.strftime("%Y-%m-%d")
 
     pvd_dc_attnd.drop("date", axis=1, inplace=True)
     woon_dc_attnd.drop("date", axis=1, inplace=True)
     wes_dc_attnd.drop("date", axis=1, inplace=True)
 
-    pvd_dc_attnd["pace_cancelation_rate"] = pvd_dc_attnd["p_cancelled"] / pvd_dc_attnd["p_scheduled"]
-    woon_dc_attnd["pace_cancelation_rate"] = woon_dc_attnd["p_cancelled"] / woon_dc_attnd["p_scheduled"]
-    wes_dc_attnd["pace_cancelation_rate"] = wes_dc_attnd["p_cancelled"] / wes_dc_attnd["p_scheduled"]
+    pvd_dc_attnd["pace_cancelation_rate"] = (
+        pvd_dc_attnd["p_cancelled"] / pvd_dc_attnd["p_scheduled"]
+    )
+    woon_dc_attnd["pace_cancelation_rate"] = (
+        woon_dc_attnd["p_cancelled"] / woon_dc_attnd["p_scheduled"]
+    )
+    wes_dc_attnd["pace_cancelation_rate"] = (
+        wes_dc_attnd["p_cancelled"] / wes_dc_attnd["p_scheduled"]
+    )
 
-    pvd_dc_attnd.columns = [f"pvd_{col}" if col!= "month" else col for col in pvd_dc_attnd.columns]
-    woon_dc_attnd.columns = [f"woon_{col}" if col!= "month" else col for col in woon_dc_attnd.columns]
-    wes_dc_attnd.columns = [f"wes_{col}" if col!= "month" else col for col in wes_dc_attnd.columns]
+    pvd_dc_attnd.columns = [
+        f"pvd_{col}" if col != "month" else col for col in pvd_dc_attnd.columns
+    ]
+    woon_dc_attnd.columns = [
+        f"woon_{col}" if col != "month" else col for col in woon_dc_attnd.columns
+    ]
+    wes_dc_attnd.columns = [
+        f"wes_{col}" if col != "month" else col for col in wes_dc_attnd.columns
+    ]
 
     pvd_group = pvd_dc_attnd.groupby("month").mean().reset_index()
     woon_group = woon_dc_attnd.groupby("month").mean().reset_index()
     wes_group = wes_dc_attnd.groupby("month").mean().reset_index()
 
-    all_centers = pvd_group.merge(woon_group, on="month",
-                              how="left").merge(wes_group, on="month", how="left")
+    all_centers = pvd_group.merge(woon_group, on="month", how="left").merge(
+        wes_group, on="month", how="left"
+    )
 
     return all_centers
 
+
 def create_center_agg_table(
-    params=("2005-12-01", end_date),
-    db_path=agg_db_path,
-    freq="MS",
-    update=True,
+    params=("2005-12-01", end_date), db_path=agg_db_path, freq="MS", update=True
 ):
     """
     Create an aggregate table of center related enrollment values
@@ -873,28 +905,25 @@ def create_center_agg_table(
         "_deaths": ce.deaths,
     }
 
-    center_shorthand_dict = {"Providence": "pvd", "Woonsocket":"woon", "Westerly":"wes"}
+    center_shorthand_dict = {
+        "Providence": "pvd",
+        "Woonsocket": "woon",
+        "Westerly": "wes",
+    }
 
-    enrollment_agg = ce.loop_plot_df(ce.census_on_end_date, 
-    params, 
-    freq=freq, 
-    additional_func_args=["Providence"]).rename(
-        columns={"Month": "month", "Value": "pvd_census"}
-    )
+    enrollment_agg = ce.loop_plot_df(
+        ce.census_on_end_date, params, freq=freq, additional_func_args=["Providence"]
+    ).rename(columns={"Month": "month", "Value": "pvd_census"})
 
-    dff = ce.loop_plot_df(ce.census_on_end_date,
-    params,
-    freq=freq,
-    additional_func_args=["Woonsocket"]).rename(
-        columns={"Month": "month", "Value": "woon_census"})
+    dff = ce.loop_plot_df(
+        ce.census_on_end_date, params, freq=freq, additional_func_args=["Woonsocket"]
+    ).rename(columns={"Month": "month", "Value": "woon_census"})
 
     enrollment_agg = enrollment_agg.merge(dff, on="month", how="left")
 
-    dff = ce.loop_plot_df(ce.census_on_end_date,
-    params,
-    freq=freq,
-    additional_func_args=["Westerly"]).rename(
-        columns={"Month": "month", "Value": "wes_census"})
+    dff = ce.loop_plot_df(
+        ce.census_on_end_date, params, freq=freq, additional_func_args=["Westerly"]
+    ).rename(columns={"Month": "month", "Value": "wes_census"})
 
     enrollment_agg = enrollment_agg.merge(dff, on="month", how="left")
 
@@ -927,10 +956,12 @@ def create_center_agg_table(
     conn.close()
 
     open(
-        f"{update_logs_folder}\\center_agg{str(pd.to_datetime('today').date())}.txt", "a"
+        f"{update_logs_folder}\\center_agg{str(pd.to_datetime('today').date())}.txt",
+        "a",
     ).close()
 
     return enrollment_agg
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -952,7 +983,6 @@ if __name__ == "__main__":
     create_incidents_agg_tables(incident_table="wounds", **vars(arguments))
     create_incidents_agg_tables(incident_table="burns", **vars(arguments))
 
-
     create_utilization_table(**vars(arguments))
     create_quality_agg_table(**vars(arguments))
 
@@ -965,8 +995,12 @@ if __name__ == "__main__":
     create_demographic_agg_table(freq="QS", **vars(arguments))
 
     create_incidents_agg_tables(freq="QS", incident_table="falls", **vars(arguments))
-    create_incidents_agg_tables(freq="QS", incident_table="infections", **vars(arguments))
-    create_incidents_agg_tables(freq="QS", incident_table="med_errors", **vars(arguments))
+    create_incidents_agg_tables(
+        freq="QS", incident_table="infections", **vars(arguments)
+    )
+    create_incidents_agg_tables(
+        freq="QS", incident_table="med_errors", **vars(arguments)
+    )
     create_incidents_agg_tables(freq="QS", incident_table="wounds", **vars(arguments))
     create_incidents_agg_tables(freq="QS", incident_table="burns", **vars(arguments))
 
@@ -977,5 +1011,5 @@ if __name__ == "__main__":
     create_team_info_agg_table(freq="QS", **vars(arguments))
     create_team_incidents_agg_table(freq="QS", **vars(arguments))
     create_center_agg_table(freq="QS", **vars(arguments))
-    
+
     print("Complete")
