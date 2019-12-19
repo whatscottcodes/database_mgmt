@@ -277,7 +277,7 @@ def update_sql_table(df, table_name, conn, primary_key, agg_table=False):
         UPDATE teams
         SET end_date = {as_of_date}
         WHERE teams.member_id IN (SELECT member_id FROM temp)
-        AND teams.start_date < {as_of_date};  
+        AND teams.start_date < {as_of_date};
         """
         )
         c.execute(
