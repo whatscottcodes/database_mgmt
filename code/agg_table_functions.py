@@ -49,8 +49,12 @@ def create_enrollment_agg_table(
     e = Enrollment()
 
     if str(update).lower() == "true":
-        params = (e.last_month()[0], e.month_to_date()[1])
-        update = True
+        if freq == "MS":
+            params = (e.last_month()[0], e.month_to_date()[1])
+            update = True
+        else:
+            params = (e.last_quarter()[0], e.month_to_date()[1])
+            update = True
     else:
         update = False
 
@@ -145,10 +149,12 @@ def create_demographic_agg_table(
     d = Demographics()
 
     if str(update).lower() == "true":
-        params = (d.last_month()[0], d.month_to_date()[1])
-        update = True
-    else:
-        update = False
+        if freq == "MS":
+            params = (d.last_month()[0], d.month_to_date()[1])
+            update = True
+        else:
+            params = (d.last_quarter()[0], d.month_to_date()[1])
+            update = True
 
     demographic_func = {
         "dual_enrolled": d.dual_count,
@@ -238,10 +244,12 @@ def create_incidents_agg_tables(
     i = Incidents()
 
     if str(update).lower() == "true":
-        params = (i.last_month()[0], i.month_to_date()[1])
-        update = True
-    else:
-        update = False
+        if freq == "MS":
+            params = (i.last_month()[0], i.month_to_date()[1])
+            update = True
+        else:
+            params = (i.last_quarter()[0], i.month_to_date()[1])
+            update = True
 
     incidents_func = {
         "total": i.total_incidents,
@@ -357,10 +365,12 @@ def create_utilization_table(
     u = Utilization()
 
     if str(update).lower() == "true":
-        params = (u.last_month()[0], u.month_to_date()[1])
-        update = True
-    else:
-        update = False
+        if freq == "MS":
+            params = (u.last_month()[0], u.month_to_date()[1])
+            update = True
+        else:
+            params = (u.last_quarter()[0], u.month_to_date()[1])
+            update = True
 
     utilization_types = ["acute", "psych", "skilled", "respite", "custodial"]
 
@@ -475,10 +485,12 @@ def create_quality_agg_table(
     q = Quality()
 
     if str(update).lower() == "true":
-        params = (q.last_month()[0], q.month_to_date()[1])
-        update = True
-    else:
-        update = False
+        if freq == "MS":
+            params = (q.last_month()[0], q.month_to_date()[1])
+            update = True
+        else:
+            params = (q.last_quarter()[0], q.month_to_date()[1])
+            update = True
 
     quality_func = {
         "mortality_within_30_days_of_discharge": q.mortality_within_30days_of_discharge_rate,
@@ -553,10 +565,12 @@ def create_team_utl_agg_table(
     t = Team()
 
     if str(update).lower() == "true":
-        params = (t.last_month()[0], t.month_to_date()[1])
-        update = True
-    else:
-        update = False
+        if freq == "MS":
+            params = (t.last_month()[0], t.month_to_date()[1])
+            update = True
+        else:
+            params = (t.last_quarter()[0], t.month_to_date()[1])
+            update = True
 
     utilization_types = ["acute", "psych", "skilled", "respite", "custodial"]
 
@@ -577,6 +591,10 @@ def create_team_utl_agg_table(
     }
 
     utl_team = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
+    
+    utl_team.drop(
+        [col for col in utl_team.columns if col != "month"], axis=1, inplace=True
+    )
 
     for col_title, func in utilization.items():
         dff = t.loop_plot_team_df(func, params, freq=freq, col_suffix=f"_{col_title}")
@@ -593,9 +611,6 @@ def create_team_utl_agg_table(
             )
             utl_team = utl_team.merge(dff, on="month", how="left")
 
-    utl_team.drop(
-        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
-    )
 
     utl_team.to_csv(f"{processed_data}\\utl_team.csv", index=False)
 
@@ -649,10 +664,12 @@ def create_team_info_agg_table(
     t = Team()
 
     if str(update).lower() == "true":
-        params = (t.last_month()[0], t.month_to_date()[1])
-        update = True
-    else:
-        update = False
+        if freq == "MS":
+            params = (t.last_month()[0], t.month_to_date()[1])
+            update = True
+        else:
+            params = (t.last_quarter()[0], t.month_to_date()[1])
+            update = True
 
     team_info = {
         "avg_age": t.avg_age_by_team,
@@ -662,14 +679,14 @@ def create_team_info_agg_table(
         "mortality": t.mortality_by_team,
     }
     team_info_df = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
+    
+    team_info_df.drop(
+        [col for col in team_info_df.columns if col != "month"], axis=1, inplace=True
+    )
 
     for col_title, func in team_info.items():
         dff = t.loop_plot_team_df(func, params, freq=freq, col_suffix=f"_{col_title}")
         team_info_df = team_info_df.merge(dff, on="month", how="left")
-
-    team_info_df.drop(
-        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
-    )
 
     team_info_df.to_csv(f"{processed_data}\\team_info_df.csv", index=False)
 
@@ -723,10 +740,12 @@ def create_team_incidents_agg_table(
     t = Team()
 
     if str(update).lower() == "true":
-        params = (t.last_month()[0], t.month_to_date()[1])
-        update = True
-    else:
-        update = False
+        if freq == "MS":
+            params = (t.last_month()[0], t.month_to_date()[1])
+            update = True
+        else:
+            params = (t.last_quarter()[0], t.month_to_date()[1])
+            update = True
 
     incident_types = ["burns", "falls", "infections", "med_errors", "wounds"]
 
@@ -739,7 +758,7 @@ def create_team_incidents_agg_table(
     incidents_team = t.loop_plot_team_df(t.ppts_on_team, params, freq=freq)
 
     incidents_team.drop(
-        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
+        [col for col in incidents_team.columns if col != "month"], axis=1, inplace=True
     )
 
     for col_title, func in incidents.items():
@@ -752,10 +771,6 @@ def create_team_incidents_agg_table(
                 col_suffix=f"_{incident}{col_title}",
             )
             incidents_team = incidents_team.merge(dff, on="month", how="left")
-
-    incidents_team.drop(
-        ["none", "central", "east", "north", "south", "west"], axis=1, inplace=True
-    )
 
     incidents_team.to_csv(f"{processed_data}\\incidents_team.csv", index=False)
 
@@ -893,10 +908,12 @@ def create_center_agg_table(
     ce = CenterEnrollment()
 
     if str(update).lower() == "true":
-        params = (ce.last_month()[0], ce.month_to_date()[1])
-        update = True
-    else:
-        update = False
+        if freq == "MS":
+            params = (ce.last_month()[0], ce.month_to_date()[1])
+            update = True
+        else:
+            params = (ce.last_quarter()[0], ce.month_to_date()[1])
+            update = True
 
     enrollment_funcs = {
         "_disenrolled": ce.disenrolled,

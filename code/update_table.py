@@ -158,8 +158,15 @@ table_name_to_funcs = {
     },
     "inpatient": {
         "file_type": "csv",
-        "filename": ["ServiceUtilizationInpatient", "ServiceUtilizationEmergency_IP"],
-        "process": [process_inpatient.process_inpatient],
+        "filename": [
+            "ParticipantEnrollmentDisenrollmentDetail",
+            "ServiceUtilizationInpatient",
+            "ServiceUtilizationEmergency_IP",
+        ],
+        "process": [
+            process_enrollment.process_enrollment,
+            process_inpatient.process_inpatient,
+        ],
         "to_sql": inpatient_to_sql.inpatient_to_sql,
     },
     "med_errors": {

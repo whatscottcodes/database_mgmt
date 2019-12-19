@@ -321,6 +321,7 @@ def discharge_admit_diff(df, table_name="", update=True, admit_diff=False):
             on=["member_id", "admission_date"],
             how="left",
         )
+        dff.sort_values("days_since_last_admission", ascending=False, inplace=True)
         # added 6-18 // see note above
         dff.drop_duplicates(
             subset=[col for col in dff.columns if col != "days_since_last_admission"],

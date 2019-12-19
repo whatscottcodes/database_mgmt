@@ -241,6 +241,7 @@ def update_sql_table(df, table_name, conn, primary_key, agg_table=False):
         WHERE EXISTS {exists_sql};
         """
     )
+
     conn.commit()
     # inserts new data if there is a primary key in the pandas df
     # that is not in the sql table
