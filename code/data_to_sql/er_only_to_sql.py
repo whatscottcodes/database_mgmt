@@ -36,10 +36,6 @@ def er_only_to_sql(update=True):
 
     if update is True:
         c = conn.cursor()
-        c.execute(
-            f"DELETE FROM er_only WHERE admission_date >= ?",
-            [str((pd.to_datetime("today") - pd.DateOffset(months=3)).date())],
-        )
 
         update_sql_table(er_only, "er_only", conn, primary_key)
 

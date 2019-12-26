@@ -39,10 +39,6 @@ def inpatient_to_sql(update=True):
 
     if update is True:
         c = conn.cursor()
-        c.execute(
-            f"DELETE FROM inpatient WHERE (discharge_date >= ? OR discharge_date IS NULL)",
-            [str((pd.to_datetime("today") - pd.DateOffset(months=3)).date())],
-        )
 
         update_sql_table(acute, "inpatient", conn, primary_key)
 
