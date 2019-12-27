@@ -3,6 +3,7 @@ data_archive/
 data_processed/
 data_raw/
 output/
+.vscode/
 
 #ignore log files
 **logs/**.txt
