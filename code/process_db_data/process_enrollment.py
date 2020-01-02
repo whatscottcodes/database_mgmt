@@ -114,10 +114,10 @@ def process_enrollment(update=True):
             SELECT member_id
             FROM centers_temp)
             """
-        conn.execute(q, (as_of_date))
+        conn.execute(update_q, (as_of_date,))
         conn.commit()
 
-        c.execute(f"DROP TABLE IF EXISTS centers_temp")
+        conn.execute(f"DROP TABLE IF EXISTS centers_temp")
 
         conn.commit()
         conn.close()

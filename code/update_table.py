@@ -122,15 +122,9 @@ table_name_to_funcs = {
     },
     "enrollment": {
         "file_type": "csv",
-        "filename": [
-            "ParticipantEnrollmentDisenrollmentDetail",
-            "ParticipantQuickList",
-        ],
-        "process": [
-            process_quick_list.process_quick_list,
-            process_enrollment.process_enrollment,
-        ],
-        "to_sql": enrollment_to_sql.enrollment_to_sql,
+        "filename": ["ParticipantEnrollmentDisenrollmentDetail"],
+        "process": [process_enrollment.process_enrollment],
+        "to_sql": [ppts_to_sql.ppts_to_sql, enrollment_to_sql.enrollment_to_sql],
     },
     "er_only": {
         "file_type": "csv",
@@ -207,14 +201,8 @@ table_name_to_funcs = {
     },
     "ppts": {
         "file_type": "csv",
-        "filename": [
-            "ParticipantEnrollmentDisenrollmentDetail",
-            "ParticipantQuickList",
-        ],
-        "process": [
-            process_quick_list.process_quick_list,
-            process_enrollment.process_enrollment,
-        ],
+        "filename": ["ParticipantEnrollmentDisenrollmentDetail"],
+        "process": [process_enrollment.process_enrollment],
         "to_sql": ppts_to_sql.ppts_to_sql,
     },
     "referrals": {
@@ -246,8 +234,8 @@ def update_table(table_name):
 
     for process_func in table_name_to_funcs[table_name]["process"]:
         process_func()
-
-    table_name_to_funcs[table_name]["to_sql"](update=True)
+    for to_sql_func in table_name_to_funcs[table_name]["to_sql"]:
+        to_sql_func(update=True)
 
 
 if __name__ == "__main__":

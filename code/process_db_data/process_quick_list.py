@@ -78,10 +78,10 @@ def process_quick_list(update=True):
             FROM team_temp)
             """
 
-        conn.execute(q, (as_of_date))
+        conn.execute(update_q, (as_of_date,))
         conn.commit()
 
-        c.execute(f"DROP TABLE IF EXISTS team_temp")
+        conn.execute(f"DROP TABLE IF EXISTS team_temp")
 
         conn.commit()
         conn.close()
