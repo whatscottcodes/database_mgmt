@@ -81,30 +81,49 @@ def process_enrollment(update=True):
     ppts = enrollment[["member_id", "last", "first"]].copy()
 
     if update:
+        from paceutils import Helpers
+
         centers = enrollment[["member_id", "center"]].copy()
+
+        helpers = Helpers(database_path)
         conn = sqlite3.connect(database_path)
 
-        centers.to_sql("center_temp", conn, index=False, if_exists="replace")
+        centers.to_sql("centers_temp", conn, index=False, if_exists="replace")
 
-        c = conn.cursor()
+        keep_new_only_q = """
+            SELECT * from centers_temp
+            WHERE member_id NOT IN (
+            SELECT centers_temp.member_id
+            FROM centers_temp
+            JOIN centers
+            ON centers_temp.member_id=centers.member_id
+            AND centers_temp.center=centers.center
+            )
+            """
 
-        drop_member_ids = [
-            tup[0]
-            for tup in c.execute(
-                """SELECT center_temp.member_id FROM center_temp
-        INNER JOIN centers ON center_temp.member_id=centers.member_id
-        WHERE center_temp.center = centers.center
-        AND end_date IS NULL"""
-            ).fetchall()
-        ]
+        centers = helpers.dataframe_query(keep_new_only_q)
 
-        centers = centers[-centers["member_id"].isin(pd.Series(drop_member_ids))].copy()
+        centers.to_sql("centers_temp", conn, index=False, if_exists="replace")
 
-        c.execute(f"DROP TABLE IF EXISTS center_temp")
-        centers["start_date"] = pd.to_datetime("today").date()
-        centers["end_date"] = pd.np.nan
+        as_of_date = str(pd.to_datetime("today").date())
 
+        update_q = """
+            UPDATE centers
+            SET end_date = ?
+            WHERE member_id IN (
+            SELECT member_id
+            FROM centers_temp)
+            """
+        conn.execute(q, (as_of_date))
+        conn.commit()
+
+        c.execute(f"DROP TABLE IF EXISTS centers_temp")
+
+        conn.commit()
         conn.close()
+
+        centers["start_date"] = as_of_date
+        centers["end_date"] = pd.np.nan
     else:
         centers = enrollment[["member_id", "center", "enrollment_date"]].copy()
         centers.rename(columns={"enrollment_date", "start_date"}, inplace=True)

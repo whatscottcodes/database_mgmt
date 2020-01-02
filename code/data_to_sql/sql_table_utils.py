@@ -272,12 +272,20 @@ def update_sql_table(df, table_name, conn, primary_key, agg_table=False):
 
     if table_name == "teams":
         as_of_date = df["start_date"].unique()[0]
+        print(
+            Helpers().dataframe_query(
+                f"""SELECT * FROM teams
+        WHERE teams.member_id IN (SELECT member_id from temp)
+        AND teams.start_date <= {as_of_date}"""
+            )
+        )
         c.execute(
             f"""
         UPDATE teams
         SET end_date = {as_of_date}
         WHERE teams.member_id IN (SELECT member_id FROM temp)
-        AND teams.start_date < {as_of_date};
+        AND teams.start_date < {as_of_date}
+        AND teams.end_date IS NULL;
         """
         )
         c.execute(

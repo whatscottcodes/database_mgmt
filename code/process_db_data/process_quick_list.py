@@ -46,26 +46,47 @@ def process_quick_list(update=True):
     team_df["member_id"] = team_df["member_id"].astype(int)
 
     if update:
+        from paceutils import Helpers
+
+        helpers = Helpers(database_path)
         conn = sqlite3.connect(database_path)
+
         team_df.to_sql("team_temp", conn, index=False, if_exists="replace")
 
-        c = conn.cursor()
+        keep_new_only_q = """
+            SELECT * from team_temp
+            WHERE member_id NOT IN (
+            SELECT team_temp.member_id
+            FROM team_temp
+            JOIN teams
+            ON team_temp.member_id=teams.member_id
+            AND team_temp.team=teams.team
+            )
+            """
 
-        drop_member_ids = [
-            tup[0]
-            for tup in c.execute(
-                """SELECT team_temp.member_id FROM team_temp
-        INNER JOIN teams ON team_temp.member_id=teams.member_id
-        WHERE team_temp.team = teams.team
-        AND end_date IS NULL"""
-            ).fetchall()
-        ]
-        team_df = team_df[-team_df["member_id"].isin(pd.Series(drop_member_ids))].copy()
+        team_df = helpers.dataframe_query(keep_new_only_q)
+
+        team_df.to_sql("team_temp", conn, index=False, if_exists="replace")
+
+        as_of_date = str(pd.to_datetime("today").date())
+
+        update_q = """
+            UPDATE teams
+            SET end_date = ?
+            WHERE member_id IN (
+            SELECT member_id
+            FROM team_temp)
+            """
+
+        conn.execute(q, (as_of_date))
+        conn.commit()
 
         c.execute(f"DROP TABLE IF EXISTS team_temp")
 
+        conn.commit()
         conn.close()
-        team_df["start_date"] = pd.to_datetime("today").date()
+
+        team_df["start_date"] = as_of_date
         team_df["end_date"] = pd.np.nan
 
     else:
