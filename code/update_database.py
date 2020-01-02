@@ -1165,20 +1165,24 @@ class CleanArchive(luigi.Task):
     last_months_folder = [
         folder_date
         for folder_date in folder_dates
-        if pd.to_datetime(folder_date).month == pd.to_datetime("today").month - 1
+        if pd.to_datetime(folder_date).month == (pd.to_datetime("today")- pd.DateOffset(months = 1)).month
     ]
+
+    complete_flag = False
 
     def requires(self):
         return ArchiveData()
 
     def complete(self):
-        return len(self.last_months_folder) == 1
+        return self.complete_flag
 
     def run(self):
         if len(self.last_months_folder) > 1:
             self.last_months_folder.sort()
             for folder_date in self.last_months_folder[:-1]:
                 os.remove(f"{archive_data}\\{folder_date}_update.zip")
+        else:
+            self.complete_flag = True
 
 class UpdateDatabasePipeline(luigi.Task):
     def requires(self):
