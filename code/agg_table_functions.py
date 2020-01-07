@@ -155,6 +155,8 @@ def create_demographic_agg_table(
         else:
             params = (d.last_quarter()[0], d.month_to_date()[1])
             update = True
+    else:
+        update=False
 
     demographic_func = {
         "dual_enrolled": d.dual_count,
@@ -250,6 +252,8 @@ def create_incidents_agg_tables(
         else:
             params = (i.last_quarter()[0], i.month_to_date()[1])
             update = True
+    else:
+        update=False
 
     incidents_func = {
         "total": i.total_incidents,
@@ -371,6 +375,8 @@ def create_utilization_table(
         else:
             params = (u.last_quarter()[0], u.month_to_date()[1])
             update = True
+    else:
+        update=False
 
     utilization_types = ["acute", "psych", "skilled", "respite", "custodial"]
 
@@ -491,6 +497,8 @@ def create_quality_agg_table(
         else:
             params = (q.last_quarter()[0], q.month_to_date()[1])
             update = True
+    else:
+        update=False
 
     quality_func = {
         "mortality_within_30_days_of_discharge": q.mortality_within_30days_of_discharge_rate,
@@ -571,6 +579,8 @@ def create_team_utl_agg_table(
         else:
             params = (t.last_quarter()[0], t.month_to_date()[1])
             update = True
+    else:
+        update=False
 
     utilization_types = ["acute", "psych", "skilled", "respite", "custodial"]
 
@@ -670,6 +680,8 @@ def create_team_info_agg_table(
         else:
             params = (t.last_quarter()[0], t.month_to_date()[1])
             update = True
+    else:
+        update=False
 
     team_info = {
         "avg_age": t.avg_age_by_team,
@@ -746,6 +758,8 @@ def create_team_incidents_agg_table(
         else:
             params = (t.last_quarter()[0], t.month_to_date()[1])
             update = True
+    else:
+        update=False
 
     incident_types = ["burns", "falls", "infections", "med_errors", "wounds"]
 
@@ -820,17 +834,19 @@ def create_dc_attnd_table(params, freq):
     wes_dc_attnd = pd.read_excel(
         daily_census_data, sheet_name="wes", parse_dates=["date"]
     )
+    start = pd.to_datetime(params[0])
+    end = pd.to_datetime(params[1])
 
     pvd_dc_attnd = pvd_dc_attnd[
-        (pvd_dc_attnd["date"] >= params[0]) & (pvd_dc_attnd["date"] <= params[1])
+        (pvd_dc_attnd["date"] >= start) & (pvd_dc_attnd["date"] <= end)
     ].copy()
     woon_dc_attnd = woon_dc_attnd[
-        (woon_dc_attnd["date"] >= params[0]) & (woon_dc_attnd["date"] <= params[1])
+        (woon_dc_attnd["date"] >= start) & (woon_dc_attnd["date"] <= end)
     ].copy()
     wes_dc_attnd = wes_dc_attnd[
-        (wes_dc_attnd["date"] >= params[0]) & (wes_dc_attnd["date"] <= params[1])
+        (wes_dc_attnd["date"] >= start) & (wes_dc_attnd["date"] <= end)
     ].copy()
-
+    
     if freq == "QS":
         month_move = 3
     else:
@@ -845,7 +861,8 @@ def create_dc_attnd_table(params, freq):
     wes_dc_attnd["month"] = (
         wes_dc_attnd["date"] - pd.offsets.MonthBegin(month_move)
     ).dt.strftime("%Y-%m-%d")
-
+    print(woon_dc_attnd[["date","month"]])
+    
     pvd_dc_attnd.drop("date", axis=1, inplace=True)
     woon_dc_attnd.drop("date", axis=1, inplace=True)
     wes_dc_attnd.drop("date", axis=1, inplace=True)
@@ -869,15 +886,14 @@ def create_dc_attnd_table(params, freq):
     wes_dc_attnd.columns = [
         f"wes_{col}" if col != "month" else col for col in wes_dc_attnd.columns
     ]
-
+    
     pvd_group = pvd_dc_attnd.groupby("month").mean().reset_index()
     woon_group = woon_dc_attnd.groupby("month").mean().reset_index()
     wes_group = wes_dc_attnd.groupby("month").mean().reset_index()
-
+    
     all_centers = pvd_group.merge(woon_group, on="month", how="left").merge(
         wes_group, on="month", how="left"
     )
-
     return all_centers
 
 
@@ -914,6 +930,8 @@ def create_center_agg_table(
         else:
             params = (ce.last_quarter()[0], ce.month_to_date()[1])
             update = True
+    else:
+        update = False
 
     enrollment_funcs = {
         "_disenrolled": ce.disenrolled,
