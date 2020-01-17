@@ -251,7 +251,7 @@ def update_sql_table(df, table_name, conn, primary_key, agg_table=False):
 
     c.execute(
         f"""
-        INSERT OR REPLACE INTO {table_name} ({insert_cols})
+        INSERT INTO {table_name} ({insert_cols})
         SELECT {insert_cols} FROM temp t
         WHERE NOT EXISTS
             (SELECT {insert_cols} from {table_name} f

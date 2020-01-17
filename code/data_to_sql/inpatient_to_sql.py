@@ -40,7 +40,10 @@ def inpatient_to_sql(update=True):
     if update is True:
         c = conn.cursor()
 
-        update_sql_table(acute, "inpatient", conn, primary_key)
+        c.execute(f"DROP TABLE IF EXISTS inpatient")
+        create_table(
+            acute, "inpatient", conn, primary_key, foreign_key, ref_table, ref_col
+        )
 
         print("inpatient updated...")
 

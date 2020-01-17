@@ -37,7 +37,10 @@ def er_only_to_sql(update=True):
     if update is True:
         c = conn.cursor()
 
-        update_sql_table(er_only, "er_only", conn, primary_key)
+        c.execute(f"DROP TABLE IF EXISTS er_only")
+        create_table(
+            er_only, "er_only", conn, primary_key, foreign_key, ref_table, ref_col
+        )
 
         print("er_only updated...")
 
