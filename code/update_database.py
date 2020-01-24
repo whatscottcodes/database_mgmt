@@ -840,8 +840,6 @@ class DemographicAgg(luigi.Task):
     def requires(self):
         return [EnrollmentToSQL(),
         DxToSQL(),
-        ClaimsDetailsToSQL(),
-        AdmitClaimsToSQL(),
         DemographicsToSQL(),
         CensusToSQL()]
     
@@ -978,8 +976,6 @@ class QualityAgg(luigi.Task):
     def requires(self):
         return [EnrollmentToSQL(),
         CensusToSQL(),
-        ClaimsDetailsToSQL(),
-        AdmitClaimsToSQL(),
         DxToSQL(),
         InpatientToSQL(),
         EROnlyToSQL(),
@@ -1022,8 +1018,6 @@ class TeamInfoAgg(luigi.Task):
     def requires(self):
         return [EnrollmentToSQL(),
         CensusToSQL(),
-        ClaimsDetailsToSQL(),
-        AdmitClaimsToSQL(),
         DxToSQL(),
         InpatientToSQL(),
         EROnlyToSQL(),
@@ -1044,8 +1038,6 @@ class TeamIncidentsAgg(luigi.Task):
     def requires(self):
         return [EnrollmentToSQL(),
         CensusToSQL(),
-        ClaimsDetailsToSQL(),
-        AdmitClaimsToSQL(),
         DxToSQL(),
         InpatientToSQL(),
         EROnlyToSQL(),
@@ -1071,8 +1063,6 @@ class CenterAgg(luigi.Task):
     def requires(self):
         return [EnrollmentToSQL(),
         CensusToSQL(),
-        ClaimsDetailsToSQL(),
-        AdmitClaimsToSQL(),
         DxToSQL(),
         InpatientToSQL(),
         EROnlyToSQL(),

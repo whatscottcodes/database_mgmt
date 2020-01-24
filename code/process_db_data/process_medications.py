@@ -146,6 +146,8 @@ def process_medications():
         == 0
     )
     assert final_df[(final_df["start_date"].isnull())].shape[0] == 0
+    final_df = final_df.sort_values("discontinue_date")
+    final_df.drop_duplicates(subset=["member_id", "desc"], inplace=True)
 
     final_df.to_csv(f"{processed_data}\\meds.csv", index=False)
 
