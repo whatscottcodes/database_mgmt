@@ -131,7 +131,7 @@ def process_enrollment(update=True):
 
     ppts.drop_duplicates(subset=["member_id"], inplace=True)
     enrollment.to_csv(f"{processed_data}\\enrollment_for_census.csv", index=False)
-    enrollment.drop(["last", "first", "center"], axis=1, inplace=True)
+    enrollment.drop(["last", "first"], axis=1, inplace=True)
 
     centers.to_csv(f"{processed_data}\\centers.csv", index=False)
     enrollment.to_csv(f"{processed_data}\\enrollment.csv", index=False)
