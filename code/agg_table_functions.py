@@ -861,7 +861,6 @@ def create_dc_attnd_table(params, freq):
     wes_dc_attnd["month"] = (
         wes_dc_attnd["date"] - pd.offsets.MonthBegin(month_move)
     ).dt.strftime("%Y-%m-%d")
-    print(woon_dc_attnd[["date","month"]])
     
     pvd_dc_attnd.drop("date", axis=1, inplace=True)
     woon_dc_attnd.drop("date", axis=1, inplace=True)
