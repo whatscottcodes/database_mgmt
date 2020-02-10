@@ -32,6 +32,7 @@ def enrollment_to_sql(update=True):
     conn = sqlite3.connect(database_path)
 
     if update is True:
+
         update_sql_table(enrollment, "enrollment", conn, primary_key)
 
         c = conn.cursor()

@@ -77,7 +77,7 @@ def create_table(
         "obj": "TEXT",
     }
 
-    if not agg_table:
+    if (not agg_table) and (ref_table is not None):
         if ref_table[0] == "ppts":
             df[ref_col] = df[ref_col].astype(int)
             helper = Helpers(database_path)
