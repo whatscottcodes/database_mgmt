@@ -32,10 +32,10 @@ def dx_to_sql(update=True):
     conn = sqlite3.connect(database_path)
 
     if update is True:
-        update_sql_table(dx, "dx", conn, primary_key)
-
         c = conn.cursor()
-        c.execute("DROP TABLE IF EXISTS temp;")
+        c.execute("DROP TABLE IF EXISTS dx;")
+
+        create_table(dx, "dx", conn, primary_key, foreign_key, ref_table, ref_col)
 
         print("dx updated...")
 

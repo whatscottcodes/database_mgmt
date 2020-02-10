@@ -37,10 +37,10 @@ def referrals_to_sql(update=True):
     conn = sqlite3.connect(database_path)
 
     if update is True:
-        update_sql_table(referrals, "referrals", conn, primary_key)
-
         c = conn.cursor()
-        c.execute("DROP TABLE IF EXISTS temp;")
+        c.execute("DROP TABLE IF EXISTS referrals;")
+
+        create_table(referrals, "referrals", conn, primary_key)
 
         print("referrals updated...")
 
