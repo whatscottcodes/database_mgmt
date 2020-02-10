@@ -14,6 +14,9 @@ daily_census_data = "C:\\Users\\snelson\\repos\\day_center_attendance\\daily_cen
 icd_10_file = "C:\\Users\\snelson\\data\\icd10.csv"
 # path for this folder
 db_mgmt_path = "C:\\Users\\snelson\\repos\\db_mgmt"
+# address Info - could be moved into these folders
+statewide_geocoding = "C:\\Users\\snelson\\data\\statewide.csv"
+non_geopy_addresses = "C:\\Users\\snelson\\data\\addresses_to_parse\\tough_adds.csv"
 
 # db_mgmt output for data and logs
 raw_data = f"{db_mgmt_path}\\data_raw"
@@ -23,6 +26,4 @@ output_folder = f"{db_mgmt_path}\\output"
 update_logs_folder = f"{db_mgmt_path}\\logs"
 luigi_log = f"{output_folder}\\luigi_log.txt"
 
-# address Info - could be moved into these folders
-statewide_geocoding = "C:\\Users\\snelson\\data\\statewide.csv"
-non_geopy_addresses = "C:\\Users\\snelson\\data\\addresses_to_parse\\tough_adds.csv"
+
