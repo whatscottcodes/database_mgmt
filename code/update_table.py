@@ -33,6 +33,7 @@ from data_to_sql import (
     appts_to_sql,
     auths_to_sql,
     burns_to_sql,
+    centers_to_sql,
     center_days_to_sql,
     claims_detail_to_sql,
     demographics_to_sql,
@@ -50,6 +51,7 @@ from data_to_sql import (
     pnuemo_to_sql,
     ppts_to_sql,
     referrals_to_sql,
+    teams_to_sql,
     wounds_to_sql,
 )
 from get_file_functions import choose_file_to_get
@@ -122,9 +124,16 @@ table_name_to_funcs = {
     },
     "enrollment": {
         "file_type": "csv",
-        "filename": ["ParticipantEnrollmentDisenrollmentDetail"],
+        "filename": [
+            "ParticipantEnrollmentDisenrollmentDetail",
+            "ParticipantTransfer.csv",
+        ],
         "process": [process_enrollment.process_enrollment],
-        "to_sql": [ppts_to_sql.ppts_to_sql, enrollment_to_sql.enrollment_to_sql],
+        "to_sql": [
+            ppts_to_sql.ppts_to_sql,
+            enrollment_to_sql.enrollment_to_sql,
+            centers_to_sql.centers_to_sql,
+        ],
     },
     "er_only": {
         "file_type": "csv",
@@ -210,6 +219,18 @@ table_name_to_funcs = {
         "filename": ["ReferralDetail"],
         "process": [process_referrals.process_referrals],
         "to_sql": [referrals_to_sql.referrals_to_sql],
+    },
+    "teams": {
+        "file_type": "csv",
+        "filename": [
+            "ParticipantQuickList",
+            "ParticipantEnrollmentDisenrollmentDetail",
+        ],
+        "process": [
+            process_enrollment.process_enrollment,
+            process_quick_list.process_quick_list,
+        ],
+        "to_sql": [ppts_to_sql.ppts_to_sql, teams_to_sql.teams_to_sql],
     },
     "wounds": {
         "file_type": "csv",

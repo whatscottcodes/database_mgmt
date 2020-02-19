@@ -31,12 +31,13 @@ def get_csv_file(csv_filename):
         "ParticipantCenterDays": "center_days",
         "PCMClaimAdmissionDischarge": "admit_claims",
         "PCMPaymentRegister": "payments",
-        "ParticipantQuickList": "ppt_quick_list",
+        "": "ppt_quick_list",
         "Admission Changes": "alfs",
         "EmrDroppedHcc_nc": "dx_not_current",
         "EmrDroppedHcc": "dx_current",
         "wound_grid": "wounds",
         "ReferralDetail": "referrals",
+        "ParticipantTransfer.csv": "transfers",
     }
 
     shutil.copy2(
