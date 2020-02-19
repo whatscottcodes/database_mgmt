@@ -1,4 +1,4 @@
-name: db_mgmt
+name: db_mgmt_env
 channels:
   - defaults
 dependencies:
@@ -14,4 +14,3 @@ dependencies:
   - wheel=0.33.6=py37_0
   - wincertstore=0.2=py37_0
 prefix: C:\Users\snelson\AppData\Local\Continuum\anaconda3\envs\db_mgmt
-
