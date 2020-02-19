@@ -205,6 +205,30 @@ def update_sql_table(df, table_name, conn, primary_key, agg_table=False):
     # create temp table with possibly new data from Cognify
     df.to_sql("temp", conn, index=False, if_exists="replace")
 
+    if table_name == "centers":
+        update_old_team_end_dates = """
+                                    UPDATE centers
+                                    SET end_date = (SELECT start_date FROM temp 
+                                                    WHERE member_id=centers.member_id
+                                                    AND old_center NOT NULL
+                                                    AND start_date != centers.end_date
+                                                    AND old_center != centers.center),
+                                    center = (SELECT old_center FROM temp
+                                            WHERE member_id=centers.member_id
+                                            AND old_center NOT NULL
+                                            AND start_date != centers.end_date
+                                            AND old_center != centers.center)
+                                    WHERE EXISTS (SELECT start_date, old_center FROM temp
+                                                    WHERE member_id=centers.member_id
+                                                    AND old_center NOT NULL
+                                                    AND start_date != centers.end_date
+                                                    AND old_center != centers.center)
+                                    """
+        c.execute(update_old_team_end_dates)
+        conn.commit()
+        df.drop(["old_center"], axis=1, inplace=True)
+        df.to_sql("temp", conn, index=False, if_exists="replace")
+
     # filters sql table for non new rows
     # and updates the cols
     filter_sql = f"""WHERE {primary_key[0]} = {table_name}.{primary_key[0]}"""
@@ -231,8 +255,8 @@ def update_sql_table(df, table_name, conn, primary_key, agg_table=False):
     set_sql = ", ".join(
         [f"""{col} = (SELECT {col} FROM temp {filter_sql})""" for col in set_cols]
     )
-
-    exists_sql = f"""(SELECT {', '.join(set_cols)} FROM temp {filter_sql})"""
+    join_cols = ", ".join(set_cols)
+    exists_sql = f"""(SELECT {join_cols} FROM temp {filter_sql})"""
 
     c.execute(
         f"""
@@ -245,6 +269,7 @@ def update_sql_table(df, table_name, conn, primary_key, agg_table=False):
     conn.commit()
     # inserts new data if there is a primary key in the pandas df
     # that is not in the sql table
+
     insert_cols = ", ".join(col for col in df.columns)
 
     compare_pk_sql = " AND ".join([f"""f.{col} = t.{col}""" for col in primary_key])
@@ -289,27 +314,6 @@ def update_sql_table(df, table_name, conn, primary_key, agg_table=False):
         WHERE teams.member_id IN (SELECT member_id FROM enrollment
         WHERE disenrollment_date NOT NULL)
         AND teams.end_date IS NULL;
-        """
-        )
-
-    if table_name == "centers":
-        as_of_date = df["start_date"].unique()[0]
-        c.execute(
-            f"""
-        UPDATE centers
-        SET end_date = {as_of_date}
-        WHERE centers.member_id IN (SELECT member_id FROM temp)
-        AND centers.start_date < {as_of_date};  
-        """
-        )
-        c.execute(
-            f"""
-        UPDATE centers
-        SET end_date = (SELECT disenrollment_date FROM enrollment
-                        WHERE member_id=centers.member_id)
-        WHERE centers.member_id IN (SELECT member_id FROM enrollment
-        WHERE disenrollment_date NOT NULL)
-        AND centers.end_date IS NULL;
         """
         )
 

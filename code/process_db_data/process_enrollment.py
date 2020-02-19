@@ -2,12 +2,11 @@
 
 import numpy as np
 import pandas as pd
-import sqlite3
 from process_db_data.data_cleaning_utils import clean_table_columns
-from file_paths import raw_data, processed_data, database_path
+from file_paths import raw_data, processed_data
 
 
-def process_enrollment(update=True):
+def process_enrollment():
     """
     Cleans/Processes dataset
       
@@ -80,54 +79,32 @@ def process_enrollment(update=True):
 
     ppts = enrollment[["member_id", "last", "first"]].copy()
 
-    if update:
-        from paceutils import Helpers
+    centers = enrollment[
+        ["member_id", "center", "enrollment_date", "disenrollment_date"]
+    ].copy()
+    centers.rename(
+        columns={"enrollment_date": "start_date", "disenrollment_date": "end_date"},
+        inplace=True,
+    )
+    try:
+        transfers = pd.read_csv(
+            f"{raw_data}\\transfers.csv", parse_dates=["TransferDate"]
+        )
+        transfers.columns = clean_table_columns(transfers.columns)
+        transfers.rename(columns={"transfer_date": "start_date"}, inplace=True)
 
-        centers = enrollment[["member_id", "center"]].copy()
+        transfers["end_date"] = np.nan
 
-        helpers = Helpers(database_path)
-        conn = sqlite3.connect(database_path)
+        transfers["old_center"] = transfers["comment"].str.split().str[4]
+        transfers.drop(
+            ["text_box5", "pariticipant_name", "comment"], axis=1, inplace=True
+        )
 
-        centers.to_sql("centers_temp", conn, index=False, if_exists="replace")
+        centers = centers.append(transfers, sort=True)
+    except ValueError:
+        centers["old_center"] = None
 
-        keep_new_only_q = """
-            SELECT * from centers_temp
-            WHERE member_id NOT IN (
-            SELECT centers_temp.member_id
-            FROM centers_temp
-            JOIN centers
-            ON centers_temp.member_id=centers.member_id
-            AND centers_temp.center=centers.center
-            )
-            """
-
-        centers = helpers.dataframe_query(keep_new_only_q)
-
-        centers.to_sql("centers_temp", conn, index=False, if_exists="replace")
-
-        as_of_date = str(pd.to_datetime("today").date())
-
-        update_q = """
-            UPDATE centers
-            SET end_date = ?
-            WHERE member_id IN (
-            SELECT member_id
-            FROM centers_temp)
-            """
-        conn.execute(update_q, (as_of_date,))
-        conn.commit()
-
-        conn.execute(f"DROP TABLE IF EXISTS centers_temp")
-
-        conn.commit()
-        conn.close()
-
-        centers["start_date"] = as_of_date
-        centers["end_date"] = pd.np.nan
-    else:
-        centers = enrollment[["member_id", "center", "enrollment_date"]].copy()
-        centers.rename(columns={"enrollment_date", "start_date"}, inplace=True)
-        centers["end_date"] = pd.np.nan
+    centers = centers[["member_id", "center", "start_date", "end_date", "old_center"]]
 
     ppts.drop_duplicates(subset=["member_id"], inplace=True)
     enrollment.to_csv(f"{processed_data}\\enrollment_for_census.csv", index=False)

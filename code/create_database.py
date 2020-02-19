@@ -280,10 +280,15 @@ class ProcessDx(luigi.Task):
 class ProcessEnrollment(luigi.Task):
 
     def requires(self):
-        return GetCognifyFile(
+        return [GetCognifyFile(
                 cognify_filepath=f"{ehr_file_location}\\ParticipantEnrollmentDisenrollmentDetail.csv",
                 new_filepath=f"{raw_data}\\enrollment.csv",
+            ),
+            GetCognifyFile(
+                cognify_filepath=f"{ehr_file_location}\\ParticipantTransfer.csv",
+                new_filepath=f"{raw_data}\\transfers.csv",
             )
+        ]
 
     def output(self):
         return [
@@ -292,7 +297,7 @@ class ProcessEnrollment(luigi.Task):
             ]
     
     def run(self):
-        return process_enrollment.process_enrollment(update=False)
+        return process_enrollment.process_enrollment()
 
 class ProcessEROnly(luigi.Task):
 

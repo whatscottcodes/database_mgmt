@@ -296,15 +296,20 @@ class ProcessDx(luigi.Task):
 class ProcessEnrollment(luigi.Task):
 
     def requires(self):
-        return GetCognifyFile(
+        return [GetCognifyFile(
                 cognify_filepath=f"{ehr_file_location}\\ParticipantEnrollmentDisenrollmentDetail.csv",
                 new_filepath=f"{raw_data}\\enrollment.csv",
+            ),
+            GetCognifyFile(
+                cognify_filepath=f"{ehr_file_location}\\ParticipantTransfer.csv",
+                new_filepath=f"{raw_data}\\transfers.csv",
             )
+        ]
 
     def output(self):
         return [
                 luigi.LocalTarget(f"{processed_data}\\{filename}.csv")
-                for filename in ["enrollment", "ppts"]
+                for filename in ["enrollment", "ppts", "centers"]
             ]
     
     def run(self):
