@@ -4,7 +4,7 @@ Scripts for creating a SQLite database that combines financial and clinical data
 
 ## Requirements
 
-All required packages are in the requirements.txt file. There is also an included environment.yml file for setting up a conda environment.
+All required packages are in the requirements.txt file. There is also an included environment.yml file for setting up a conda environment. Requires paceutils package to be installed in environment - use pip install e <local_path/to/pace_utils>.
 
 ### PaceUtils
 
