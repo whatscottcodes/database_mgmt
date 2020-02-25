@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from process_db_data.data_cleaning_utils import clean_table_columns, get_id
 from file_paths import processed_data, raw_data
 
@@ -47,15 +48,15 @@ def process_alfs():
                 "discharge_type"
             ].str.split(" - ", expand=True)
 
-            alfs["discharge_facility2"] = pd.np.nan
+            alfs["discharge_facility2"] = np.nan
 
-        alfs["discharge_type"] = pd.np.where(
+        alfs["discharge_type"] = np.where(
             alfs["discharge_facility"].isin(["Respite", "Permanent", "Skilled"]),
             alfs["discharge_type"] + " " + alfs["discharge_facility"],
             alfs["discharge_type"],
         )
 
-        alfs["discharge_facility"] = pd.np.where(
+        alfs["discharge_facility"] = np.where(
             alfs["discharge_facility"].isin(["Respite", "Permanent", "Skilled"]),
             alfs["discharge_facility2"],
             alfs["discharge_facility"],

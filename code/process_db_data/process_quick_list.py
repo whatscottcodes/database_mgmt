@@ -87,14 +87,14 @@ def process_quick_list(update=True):
         conn.close()
 
         team_df["start_date"] = as_of_date
-        team_df["end_date"] = pd.np.nan
+        team_df["end_date"] = np.nan
 
     else:
         enrollment = pd.read_csv(f"{processed_data}/enrollment.csv")
         team_df = team_df.merge(enrollment, on="member_id")
         team_df.rename(columns={"enrollment_date": "start_date"}, inplace=True)
         team_df = team_df[["member_id", "team", "start_date"]].copy()
-        team_df["end_date"] = pd.np.nan
+        team_df["end_date"] = np.nan
 
     team_df.to_csv(f"{processed_data}\\teams.csv", index=False)
 

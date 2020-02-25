@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import pandas as pd
+import numpy as np
 from process_db_data.data_cleaning_utils import clean_table_columns, code_y_n
 from file_paths import processed_data, raw_data, database_path
 from paceutils import Helpers
@@ -76,37 +77,37 @@ def process_medications():
 
     dff = dff.merge(enroll, on="member_id")
 
-    dff["discontinue_date"] = pd.np.where(
+    dff["discontinue_date"] = np.where(
         ((dff.discontinue_date < dff.most_recent_script) & (dff.status != "Active")),
         dff["estimated_end_date"],
         dff["discontinue_date"],
     )
 
-    dff["discontinue_date"] = pd.np.where(
+    dff["discontinue_date"] = np.where(
         ((dff.discontinue_date < dff.most_recent_script) & (dff.status != "Active")),
         dff["most_recent_script"],
         dff["discontinue_date"],
     )
 
-    dff["discontinue_date"] = pd.np.where(
+    dff["discontinue_date"] = np.where(
         ((dff.discontinue_date.notnull()) & (dff.status == "Active")),
         pd.NaT,
         dff["discontinue_date"],
     )
 
-    dff["discontinue_date"] = pd.np.where(
+    dff["discontinue_date"] = np.where(
         ((dff.discontinue_date.isnull()) & (dff.status != "Active")),
         dff["most_recent_script"],
         dff["discontinue_date"],
     )
 
-    dff["discontinue_date"] = pd.np.where(
+    dff["discontinue_date"] = np.where(
         ((dff.discontinue_date.isnull()) & (dff.status != "Active")),
         dff["disenrollment_date"],
         dff["discontinue_date"],
     )
 
-    dff["discontinue_date"] = pd.np.where(
+    dff["discontinue_date"] = np.where(
         (
             (dff.discontinue_date.isnull())
             & (dff.status != "Active")
@@ -116,7 +117,7 @@ def process_medications():
         dff["discontinue_date"],
     )
 
-    dff["start_date"] = pd.np.where(
+    dff["start_date"] = np.where(
         dff.start_date.isnull(), dff["create_date"], dff["start_date"]
     )
 

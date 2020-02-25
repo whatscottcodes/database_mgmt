@@ -2,6 +2,7 @@
 
 import warnings
 import pandas as pd
+import numpy as np
 from file_paths import database_path
 from paceutils import Helpers
 
@@ -27,7 +28,7 @@ def create_sql_dates(df, additional_date_cols=None):
         date_cols = date_cols + additional_date_cols
     for col in date_cols:
         df[col] = pd.to_datetime(df[col]).dt.strftime("%Y-%m-%d")
-        df[col].replace({"NaT": pd.np.nan}, inplace=True)
+        df[col].replace({"NaT": np.nan}, inplace=True)
     return df
 
 

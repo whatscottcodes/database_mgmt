@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import pandas as pd
+import numpy as np
 from process_db_data.data_cleaning_utils import clean_table_columns
 from file_paths import raw_data, processed_data
 
@@ -49,7 +50,7 @@ def process_referrals():
 
     referrals["close_date"] = pd.to_datetime(referrals["close_date"])
 
-    referrals["referral_source"].replace({"NOT SPECIFIED": pd.np.nan}, inplace=True)
+    referrals["referral_source"].replace({"NOT SPECIFIED": np.nan}, inplace=True)
 
     assert len(set(referrals.columns)) == len(referrals.columns)
 
